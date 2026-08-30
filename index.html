@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Niyyah — Meant for More</title>
-<meta name="description" content="A halal way to build a meaningful connection with intention. Faith-led, values-first matching — coming soon.">
-<meta property="og:title" content="Niyyah — Meant for More">
-<meta property="og:description" content="A halal way to build a meaningful connection with intention.">
-<meta property="og:image" content="/assets/emblem.jpg">
+<title>Niyyah — Halal connections. Built for marriage.</title>
+<meta name="description" content="Niyyah is a halal dating app for Muslims who are serious about finding their life partner with intention.">
+<meta property="og:title" content="Niyyah — Halal connections. Built for marriage.">
+<meta property="og:description" content="Niyyah is a halal dating app for Muslims who are serious about finding their life partner with intention.">
+<meta property="og:image" content="/assets/favicon-512.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.niyyahmarriage.com">
 <meta name="twitter:card" content="summary_large_image">
@@ -15,197 +15,566 @@
 <link rel="apple-touch-icon" href="/assets/favicon-512.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream: #f4ead2;
-    --cream-deep: #ece0c2;
-    --teal: #0e3a37;
-    --teal-soft: #1f5f5a;
-    --teal-mist: #8eac9d;
-    --gold: #b8862f;
-    --gold-soft: #d4af6a;
-    --ink: #26312d;
+    --cream: #fdf1e7;
+    --cream-panel: #fdf6ee;
+    --navy: #12162b;
+    --navy-soft: #262b45;
+    --gold: #c9a24f;
+    --gold-deep: #b6893a;
+    --gold-soft: #e3c98a;
+    --ink: #1c1f2e;
+    --muted: #6b6b78;
+    --line: rgba(18,22,43,0.1);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
     font-family:'Jost', sans-serif;
-    background:
-      radial-gradient(ellipse 900px 500px at 8% -6%, rgba(142,172,157,0.35), transparent 60%),
-      radial-gradient(ellipse 900px 600px at 95% 105%, rgba(142,172,157,0.3), transparent 60%),
-      var(--cream);
+    background:var(--cream);
     color:var(--ink);
-    min-height:100vh;
     overflow-x:hidden;
   }
-  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  img{max-width:100%; display:block;}
 
+  h1,h2,h3{font-family:'Cormorant Garamond', serif;}
+
+  /* ---------- logo ---------- */
+  .logo{display:flex; align-items:center; gap:12px;}
+  .logo-mark{width:42px; height:42px; flex-shrink:0;}
+  .logo-text{line-height:1.1;}
+  .logo-text .name{
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px; font-weight:700; color:var(--navy);
+    letter-spacing:0.01em;
+  }
+  .logo-text .sub{
+    font-size:9px; letter-spacing:0.24em; color:var(--muted);
+    font-weight:500;
+  }
+  footer .logo-text .name{color:var(--cream);}
+  footer .logo-text .sub{color:var(--gold-soft);}
+
+  /* ---------- nav ---------- */
   header.nav{
     display:flex; align-items:center; justify-content:space-between;
-    padding:28px 0;
+    padding:26px 0;
   }
-  .brand{
-    display:flex; align-items:center; gap:10px;
-    font-family:'Cormorant Garamond', serif;
-    font-size:22px; font-weight:600; letter-spacing:0.14em;
-    color:var(--teal);
+  .nav-links{display:flex; align-items:center; gap:38px;}
+  .nav-links a{
+    font-size:15px; color:var(--navy); font-weight:500; opacity:0.85;
+    transition:opacity 0.2s;
   }
-  .brand-dot{width:6px; height:6px; border-radius:50%; background:var(--gold);}
-  .pill{
-    font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--gold); border:1px solid rgba(184,134,47,0.45);
-    padding:8px 16px; border-radius:999px; background:rgba(255,255,255,0.35);
-    backdrop-filter:blur(4px);
+  .nav-links a:hover{opacity:1;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 24px; border-radius:999px;
+    font-size:14.5px; font-weight:600;
+    cursor:pointer; border:none;
   }
+  .btn-navy{background:var(--navy); color:var(--cream);}
+  .btn-navy:hover{background:var(--navy-soft);}
+  .btn-gold{background:var(--gold); color:var(--navy);}
+  .btn-gold:hover{background:var(--gold-deep);}
 
+  /* ---------- hero ---------- */
   .hero{
-    display:flex; flex-direction:column; align-items:center; text-align:center;
-    padding:40px 0 80px;
+    display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+    padding:50px 0 90px;
   }
-  .emblem{
-    width:220px; max-width:60vw; filter:drop-shadow(0 18px 40px rgba(14,58,55,0.18));
-    margin-bottom:8px;
+  .hero-copy .h1{
+    font-size:clamp(38px, 4.6vw, 54px); font-weight:600; line-height:1.12;
+    color:var(--navy);
   }
-  .wordmark{
-    font-family:'Cormorant Garamond', serif;
-    font-weight:700;
-    font-size:clamp(44px, 9vw, 74px);
-    letter-spacing:0.08em;
-    color:var(--teal);
-    line-height:1;
-  }
-  .tagline{
-    margin-top:10px;
-    font-size:13px; letter-spacing:0.32em; text-transform:uppercase;
+  .hero-copy .h1 .accent{color:var(--gold-deep);}
+  .divider{
+    display:flex; align-items:center; gap:10px;
+    margin:22px 0 22px;
     color:var(--gold);
   }
-  .lede{
-    margin-top:34px;
-    max-width:560px;
-    font-size:19px; line-height:1.6;
-    color:var(--ink);
-    font-weight:400;
+  .divider::before, .divider::after{
+    content:''; height:1px; width:64px; background:linear-gradient(90deg, transparent, var(--gold));
+  }
+  .divider::after{background:linear-gradient(90deg, var(--gold), transparent);}
+  .hero-copy p.lede{
+    font-size:16.5px; line-height:1.65; color:var(--muted); max-width:420px;
   }
   .hero-actions{
-    margin-top:34px;
-    display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:center;
+    display:flex; align-items:center; gap:18px; margin-top:30px; flex-wrap:wrap;
   }
-  .badge{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:12px 22px; border-radius:999px;
-    background:var(--teal); color:var(--cream);
-    font-size:14px; letter-spacing:0.04em; font-weight:500;
+  .coming-soon-note{
+    font-size:14.5px; color:var(--muted); display:flex; align-items:center; gap:6px;
   }
-  .badge .spark{color:var(--gold-soft);}
-  .domain-note{
-    font-size:13px; color:var(--teal-soft); opacity:0.75;
+  .stores{
+    display:flex; gap:12px; margin-top:22px;
   }
+  .store-badge{
+    display:flex; align-items:center; gap:8px;
+    border:1px solid var(--line); border-radius:11px;
+    padding:9px 16px; font-size:12px; color:var(--navy);
+    background:rgba(255,255,255,0.5);
+    opacity:0.55;
+  }
+  .store-badge .top{font-size:9.5px; display:block; opacity:0.8;}
+  .store-badge .bottom{font-size:14px; font-weight:600; font-family:'Jost',sans-serif;}
 
-  .pillars{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;
-    padding:10px 0 70px;
+  /* phone mockups */
+  .hero-visual{position:relative; display:flex; justify-content:center; align-items:center; min-height:520px;}
+  .spark{position:absolute; color:var(--gold); opacity:0.7;}
+  .phone{
+    position:relative;
+    width:230px; height:470px;
+    border-radius:34px;
+    background:var(--navy);
+    border:6px solid var(--navy);
+    box-shadow:0 30px 60px -20px rgba(18,22,43,0.45);
+    overflow:hidden;
   }
-  .pillar{
-    background:rgba(255,255,255,0.4);
-    border:1px solid rgba(14,58,55,0.12);
-    border-radius:18px;
-    padding:30px 24px;
-    text-align:left;
-    backdrop-filter:blur(6px);
+  .phone::before{
+    content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:70px; height:18px; background:var(--navy); border-radius:0 0 14px 14px; z-index:3;
   }
-  .pillar-icon{
-    width:38px; height:38px; border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    background:rgba(184,134,47,0.14);
-    border:1px solid rgba(184,134,47,0.4);
-    margin-bottom:16px;
-    color:var(--gold);
-    font-size:17px;
+  .phone-splash{
+    width:100%; height:100%;
+    background:linear-gradient(160deg, #171c34, #0d1023);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
+    color:var(--gold-soft);
   }
-  .pillar h3{
-    font-family:'Cormorant Garamond', serif;
-    font-size:22px; font-weight:600; color:var(--teal);
-    margin-bottom:8px;
-  }
-  .pillar p{
-    font-size:14.5px; line-height:1.6; color:var(--ink); opacity:0.85;
-  }
+  .phone-splash svg{width:64px; height:64px;}
+  .phone-splash .word{font-family:'Cormorant Garamond', serif; font-size:26px; font-weight:700; color:var(--gold-soft); letter-spacing:0.03em;}
+  .phone-splash .tag{font-size:9px; letter-spacing:0.3em; color:var(--gold); opacity:0.85;}
 
-  .quote{
-    text-align:center;
-    padding:20px 0 90px;
+  .phone-primary{margin-right:-58px; z-index:2; transform:rotate(-2deg);}
+  .phone-secondary{
+    width:200px; height:410px; z-index:1; transform:rotate(4deg) translateY(18px);
+    background:var(--cream-panel); border-color:var(--navy);
   }
-  .quote p{
-    font-family:'Cormorant Garamond', serif;
-    font-style:italic;
-    font-size:clamp(20px, 3vw, 28px);
-    color:var(--teal-soft);
-    max-width:640px;
-    margin:0 auto;
-    line-height:1.5;
+  .phone-secondary .screen{
+    width:100%; height:100%; background:var(--cream-panel);
+    display:flex; flex-direction:column;
   }
-
-  footer{
-    border-top:1px solid rgba(14,58,55,0.14);
-    padding:26px 0 40px;
+  .screen-topbar{
     display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap; gap:12px;
-    font-size:13px; color:var(--teal-soft); opacity:0.8;
+    padding:22px 14px 8px; font-size:11px; color:var(--navy); font-weight:600;
+  }
+  .screen-card{
+    margin:8px 12px; border-radius:16px; overflow:hidden;
+    background:linear-gradient(160deg, #cbb08a, #8f7350);
+    height:260px; position:relative;
+  }
+  .screen-card .info{
+    position:absolute; left:10px; bottom:34px; color:#fff;
+  }
+  .screen-card .info .nm{font-size:13px; font-weight:600;}
+  .screen-card .info .lc{font-size:9.5px; opacity:0.85;}
+  .screen-actions{
+    display:flex; justify-content:center; gap:14px; margin-top:12px;
+  }
+  .round-btn{
+    width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:#fff; border:1px solid var(--line); font-size:14px;
+  }
+  .round-btn.heart{color:var(--gold-deep);}
+  .screen-navbar{
+    margin-top:auto; display:flex; justify-content:space-around; padding:12px 0;
+    border-top:1px solid var(--line); font-size:14px; color:var(--muted);
   }
 
-  @media (max-width: 720px){
-    .pillars{grid-template-columns:1fr;}
+  /* ---------- feature strip ---------- */
+  .feature-panel{
+    background:var(--cream-panel); border:1px solid var(--line); border-radius:22px;
+    padding:44px 30px; margin-bottom:110px;
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:30px;
+  }
+  .feature{text-align:center;}
+  .feature-icon{
+    width:52px; height:52px; margin:0 auto 16px;
+    border:1.5px solid var(--gold); border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--gold-deep);
+  }
+  .feature-icon svg{width:24px; height:24px;}
+  .feature h3{font-size:18px; font-weight:600; color:var(--navy); margin-bottom:8px;}
+  .feature p{font-size:13.5px; color:var(--muted); line-height:1.55;}
+
+  /* ---------- more than swiping ---------- */
+  .split{
+    display:grid; grid-template-columns:1fr 1.15fr; gap:56px; align-items:center;
+    padding-bottom:110px;
+  }
+  .eyebrow{
+    font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-deep);
+    font-weight:600; margin-bottom:14px;
+  }
+  .split h2{
+    font-size:clamp(30px, 3.6vw, 42px); font-weight:600; color:var(--navy); line-height:1.18;
+    margin-bottom:18px;
+  }
+  .split h2 .accent{color:var(--gold-deep);}
+  .split p.body{font-size:15.5px; line-height:1.65; color:var(--muted); max-width:460px; margin-bottom:26px;}
+  .checklist{display:flex; flex-direction:column; gap:13px;}
+  .checklist li{display:flex; align-items:center; gap:11px; font-size:14.5px; color:var(--ink);}
+  .check-dot{
+    width:20px; height:20px; border-radius:50%; background:rgba(201,162,79,0.16);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    color:var(--gold-deep); font-size:11px;
+  }
+
+  .mini-phones{
+    display:flex; gap:14px; overflow-x:auto; padding:10px 4px 20px;
+  }
+  .mini-phone{
+    flex:0 0 auto; width:150px; height:310px;
+    background:var(--cream-panel); border:5px solid var(--navy); border-radius:24px;
+    padding:10px 8px; display:flex; flex-direction:column; gap:8px;
+    box-shadow:0 20px 40px -18px rgba(18,22,43,0.3);
+  }
+  .mini-title{font-size:10px; font-weight:700; color:var(--navy); text-align:center;}
+  .mini-sub{font-size:7.5px; color:var(--muted); text-align:center; margin-bottom:2px;}
+  .mini-row{
+    display:flex; align-items:center; justify-content:space-between;
+    background:#fff; border:1px solid var(--line); border-radius:8px;
+    padding:5px 8px; font-size:8.5px; color:var(--ink);
+  }
+  .mini-row.on{border-color:var(--gold); background:rgba(201,162,79,0.1);}
+  .mini-btn{
+    margin-top:auto; background:var(--gold); color:var(--navy);
+    text-align:center; border-radius:8px; padding:7px; font-size:9px; font-weight:700;
+  }
+  .ring{
+    width:86px; height:86px; border-radius:50%; margin:8px auto 2px;
+    background:conic-gradient(var(--gold) 0 92%, var(--line) 92% 100%);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .ring-inner{
+    width:66px; height:66px; border-radius:50%; background:var(--cream-panel);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+  }
+  .ring-inner .pct{font-size:16px; font-weight:700; color:var(--navy);}
+  .match-label{text-align:center; font-size:9px; color:var(--gold-deep); font-weight:700; margin-bottom:4px;}
+  .bars{display:flex; flex-direction:column; gap:6px; margin-top:4px;}
+  .bar-row{font-size:7px; color:var(--muted);}
+  .bar-track{height:4px; border-radius:3px; background:var(--line); margin-top:2px; overflow:hidden;}
+  .bar-fill{height:100%; background:var(--gold);}
+  .chat-bubbles{display:flex; flex-direction:column; gap:6px; flex:1;}
+  .bubble{
+    max-width:80%; padding:6px 9px; border-radius:10px; font-size:8px; line-height:1.35;
+  }
+  .bubble.in{background:#fff; border:1px solid var(--line); align-self:flex-start;}
+  .bubble.out{background:var(--navy); color:var(--cream); align-self:flex-end;}
+
+  /* ---------- waitlist ---------- */
+  .waitlist{
+    background:var(--navy); border-radius:26px; padding:44px 40px;
+    display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;
+    margin-bottom:90px; position:relative; overflow:hidden;
+  }
+  .waitlist::after{
+    content:'✦'; position:absolute; top:20px; right:36px; color:var(--gold); opacity:0.4; font-size:20px;
+  }
+  .waitlist-left{display:flex; align-items:center; gap:18px; max-width:440px;}
+  .bell-badge{
+    width:52px; height:52px; border-radius:50%; background:rgba(201,162,79,0.16);
+    border:1px solid rgba(201,162,79,0.5); display:flex; align-items:center; justify-content:center;
+    color:var(--gold); flex-shrink:0;
+  }
+  .bell-badge svg{width:22px; height:22px;}
+  .waitlist h3{color:var(--cream); font-size:22px; font-weight:600; line-height:1.3;}
+  .waitlist p{color:rgba(253,241,231,0.65); font-size:13.5px; margin-top:6px;}
+  .waitlist-form{display:flex; gap:10px; flex-wrap:wrap;}
+  .waitlist-form input{
+    padding:14px 18px; border-radius:999px; border:1px solid rgba(253,241,231,0.25);
+    background:rgba(253,241,231,0.06); color:var(--cream); font-size:14px; min-width:240px;
+    font-family:'Jost', sans-serif;
+  }
+  .waitlist-form input::placeholder{color:rgba(253,241,231,0.45);}
+  .waitlist-form input:focus{outline:none; border-color:var(--gold);}
+  .waitlist-note{color:rgba(253,241,231,0.5); font-size:11.5px; margin-top:10px;}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy); padding:60px 0 26px;}
+  .footer-grid{
+    display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; padding-bottom:36px;
+  }
+  footer p.desc{color:rgba(253,241,231,0.55); font-size:13.5px; line-height:1.6; margin-top:16px; max-width:300px;}
+  .footer-col h4{color:var(--cream); font-size:14px; font-weight:600; margin-bottom:16px; letter-spacing:0.02em;}
+  .footer-col ul{display:flex; flex-direction:column; gap:11px;}
+  .footer-col a{color:rgba(253,241,231,0.65); font-size:13.5px;}
+  .footer-col a:hover{color:var(--gold);}
+  .social-row{display:flex; gap:10px;}
+  .social-icon{
+    width:36px; height:36px; border-radius:50%; background:rgba(201,162,79,0.14);
+    border:1px solid rgba(201,162,79,0.4); display:flex; align-items:center; justify-content:center;
+    color:var(--gold);
+  }
+  .social-icon svg{width:15px; height:15px;}
+  .footer-bottom{
+    border-top:1px solid rgba(253,241,231,0.12); padding-top:22px;
+    text-align:center; color:rgba(253,241,231,0.45); font-size:12.5px;
+  }
+
+  @media (max-width: 860px){
+    .hero{grid-template-columns:1fr; padding-top:20px;}
+    .hero-visual{order:-1; min-height:420px; transform:scale(0.85);}
+    .feature-panel{grid-template-columns:1fr 1fr;}
+    .split{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr; gap:28px;}
+    .waitlist{flex-direction:column; align-items:flex-start;}
+  }
+  @media (max-width: 640px){
+    .nav-links{display:none;}
+    header.nav{padding:20px 0;}
+    header.nav .btn{padding:10px 16px; font-size:13px;}
+    .wrap{padding:0 20px;}
+    .hero-visual{min-height:340px;}
+    .phone{width:165px; height:340px; border-width:5px; border-radius:26px;}
+    .phone-primary{margin-right:-42px;}
+    .phone-secondary{width:145px; height:300px;}
+    .phone-splash svg{width:44px; height:44px;}
+    .phone-splash .word{font-size:19px;}
   }
 </style>
 </head>
 <body>
+
   <div class="wrap">
     <header class="nav">
-      <div class="brand"><span class="brand-dot"></span>NIYYAH</div>
-      <div class="pill">Coming Soon</div>
+      <div class="logo">
+        <svg class="logo-mark" viewBox="0 0 48 48" fill="none">
+          <path d="M24 40S8 29.5 8 17.8C8 11.8 12.7 8 17.6 8c2.9 0 5.4 1.4 6.4 3.6C25 9.4 27.5 8 30.4 8 35.3 8 40 11.8 40 17.8 40 29.5 24 40 24 40Z"
+            stroke="#c9a24f" stroke-width="2.6" stroke-linejoin="round"/>
+        </svg>
+        <div class="logo-text">
+          <div class="name">Niyyah</div>
+          <div class="sub">HALAL DATING APP</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#for-you">For You</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#waitlist" class="btn btn-navy">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        Stay Updated
+      </a>
     </header>
 
-    <section class="hero">
-      <img class="emblem" src="assets/emblem.jpg" alt="Niyyah — two silhouettes beneath an arch">
-      <h1 class="wordmark">NIYYAH</h1>
-      <div class="tagline">Meant for More</div>
-      <p class="lede">A halal way to build a meaningful connection with intention — faith-led, values-first, and built for marriage, not endless swiping.</p>
-      <div class="hero-actions">
-        <span class="badge"><span class="spark">✦</span> Launching soon on iOS &amp; Android</span>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <h1 class="h1">Halal connections.<br><span class="accent">Built for marriage.</span></h1>
+        <div class="divider">✦</div>
+        <p class="lede">Niyyah is a halal dating app for Muslims who are serious about finding their life partner with intention.</p>
+        <div class="hero-actions">
+          <a href="#waitlist" class="btn btn-navy">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            Stay Updated
+          </a>
+          <span class="coming-soon-note">Coming Soon ♡</span>
+        </div>
+        <div class="stores">
+          <div class="store-badge"><span></span><span><span class="top">Download on the</span><span class="bottom">App Store</span></span></div>
+          <div class="store-badge"><span></span><span><span class="top">GET IT ON</span><span class="bottom">Google Play</span></span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <span class="spark" style="top:6%; left:8%; font-size:20px;">✦</span>
+        <span class="spark" style="bottom:10%; right:4%; font-size:16px;">✦</span>
+        <span class="spark" style="top:46%; left:0%; font-size:14px;">✦</span>
+
+        <div class="phone phone-secondary">
+          <div class="screen">
+            <div class="screen-topbar"><span>Discover</span><span>⋮</span></div>
+            <div class="screen-card">
+              <div class="info"><div class="nm">Aisha, 25 ✓</div><div class="lc">Teacher · Sarajevo, Bosnia</div></div>
+            </div>
+            <div class="screen-actions">
+              <div class="round-btn">✕</div>
+              <div class="round-btn heart">♥</div>
+              <div class="round-btn">★</div>
+            </div>
+            <div class="screen-navbar"><span>◎</span><span>♡</span><span>◈</span><span>☰</span></div>
+          </div>
+        </div>
+
+        <div class="phone phone-primary">
+          <div class="phone-splash">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M24 40S8 29.5 8 17.8C8 11.8 12.7 8 17.6 8c2.9 0 5.4 1.4 6.4 3.6C25 9.4 27.5 8 30.4 8 35.3 8 40 11.8 40 17.8 40 29.5 24 40 24 40Z"
+                stroke="#e3c98a" stroke-width="2.4" stroke-linejoin="round"/>
+            </svg>
+            <div class="word">Niyyah</div>
+            <div class="tag">LOVE WITH INTENTION</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="pillars">
-      <div class="pillar">
-        <div class="pillar-icon">☾</div>
-        <h3>Faith-led connections</h3>
-        <p>Every part of the experience is shaped around deen first — matching, conversation, and intention all rooted in faith.</p>
+    <section class="feature-panel" id="features">
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Faith First</h3>
+        <p>Built on Islamic values to help you find a spouse with honesty and respect.</p>
       </div>
-      <div class="pillar">
-        <div class="pillar-icon">✦</div>
-        <h3>Meaningful intentions</h3>
-        <p>No endless swiping. Niyyah is built for people who know what they're looking for and are ready for something real.</p>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 8.3c0 5.5-8.8 10-8.8 10s-8.8-4.5-8.8-10a4.9 4.9 0 0 1 8.8-3 4.9 4.9 0 0 1 8.8 3Z"/></svg></div>
+        <h3>Serious Intentions</h3>
+        <p>For those who are truly ready for marriage and building a future.</p>
       </div>
-      <div class="pillar">
-        <div class="pillar-icon">◈</div>
-        <h3>Built on values that last</h3>
-        <p>Guardian involvement, mutual respect, and thoughtful safeguards — designed the way a halal connection should feel.</p>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+        <h3>Privacy Focused</h3>
+        <p>Your privacy is our priority. You're in control of your experience.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="18" cy="9" r="2.4"/><path d="M15.5 14.2c2.8.3 5 2.3 5 5.3"/></svg></div>
+        <h3>Family Aware</h3>
+        <p>Involve your family in your journey, the halal way.</p>
       </div>
     </section>
 
-    <section class="quote">
-      <p>"Nurture your heart — every sincere step is growth."</p>
+    <section class="split" id="for-you">
+      <div>
+        <div class="eyebrow">Made for Muslims</div>
+        <h2>More than just <span class="accent">swiping.</span></h2>
+        <p class="body">Niyyah focuses on meaningful connections, compatibility and shared values to help you find your future spouse.</p>
+        <ul class="checklist">
+          <li><span class="check-dot">✓</span>Detailed profiles that matter</li>
+          <li><span class="check-dot">✓</span>Compatibility &amp; values matching</li>
+          <li><span class="check-dot">✓</span>Private &amp; respectful conversations</li>
+          <li><span class="check-dot">✓</span>Family involvement options</li>
+          <li><span class="check-dot">✓</span>And much more…</li>
+        </ul>
+      </div>
+
+      <div class="mini-phones">
+        <div class="mini-phone">
+          <div class="mini-title">Values</div>
+          <div class="mini-sub">Select up to 5 that matter most</div>
+          <div class="mini-row on">Practicing</div>
+          <div class="mini-row">Honest</div>
+          <div class="mini-row on">Kind</div>
+          <div class="mini-row">Family-oriented</div>
+          <div class="mini-row on">Ambitious</div>
+          <div class="mini-row">Reliable</div>
+          <div class="mini-btn">Continue</div>
+        </div>
+
+        <div class="mini-phone">
+          <div class="mini-title">Compatibility</div>
+          <div class="mini-sub">Here's how you match</div>
+          <div class="ring"><div class="ring-inner"><div class="pct">92%</div></div></div>
+          <div class="match-label">Great Match!</div>
+          <div class="bars">
+            <div class="bar-row">Values 95%<div class="bar-track"><div class="bar-fill" style="width:95%"></div></div></div>
+            <div class="bar-row">Lifestyle 90%<div class="bar-track"><div class="bar-fill" style="width:90%"></div></div></div>
+            <div class="bar-row">Goals 91%<div class="bar-track"><div class="bar-fill" style="width:91%"></div></div></div>
+            <div class="bar-row">Faith 93%<div class="bar-track"><div class="bar-fill" style="width:93%"></div></div></div>
+          </div>
+          <div class="mini-btn">View Profile</div>
+        </div>
+
+        <div class="mini-phone">
+          <div class="mini-title">Family Involvement</div>
+          <div class="mini-sub">How would you like your family to be involved?</div>
+          <div class="mini-row on">◉ Fully Involved</div>
+          <div class="mini-row">○ Moderately Involved</div>
+          <div class="mini-row">○ I'll Decide Later</div>
+          <div class="mini-row">○ Not Involved</div>
+          <div class="mini-btn">Continue</div>
+        </div>
+
+        <div class="mini-phone">
+          <div class="mini-title">Aisha · Online</div>
+          <div class="chat-bubbles">
+            <div class="bubble in">Assalamu alaikum 😊</div>
+            <div class="bubble out">Wa alaikum assalam! How are you?</div>
+            <div class="bubble in">Alhamdulillah, I'm good. How about you?</div>
+            <div class="bubble out">I'm good too, JazakAllah. What are you passionate about?</div>
+          </div>
+          <div class="mini-row" style="margin-top:6px;">Type a message… ➤</div>
+        </div>
+      </div>
     </section>
 
-    <footer>
-      <span>© <span id="year"></span> Niyyah</span>
-      <span>niyyahmarriage.com</span>
-    </footer>
+    <section class="waitlist" id="waitlist">
+      <div class="waitlist-left">
+        <div class="bell-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </div>
+        <div>
+          <h3>Be the first to know when we launch</h3>
+          <p>Join our waitlist and get early access!</p>
+        </div>
+      </div>
+      <div>
+        <form class="waitlist-form" id="waitlist-form">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit" class="btn btn-gold">Notify Me</button>
+        </form>
+        <div class="waitlist-note" id="waitlist-note">We'll only email you when Niyyah is ready.</div>
+      </div>
+    </section>
   </div>
+
+  <footer id="privacy">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="logo">
+            <svg class="logo-mark" viewBox="0 0 48 48" fill="none">
+              <path d="M24 40S8 29.5 8 17.8C8 11.8 12.7 8 17.6 8c2.9 0 5.4 1.4 6.4 3.6C25 9.4 27.5 8 30.4 8 35.3 8 40 11.8 40 17.8 40 29.5 24 40 24 40Z"
+                stroke="#c9a24f" stroke-width="2.6" stroke-linejoin="round"/>
+            </svg>
+            <div class="logo-text">
+              <div class="name">Niyyah</div>
+              <div class="sub">LOVE WITH INTENTION</div>
+            </div>
+          </div>
+          <p class="desc">Niyyah is a halal dating app for Muslims who are serious about marriage. Our mission is to help you find your spouse with purpose and peace.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#for-you">For You</a></li>
+            <li><a href="#privacy">Privacy</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col" id="faq">
+          <h4>Follow Us</h4>
+          <div class="social-row">
+            <a class="social-icon" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+            <a class="social-icon" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3c.3 2 1.8 3.6 4 3.9v2.6c-1.4-.1-2.8-.6-4-1.4v6.4a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v2.7a2.9 2.9 0 1 0 2.1 2.8V3Z"/></svg></a>
+            <a class="social-icon" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="m11 10 4 2-4 2Z" fill="currentColor"/></svg></a>
+            <a class="social-icon" href="mailto:hello@niyyahmarriage.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© <span id="year"></span> Niyyah. All rights reserved.</div>
+    </div>
+  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // NOTE: not yet wired to a real email service — hook this up to
+    // Mailchimp / ConvertKit / Formspree / your own backend endpoint
+    // before launch. For now it just gives optimistic UI feedback.
+    document.getElementById('waitlist-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('waitlist-note').textContent = "Thanks — we'll let you know as soon as we launch!";
+      this.reset();
+    });
   </script>
 </body>
 </html>
