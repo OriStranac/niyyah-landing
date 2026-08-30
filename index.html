@@ -18,6 +18,7 @@
 <style>
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
+    position:relative;
     min-height:100vh;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     background:#12162b;
@@ -25,28 +26,68 @@
     font-family:'Jost', sans-serif;
     text-align:center;
     padding:24px;
+    overflow:hidden;
+  }
+  .glow{
+    position:absolute;
+    top:50%; left:50%;
+    width:640px; height:640px;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(201,162,79,0.16) 0%, rgba(201,162,79,0) 68%);
+    animation:pulseGlow 5s ease-in-out infinite;
+    pointer-events:none;
   }
   .logo{
+    position:relative;
     width:220px; max-width:60vw;
     filter:drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+    opacity:0;
+    animation:
+      fadeUp 0.9s cubic-bezier(.22,1,.36,1) 0.1s forwards,
+      float 6s ease-in-out 1s infinite;
   }
   .tag{
+    position:relative;
     margin-top:26px;
     font-size:13px;
     letter-spacing:0.35em;
     text-transform:uppercase;
     color:#c9a24f;
+    opacity:0;
+    animation:fadeUp 0.9s cubic-bezier(.22,1,.36,1) 0.4s forwards;
   }
   .note{
+    position:relative;
     margin-top:22px;
     font-size:15px;
     color:rgba(253,241,231,0.6);
     max-width:420px;
     line-height:1.6;
+    opacity:0;
+    animation:fadeUp 0.9s cubic-bezier(.22,1,.36,1) 0.65s forwards;
+  }
+
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(16px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  @keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+  }
+  @keyframes pulseGlow{
+    0%,100%{opacity:0.6; transform:translate(-50%,-50%) scale(1);}
+    50%{opacity:1; transform:translate(-50%,-50%) scale(1.08);}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .logo, .tag, .note{animation:none; opacity:1;}
+    .glow{animation:none;}
   }
 </style>
 </head>
 <body>
+  <div class="glow"></div>
   <img class="logo" src="assets/logo.png" alt="Niyyah — Love with Intention">
   <div class="tag">Coming Soon</div>
   <p class="note">We're building something meaningful. niyyahmarriage.com will be live soon.</p>
