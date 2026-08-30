@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niyyah — Meant for More</title>
+<meta name="description" content="A halal way to build a meaningful connection with intention. Faith-led, values-first matching — coming soon.">
+<meta property="og:title" content="Niyyah — Meant for More">
+<meta property="og:description" content="A halal way to build a meaningful connection with intention.">
+<meta property="og:image" content="/assets/emblem.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.niyyahmarriage.com">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/favicon-512.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #f4ead2;
+    --cream-deep: #ece0c2;
+    --teal: #0e3a37;
+    --teal-soft: #1f5f5a;
+    --teal-mist: #8eac9d;
+    --gold: #b8862f;
+    --gold-soft: #d4af6a;
+    --ink: #26312d;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost', sans-serif;
+    background:
+      radial-gradient(ellipse 900px 500px at 8% -6%, rgba(142,172,157,0.35), transparent 60%),
+      radial-gradient(ellipse 900px 600px at 95% 105%, rgba(142,172,157,0.3), transparent 60%),
+      var(--cream);
+    color:var(--ink);
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+
+  header.nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:28px 0;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:22px; font-weight:600; letter-spacing:0.14em;
+    color:var(--teal);
+  }
+  .brand-dot{width:6px; height:6px; border-radius:50%; background:var(--gold);}
+  .pill{
+    font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--gold); border:1px solid rgba(184,134,47,0.45);
+    padding:8px 16px; border-radius:999px; background:rgba(255,255,255,0.35);
+    backdrop-filter:blur(4px);
+  }
+
+  .hero{
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+    padding:40px 0 80px;
+  }
+  .emblem{
+    width:220px; max-width:60vw; filter:drop-shadow(0 18px 40px rgba(14,58,55,0.18));
+    margin-bottom:8px;
+  }
+  .wordmark{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;
+    font-size:clamp(44px, 9vw, 74px);
+    letter-spacing:0.08em;
+    color:var(--teal);
+    line-height:1;
+  }
+  .tagline{
+    margin-top:10px;
+    font-size:13px; letter-spacing:0.32em; text-transform:uppercase;
+    color:var(--gold);
+  }
+  .lede{
+    margin-top:34px;
+    max-width:560px;
+    font-size:19px; line-height:1.6;
+    color:var(--ink);
+    font-weight:400;
+  }
+  .hero-actions{
+    margin-top:34px;
+    display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:center;
+  }
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; border-radius:999px;
+    background:var(--teal); color:var(--cream);
+    font-size:14px; letter-spacing:0.04em; font-weight:500;
+  }
+  .badge .spark{color:var(--gold-soft);}
+  .domain-note{
+    font-size:13px; color:var(--teal-soft); opacity:0.75;
+  }
+
+  .pillars{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;
+    padding:10px 0 70px;
+  }
+  .pillar{
+    background:rgba(255,255,255,0.4);
+    border:1px solid rgba(14,58,55,0.12);
+    border-radius:18px;
+    padding:30px 24px;
+    text-align:left;
+    backdrop-filter:blur(6px);
+  }
+  .pillar-icon{
+    width:38px; height:38px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(184,134,47,0.14);
+    border:1px solid rgba(184,134,47,0.4);
+    margin-bottom:16px;
+    color:var(--gold);
+    font-size:17px;
+  }
+  .pillar h3{
+    font-family:'Cormorant Garamond', serif;
+    font-size:22px; font-weight:600; color:var(--teal);
+    margin-bottom:8px;
+  }
+  .pillar p{
+    font-size:14.5px; line-height:1.6; color:var(--ink); opacity:0.85;
+  }
+
+  .quote{
+    text-align:center;
+    padding:20px 0 90px;
+  }
+  .quote p{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:clamp(20px, 3vw, 28px);
+    color:var(--teal-soft);
+    max-width:640px;
+    margin:0 auto;
+    line-height:1.5;
+  }
+
+  footer{
+    border-top:1px solid rgba(14,58,55,0.14);
+    padding:26px 0 40px;
+    display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:12px;
+    font-size:13px; color:var(--teal-soft); opacity:0.8;
+  }
+
+  @media (max-width: 720px){
+    .pillars{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand"><span class="brand-dot"></span>NIYYAH</div>
+      <div class="pill">Coming Soon</div>
+    </header>
+
+    <section class="hero">
+      <img class="emblem" src="assets/emblem.jpg" alt="Niyyah — two silhouettes beneath an arch">
+      <h1 class="wordmark">NIYYAH</h1>
+      <div class="tagline">Meant for More</div>
+      <p class="lede">A halal way to build a meaningful connection with intention — faith-led, values-first, and built for marriage, not endless swiping.</p>
+      <div class="hero-actions">
+        <span class="badge"><span class="spark">✦</span> Launching soon on iOS &amp; Android</span>
+      </div>
+    </section>
+
+    <section class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">☾</div>
+        <h3>Faith-led connections</h3>
+        <p>Every part of the experience is shaped around deen first — matching, conversation, and intention all rooted in faith.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">✦</div>
+        <h3>Meaningful intentions</h3>
+        <p>No endless swiping. Niyyah is built for people who know what they're looking for and are ready for something real.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">◈</div>
+        <h3>Built on values that last</h3>
+        <p>Guardian involvement, mutual respect, and thoughtful safeguards — designed the way a halal connection should feel.</p>
+      </div>
+    </section>
+
+    <section class="quote">
+      <p>"Nurture your heart — every sincere step is growth."</p>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Niyyah</span>
+      <span>niyyahmarriage.com</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
