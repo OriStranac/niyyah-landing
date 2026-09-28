@@ -1,19 +1,40 @@
-# Niyyah — Landing Page
+# Niyyah — landing stranica
 
-Static "coming soon" landing page for [niyyahmarriage.com](https://www.niyyahmarriage.com), the marketing site for the Niyyah app.
+Marketinška stranica za [niyyahmarriage.com](https://www.niyyahmarriage.com).
+Nuxt 4, statički generisana, bosanski (`/`) i engleski (`/en`).
 
-## Structure
+Sadržaj i tvrdnje: `CLAUDE.md` (izvor istine). Slike: `SLIKE.md`.
 
-Plain HTML/CSS, no build step — `index.html` + `assets/`.
-
-## Local preview
-
-Open `index.html` directly in a browser, or serve it:
+## Pokretanje
 
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev        # http://localhost:3000
+npm run generate   # statički build u .output/public
 ```
+
+## Gdje je šta
+
+- `app/content/bs.ts`, `app/content/en.ts` — sav tekst stranice (en mora imati iste ključeve kao bs)
+- `app/components/` — sekcije stranice, redom kako ih slaže `app/pages/index.vue`
+- `app/components/mock/` — HTML makete ekrana dok nema screenshotova
+- `app/assets/images/` — screenshotovi (prepoznaju se po imenu, vidi `SLIKE.md`)
+- `app/assets/css/main.css` — boje, fontovi, razmaci
+- `nuxt.config.ts` — SEO, jezici, sitemap, fontovi
+
+## Lansiranje aplikacije
+
+Dok aplikacija nije u trgovinama, CTA je lista čekanja. Postavi varijable okoline
+pri buildu:
+
+| Varijabla | Značenje |
+|---|---|
+| `NUXT_PUBLIC_WAITLIST_ENDPOINT` | URL koji prima `POST { email, locale }` (npr. ruta u Laravel API-ju). Bez toga forma kaže da lista još nije otvorena. |
+| `NUXT_PUBLIC_APP_LAUNCHED=true` | Prebacuje sve CTA na „Preuzmi Niyyah" + bedževe |
+| `NUXT_PUBLIC_APP_STORE_URL`, `NUXT_PUBLIC_GOOGLE_PLAY_URL` | Linkovi na trgovine |
 
 ## Deploy
 
-Any static host works (Vercel, Netlify, GitHub Pages, Cloudflare Pages) — just point it at this repo's root, no build command needed.
+GitHub Actions (`.github/workflows/deploy.yml`) na svaki push na `main` generiše
+stranicu i objavljuje je na GitHub Pages. U postavkama repozitorija:
+**Settings → Pages → Source: GitHub Actions**. `CNAME` je u `public/`.

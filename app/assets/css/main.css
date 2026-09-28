@@ -1,0 +1,318 @@
+/* ──────────────────────────────────────────────────────────
+   Niyyah: tokeni
+   Noćna tinta (navy iz logotipa), papir i zlato. Tamne sekcije su
+   "noć" (hero, mahrem, kraj), svijetle su "dan" (sadržaj).
+   ────────────────────────────────────────────────────────── */
+:root {
+  --night-950: oklch(0.165 0.034 272);
+  --night-900: oklch(0.205 0.042 272);
+  --night-800: oklch(0.255 0.05 272);
+  --night-700: oklch(0.33 0.055 272);
+  --night-line: oklch(0.4 0.05 272 / 0.55);
+
+  --paper: oklch(0.972 0.013 80);
+  --paper-2: oklch(0.948 0.02 80);
+  --paper-3: oklch(0.915 0.028 80);
+  --line: oklch(0.87 0.024 80);
+
+  --ink: oklch(0.225 0.04 272);
+  --ink-2: oklch(0.43 0.03 272);
+  --ink-3: oklch(0.55 0.025 272);
+
+  --gold: oklch(0.76 0.105 82);
+  --gold-soft: oklch(0.86 0.065 85);
+  --gold-deep: oklch(0.5 0.088 70);
+  --gold-glow: oklch(0.76 0.105 82 / 0.18);
+
+  --moon: oklch(0.955 0.018 80);
+  --moon-2: oklch(0.955 0.018 80 / 0.72);
+  --moon-3: oklch(0.955 0.018 80 / 0.5);
+
+  --font-display: 'Gloock', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Jost', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+  --font-arabic: 'Amiri', 'Geeza Pro', 'Noto Naskh Arabic', serif;
+
+  --fs-display: clamp(3.1rem, 1.5rem + 6.2vw, 7.25rem);
+  --fs-h2: clamp(2.15rem, 1.35rem + 3.2vw, 4.25rem);
+  --fs-h3: clamp(1.3rem, 1.12rem + 0.7vw, 1.7rem);
+  --fs-lead: clamp(1.125rem, 1.02rem + 0.42vw, 1.375rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9375rem;
+  --fs-tiny: 0.8125rem;
+
+  --gutter: clamp(1rem, 4.5vw, 2.75rem);
+  --wide: 1240px;
+  --section: clamp(5.5rem, 3rem + 8vw, 10.5rem);
+
+  --radius: 18px;
+  --radius-lg: 28px;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+dl,
+dd,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--gold-soft);
+  color: var(--night-900);
+}
+
+/* ── Tipografija ─────────────────────────────────────────── */
+.display,
+.h2,
+.h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+.display {
+  font-size: var(--fs-display);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+}
+
+.h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+
+.prose {
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--gold-deep);
+  letter-spacing: 0.01em;
+}
+
+.on-night .kicker {
+  color: var(--gold);
+}
+
+.ar {
+  font-family: var(--font-arabic);
+}
+
+/* ── Raspored ────────────────────────────────────────────── */
+.wrap {
+  width: 100%;
+  max-width: calc(var(--wide) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section);
+}
+
+.on-night {
+  background: var(--night-900);
+  color: var(--moon);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Dugmad ──────────────────────────────────────────────── */
+.btn {
+  --btn-bg: var(--night-900);
+  --btn-fg: var(--moon);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  min-height: 52px;
+  padding: 0 1.6rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 160ms var(--ease-out),
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--gold {
+  --btn-bg: var(--gold);
+  --btn-fg: var(--night-950);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    box-shadow: 0 10px 30px -12px oklch(0.2 0.04 272 / 0.5);
+  }
+  .btn--gold:hover {
+    --btn-bg: var(--gold-soft);
+    box-shadow: 0 10px 34px -10px var(--gold-glow);
+  }
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.link-arrow svg {
+  transition: transform 200ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link-arrow:hover svg {
+    transform: translateX(3px);
+  }
+}
+
+/* ── Čipovi ──────────────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-size: var(--fs-small);
+  line-height: 1.2;
+}
+
+/* ── Pojavljivanje pri skrolanju ─────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 900ms var(--ease-out),
+    transform 900ms var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
