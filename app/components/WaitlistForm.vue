@@ -180,10 +180,14 @@ async function submit() {
 
 .wl__trap {
   position: absolute;
-  left: -9999px;
   width: 1px;
   height: 1px;
-  opacity: 0;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .wl__msg {
