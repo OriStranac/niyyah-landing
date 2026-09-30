@@ -46,16 +46,7 @@ const title = computed(() => {
         <p class="lead hero__lead">{{ c.hero.lead }}</p>
 
         <div class="hero__cta">
-          <PrimaryCta tone="night">
-            <template #between>
-              <ul class="hero__marks">
-                <li v-for="m in c.cta.marks" :key="m.label">
-                  <Icon :name="m.icon" :size="20" />
-                  <span>{{ m.label }}</span>
-                </li>
-              </ul>
-            </template>
-          </PrimaryCta>
+          <PrimaryCta tone="night" />
         </div>
       </div>
 
@@ -69,6 +60,7 @@ const title = computed(() => {
           eager
         />
       </div>
+    </div>
   </section>
 </template>
 
@@ -165,52 +157,6 @@ const title = computed(() => {
   width: min(100%, 340px);
   height: auto;
   margin: 0.2rem 0 0;
-}
-
-.hero__marks {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.hero__marks li + li {
-  padding-left: 1.4rem;
-  margin-left: 1.4rem;
-}
-
-.hero__marks li + li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 1px;
-  height: 1.6rem;
-  transform: translateY(-50%);
-  background: var(--night-line);
-}
-
-.hero__marks li {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: clamp(0.85rem, 0.9vw, 1.02rem);
-  line-height: 1.25;
-  color: var(--moon-2);
-  white-space: pre-line;
-}
-
-.hero__marks li :deep(svg) {
-  flex: none;
-  padding: 0.6rem;
-  box-sizing: content-box;
-  border: 1px solid var(--night-line);
-  border-radius: 50%;
-  color: var(--gold);
 }
 
 .hero__eyebrow {

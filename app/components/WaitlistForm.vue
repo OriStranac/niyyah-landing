@@ -84,13 +84,69 @@ async function submit() {
 }
 
 .wl__form {
+  position: relative;
   display: flex;
+  /* Bez ovoga se djeca rastežu po visini, pa ikona koverte stoji razvučena
+     uz vrh umjesto poravnata s tekstom. */
+  align-items: center;
   gap: 0.5rem;
   padding: 0.4rem;
   border-radius: 999px;
   background: oklch(1 0 0 / 0.06);
   box-shadow: inset 0 0 0 1px var(--night-line);
   transition: box-shadow 200ms ease;
+}
+
+/* Sjaj koji obilazi obrub, kao na karticama u Otkrij ekranu aplikacije.
+   Konusni gradijent se vrti, a maska ostavlja samo prsten širine 1 px —
+   tako svjetlo putuje rubom umjesto da preko njega stoji druga linija. */
+.wl__form::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--sheen),
+    transparent 0deg,
+    transparent 200deg,
+    oklch(0.76 0.105 82 / 0.5) 260deg,
+    oklch(0.9 0.07 85) 295deg,
+    oklch(0.76 0.105 82 / 0.5) 330deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: wl-sheen 4.5s linear infinite;
+  pointer-events: none;
+}
+
+/* Sadržaj iznad prstena. */
+.wl__icon,
+.wl__input,
+.wl__btn {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes wl-sheen {
+  to {
+    --sheen: 360deg;
+  }
+}
+
+/* Ukras; ko ga je isključio, ne treba ga dobiti. */
+@media (prefers-reduced-motion: reduce) {
+  .wl__form::before {
+    animation: none;
+  }
 }
 
 .wl__form:focus-within {

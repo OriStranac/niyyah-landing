@@ -42,15 +42,8 @@ export const en: Copy = {
     googlePlay: 'Google Play',
     getOn: 'Get it on',
     availableOn: 'Get it on',
-    founder: 'The first 50 to leave an address get unlimited access — no caps on messages, likes or anything else.',
     eyebrow: 'HALAL MARRIAGE APP',
     note: 'Real profiles.\nReal intentions.',
-    marks: [
-      { icon: 'badge', label: 'Islamic\nvalues' },
-      { icon: 'lock', label: 'Safe and\nprivate' },
-      { icon: 'heart', label: 'Serious\nmembers' },
-    ],
-    founderShort: 'First 50 get unlimited access',
   },
 
   hero: {

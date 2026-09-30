@@ -41,15 +41,8 @@ export const bs = {
     googlePlay: 'Google Play',
     getOn: 'Preuzmi na',
     availableOn: 'Dostupno na',
-    founder: 'Prvih 50 koji ostave adresu dobijaju neograničen pristup — bez ograničenja na poruke, lajkove i sve ostalo.',
     eyebrow: 'HALAL APLIKACIJA ZA BRAK',
     note: 'Stvarni profili.\nStvarne namjere.',
-    marks: [
-      { icon: 'badge', label: 'Islamske\nvrijednosti' },
-      { icon: 'lock', label: 'Sigurno i\nprivatno' },
-      { icon: 'heart', label: 'Ozbiljni\nkorisnici' },
-    ],
-    founderShort: 'Prvih 50 dobija neograničen pristup',
   },
 
   hero: {

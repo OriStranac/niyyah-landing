@@ -1,3 +1,11 @@
+/* Ugao sjaja koji obilazi obrub. Bez @property ugao nije animirajući
+   tip, pa bi gradijent skakao umjesto da se vrti. */
+@property --sheen {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 /* ──────────────────────────────────────────────────────────
    Niyyah: tokeni
    Noćna tinta (navy iz logotipa), papir i zlato. Tamne sekcije su
