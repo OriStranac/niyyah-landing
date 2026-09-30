@@ -51,7 +51,6 @@ const title = computed(() => {
       </div>
 
       <div class="hero__visual">
-        <p class="hero__note">{{ c.cta.note }}</p>
         <PhoneShot
           class="hero__phone"
           :src="heroShot"
@@ -177,23 +176,39 @@ const title = computed(() => {
 }
 
 .hero__phone {
+  position: relative;
   width: 100%;
+  /* Podignut s dna kolone: postolje na slici nije skroz pri dnu, pa bi
+     telefon poravnat uz rub visio ispod njega. */
+  margin-bottom: clamp(0.5rem, 2vw, 3rem);
 }
 
 .hero__phone :deep(.shot__img) {
-  width: min(100%, clamp(240px, 24vw, 430px));
+  position: relative;
+  z-index: 1;
+  width: min(100%, clamp(280px, 30vw, 520px));
 }
 
-.hero__note {
-  margin: 0 0 0.6rem auto;
-  padding-right: clamp(0.5rem, 2vw, 2.5rem);
-  font-family: var(--font-hand);
-  font-size: clamp(1.05rem, 1.24vw, 1.6rem);
-  line-height: 1.25;
-  color: var(--gold-soft);
-  white-space: pre-line;
-  text-align: right;
-  transform: rotate(-4deg);
+/* Sjena pod uređajem — bez nje render lebdi nad postoljem umjesto da stoji
+   na njemu. Spljoštena elipsa, jer svjetlo na slici pada odozgo i sprijeda,
+   a ne tačka ispod telefona. */
+.hero__phone::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2%;
+  width: min(74%, clamp(210px, 22vw, 390px));
+  aspect-ratio: 5 / 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    oklch(0.08 0.02 272 / 0.62),
+    oklch(0.08 0.02 272 / 0.28) 58%,
+    transparent 100%
+  );
+  filter: blur(10px);
+  pointer-events: none;
 }
 
 /* ── Učitavanje ──────────────────────────────────────────────────────── */
@@ -246,10 +261,6 @@ const title = computed(() => {
     gap: clamp(2rem, 1rem + 4vw, 3.5rem);
   }
 
-  .hero__note {
-    display: none;
-  }
-
   .hero__bg {
     background-position: 72% bottom;
   }
@@ -264,7 +275,7 @@ const title = computed(() => {
   }
 
   .hero__phone :deep(.shot__img) {
-    width: min(100%, 320px);
+    width: min(100%, 360px);
   }
 }
 
@@ -274,7 +285,7 @@ const title = computed(() => {
   }
 
   .hero__phone :deep(.shot__img) {
-    width: min(100%, 270px);
+    width: min(100%, 290px);
   }
 }
 

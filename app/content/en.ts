@@ -43,7 +43,6 @@ export const en: Copy = {
     getOn: 'Get it on',
     availableOn: 'Get it on',
     eyebrow: 'HALAL MARRIAGE APP',
-    note: 'Real profiles.\nReal intentions.',
   },
 
   hero: {
@@ -127,7 +126,6 @@ export const en: Copy = {
       { label: 'For her family', body: 'You know who she is talking to and how. No secrets.' },
       { label: 'For him', body: 'A clear sign that she is serious and that her family is involved.' },
     ],
-    note: 'Available on women’s profiles. One mahram can look after several people, for example a father for two daughters.',
     parentsTitle: 'Parents, this is for you.',
     parentsBody:
       'We know a “dating app” does not sound like something for your daughter or sister. In Niyyah you can be in her conversations and see who she is writing to and how, without writing anything yourself. A message cannot even arrive until both sides show interest, and all of this is free.',

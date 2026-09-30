@@ -42,7 +42,6 @@ export const bs = {
     getOn: 'Preuzmi na',
     availableOn: 'Dostupno na',
     eyebrow: 'HALAL APLIKACIJA ZA BRAK',
-    note: 'Stvarni profili.\nStvarne namjere.',
   },
 
   hero: {
@@ -126,7 +125,6 @@ export const bs = {
       { label: 'Za porodicu', body: 'Znate s kim razgovara i kako. Bez tajni.' },
       { label: 'Za njega', body: 'Jasan znak da je ozbiljna i da je porodica uključena.' },
     ],
-    note: 'Dostupno ženskim profilima. Jedan mahrem može paziti na više osoba, na primjer otac na dvije kćerke.',
     parentsTitle: 'Roditelji, ovo je za vas.',
     parentsBody:
       'Znamo da „aplikacija za upoznavanje“ ne zvuči kao nešto za vašu kćerku ili sestru. U Niyyah možete biti u njenim razgovorima i vidjeti s kim se dopisuje i kako, bez da išta pišete. Poruka ne može ni stići dok oboje ne pokažu interes, a sve ovo je besplatno.',
