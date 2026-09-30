@@ -39,6 +39,8 @@ export const bs = {
     appStore: 'App Store',
     googlePlay: 'Google Play',
     getOn: 'Preuzmi na',
+    founder: 'Prvih 50 koji ostave adresu dobijaju neograničen pristup — bez ograničenja na poruke, lajkove i sve ostalo.',
+    founderShort: 'Prvih 50 dobija neograničen pristup',
   },
 
   hero: {
