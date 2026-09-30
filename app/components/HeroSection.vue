@@ -95,7 +95,9 @@ const title = computed(() => {
   position: absolute;
   left: 70.5%;
   bottom: 10%;
-  width: 28%;
+  /* Render je u omjeru 2:3, pa širina određuje visinu: 25,5% širine daje
+     vrh na oko 13% — tamo gdje je i na mockupu. */
+  width: 25.5%;
   transform: translateX(-50%);
 }
 
