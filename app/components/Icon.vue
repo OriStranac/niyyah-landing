@@ -44,6 +44,8 @@ defineProps<{ name: string; size?: number }>()
     <template v-else-if="name === 'badge'"><path d="M12 3l2.3 1.7 2.8-.2.9 2.7 2.3 1.6-.9 2.7.9 2.7-2.3 1.6-.9 2.7-2.8-.2L12 21l-2.3-1.7-2.8.2-.9-2.7-2.3-1.6.9-2.7-.9-2.7 2.3-1.6.9-2.7 2.8.2Z" /><path d="M8.8 12.2l2.2 2.2 4.2-4.4" /></template>
     <template v-else-if="name === 'mail'"><rect x="3" y="5.5" width="18" height="13" rx="2.6" /><path d="m4 7 8 5.5L20 7" /></template>
     <template v-else-if="name === 'heart'"><path d="M12 20.3s-7.3-4.6-7.3-9.6a4.3 4.3 0 0 1 7.3-3 4.3 4.3 0 0 1 7.3 3c0 5-7.3 9.6-7.3 9.6Z" /></template>
+    <template v-else-if="name === 'moon'"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4 8.4 8.4 0 1 0 20 14.2Z" /></template>
+    <template v-else-if="name === 'doc'"><rect x="5" y="3.5" width="14" height="17" rx="2.6" /><path d="M8.6 8.5h6.8M8.6 12h6.8M8.6 15.5h4" /></template>
     <template v-else-if="name === 'people'"><circle cx="9" cy="8.5" r="3" /><path d="M3.5 19c.6-3 2.8-4.8 5.5-4.8s4.9 1.8 5.5 4.8" /><circle cx="17" cy="9.5" r="2.4" /><path d="M16 14.4c2.3.1 4 1.6 4.5 4.1" /></template>
     <template v-else-if="name === 'block'"><circle cx="12" cy="12" r="8.5" /><path d="M6 6l12 12" /></template>
     <template v-else-if="name === 'pause'"><circle cx="12" cy="12" r="8.5" /><path d="M10 9v6M14 9v6" /></template>

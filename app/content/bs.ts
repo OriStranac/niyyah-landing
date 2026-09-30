@@ -81,7 +81,9 @@ export const bs = {
       'Sestre se boje uznemiravanja, lažnih profila i toga da su same u svemu.',
       'Prevedene aplikacije ne razumiju naš jezik, mezheb, običaje ni dijasporu.',
     ],
+    eyebrow: 'KAKO FUNKCIONIŠE',
     painsLabel: 'Zvuči poznato?',
+    painIcons: ['eye', 'people', 'doc'],
     quote:
       'Ostale aplikacije mjere uspjeh vremenom koje provedeš u njima. Mi ga mjerimo nikahom nakon kojeg ti više ne trebamo.',
   },

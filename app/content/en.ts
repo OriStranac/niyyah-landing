@@ -82,6 +82,8 @@ export const en: Copy = {
       'Sisters worry about harassment, fake profiles and facing it all alone.',
       'Translated apps do not understand our language, madhhab, customs or diaspora.',
     ],
+    eyebrow: 'HOW IT WORKS',
+    painIcons: ['eye', 'people', 'doc'],
     painsLabel: 'Sound familiar?',
     quote:
       'Other apps measure success by the time you spend in them. We measure it by the nikah after which you no longer need us.',

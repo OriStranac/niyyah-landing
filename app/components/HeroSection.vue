@@ -73,8 +73,8 @@ const title = computed(() => {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding-top: calc(var(--hdr-h) + clamp(2rem, 1rem + 4vw, 5rem));
-  padding-bottom: clamp(3rem, 2rem + 5vw, 6rem);
+  padding-top: calc(var(--hdr-h) + clamp(1rem, 0.4rem + 2vw, 2.5rem));
+  padding-bottom: clamp(2.5rem, 1.5rem + 4vw, 5rem);
   background:
     radial-gradient(120% 80% at 80% 0%, var(--night-800) 0%, transparent 60%),
     var(--night-900);
