@@ -19,8 +19,8 @@ onMounted(() => {
 
 const stores = computed(() => {
   const list = [
-    { key: 'ios', icon: 'apple', url: appStoreUrl, name: c.value.cta.appStore, badge: appStoreBadge.value },
-    { key: 'android', icon: 'google-play', url: googlePlayUrl, name: c.value.cta.googlePlay, badge: playBadge.value },
+    { key: 'ios', icon: 'apple', lead: c.value.cta.getOn, url: appStoreUrl, name: c.value.cta.appStore, badge: appStoreBadge.value },
+    { key: 'android', icon: 'google-play', lead: c.value.cta.availableOn, url: googlePlayUrl, name: c.value.cta.googlePlay, badge: playBadge.value },
   ]
   return android.value ? list.reverse() : list
 })
@@ -47,7 +47,7 @@ const stores = computed(() => {
       <template v-else>
         <Icon :name="s.icon" :size="24" />
         <span class="store__text">
-          <small>{{ c.cta.getOn }}</small>
+          <small>{{ s.lead }}</small>
           <b>{{ s.name }}</b>
         </span>
       </template>
@@ -59,15 +59,15 @@ const stores = computed(() => {
 .stores {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.9rem;
 }
 
 .store {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  min-height: 56px;
-  padding: 0 1.15rem;
+  min-height: 62px;
+  padding: 0 1.35rem;
   border-radius: 12px;
   box-shadow: inset 0 0 0 1px oklch(1 0 0 / 0.22);
   background: oklch(0.12 0.02 272);

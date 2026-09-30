@@ -89,9 +89,17 @@ const title = computed(() => {
             </template>
           </PrimaryCta>
         </div>
-
-
       </div>
+
+      <!-- Isti telefon, ali u normalnom toku — za uske ekrane, gdje postolja
+           praktično nema i držanje kompozicije nema smisla. Samo jedan od
+           dva je ikad vidljiv. -->
+      <PhoneShot
+        class="hero__phone-flow"
+        :src="heroShot"
+        :alt="c.hero.imageAlt"
+        :width="320"
+      />
 
     </div>
   </section>
@@ -173,6 +181,76 @@ const title = computed(() => {
   margin: 0.15rem 0 0 -0.35rem;
 }
 
+/* ── Raspored po širini ──────────────────────────────────────────────────
+   Preko 1200 px drži se kompozicija s mockupa: telefon stoji na postolju
+   unutar pozadine. Ispod toga postolje je odrezano i kompozicija nema
+   smisla, pa telefon izlazi iz slike i ide ispod teksta.
+   ─────────────────────────────────────────────────────────────────────── */
+
+.hero__phone-flow {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .hero {
+    min-height: 0;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 1rem + 4vw, 3.5rem);
+  }
+
+  /* Telefon i bilješka pripadaju kompoziciji koje više nema. */
+  .hero__phone,
+  .hero__note {
+    display: none;
+  }
+
+  .hero__phone-flow {
+    display: flex;
+  }
+
+  /* Pozadina se više ne mjeri po visini — nema šta da poravnava — pa se
+     ponaša kao obična slika preko cijele sekcije. */
+  .hero__bg {
+    height: 100%;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: auto;
+    background-position: 72% bottom;
+  }
+
+  /* Tekst sada stoji preko cijele širine slike, pa veo mora biti ravnomjeran
+     umjesto jači samo lijevo. */
+  .hero__scrim {
+    background:
+      linear-gradient(
+        oklch(0.165 0.034 272 / 0.72),
+        oklch(0.165 0.034 272 / 0.86)
+      );
+  }
+}
+
+@media (max-width: 767px) {
+  .hero__marks {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Razdjelnici su za red, ne za stupac. */
+  .hero__marks li + li {
+    padding-left: 0;
+    margin-left: 0;
+    border-left: 0;
+    margin-top: 0.85rem;
+  }
+
+  .hero__eyebrow {
+    letter-spacing: 0.16em;
+  }
+}
+
 @media (max-width: 900px) {
   .hero__note {
     display: none;
@@ -206,18 +284,29 @@ const title = computed(() => {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem 0;
-  margin: 1.5rem 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .hero__marks li + li {
-  padding-left: 1.1rem;
-  margin-left: 1.1rem;
-  border-left: 1px solid var(--night-line);
+  padding-left: 1.4rem;
+  margin-left: 1.4rem;
+}
+
+.hero__marks li + li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 1.6rem;
+  transform: translateY(-50%);
+  background: var(--night-line);
 }
 
 .hero__marks li {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.75rem;
