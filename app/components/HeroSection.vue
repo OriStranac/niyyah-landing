@@ -133,13 +133,57 @@ const title = computed(() => {
 .hero__visual {
   display: flex;
   justify-content: center;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Sjaj iza telefona. Dvije elipse: šira i topla nosi ambijent, uža i svjetlija
+   pada iza samog uređaja da se odvoji od pozadine. Obje su u zlatu iz palete,
+   pa svijetli kao lampa sa slike, a ne kao dodatak. */
+.hero__visual::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 8% -12% 4%;
+  background:
+    radial-gradient(
+      52% 40% at 50% 42%,
+      oklch(0.76 0.105 82 / 0.28),
+      transparent 70%
+    ),
+    radial-gradient(
+      78% 62% at 50% 52%,
+      oklch(0.5 0.088 70 / 0.22),
+      transparent 72%
+    );
+  filter: blur(34px);
+  animation: hero-glow 7s var(--ease-in-out) infinite;
 }
 
 /* Slika je već render telefona, sa svojim okvirom i sjenom, pa stoji sama —
    nacrtani okvir bi oko nje bio drugi telefon. */
 .hero__shot {
-  width: min(100%, 420px);
+  width: min(100%, 500px);
   height: auto;
+}
+
+@keyframes hero-glow {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(0.97);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+/* Disanje je ukras; ko ga je isključio, ne treba ga dobiti. */
+@media (prefers-reduced-motion: reduce) {
+  .hero__visual::before {
+    animation: none;
+  }
 }
 
 /* Učitavanje: tekst se slaže odozgo, telefon se diže malo kasnije. */
@@ -178,7 +222,7 @@ const title = computed(() => {
     grid-template-columns: 1fr;
   }
   .hero__shot {
-    width: min(100%, 360px);
+    width: min(100%, 400px);
   }
 }
 </style>
