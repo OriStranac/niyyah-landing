@@ -15,7 +15,6 @@ const title = computed(() => {
 <template>
   <section class="hero on-night" aria-labelledby="hero-title">
     <GeoPattern :opacity="0.12" />
-    <div class="hero__glow" aria-hidden="true" />
 
     <div class="wrap hero__grid">
       <div class="hero__text">
@@ -74,26 +73,6 @@ const title = computed(() => {
 
 .hero .geo {
   z-index: -1;
-}
-
-/* Topli krug iza telefona — ono što je stajalo prije pozadinske slike. */
-.hero__glow {
-  position: absolute;
-  top: 38%;
-  right: 12%;
-  z-index: -1;
-  width: min(720px, 90vw);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 65%);
-  transform: translate(30%, -50%);
-  animation: glow 7s ease-in-out infinite;
-}
-
-@keyframes glow {
-  50% {
-    opacity: 0.65;
-  }
 }
 
 /* ── Mreža ───────────────────────────────────────────────────────────── */
@@ -160,6 +139,30 @@ const title = computed(() => {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+}
+
+/* Topli krug iza telefona. Vezan je za kolonu u kojoj telefon stoji, ne za
+   sekciju — dok je bio vezan za sekciju, svaka promjena veličine telefona
+   tražila je da se krug ručno pomjera za njim. */
+.hero__visual::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  width: min(140%, 760px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 65%);
+  animation: glow 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glow {
+  50% {
+    opacity: 0.65;
+  }
 }
 
 .hero__phone {
@@ -235,7 +238,8 @@ const title = computed(() => {
 
 @media (prefers-reduced-motion: reduce) {
   .hero__text > *,
-  .hero__visual {
+  .hero__visual,
+  .hero__visual::before {
     animation: none;
   }
 }
