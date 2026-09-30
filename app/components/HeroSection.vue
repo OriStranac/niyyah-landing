@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import heroBg from '~/assets/images/hero-bg.webp'
 import heroShot from '~/assets/images/hero-discover.webp'
 
 const c = useCopy()
@@ -15,10 +14,8 @@ const title = computed(() => {
 
 <template>
   <section class="hero on-night" aria-labelledby="hero-title">
-    <div class="hero__stage" aria-hidden="true">
-      <div class="hero__bg" :style="{ backgroundImage: `url(${heroBg})` }" />
-      <div class="hero__scrim" />
-    </div>
+    <GeoPattern :opacity="0.12" />
+    <div class="hero__glow" aria-hidden="true" />
 
     <div class="wrap hero__grid">
       <div class="hero__text">
@@ -68,45 +65,35 @@ const title = computed(() => {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: calc(var(--hdr-h) + clamp(1.5rem, 0.5rem + 3vw, 4rem));
-  padding-bottom: clamp(2.5rem, 1.5rem + 4vw, 5rem);
-}
-
-/* ── Pozadina ────────────────────────────────────────────────────────────
-   Sloj, ne koordinatni sistem. Pokriva sekciju kako god visoka bila; položaj
-   je biran tako da postolje ostane pod telefonom, a lijeva strana — gdje je
-   tekst — ostane mirna i tamna.
-   ─────────────────────────────────────────────────────────────────────── */
-.hero__stage {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.hero__bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: 68% bottom;
-}
-
-.hero__scrim {
-  position: absolute;
-  inset: 0;
+  padding-top: calc(var(--hdr-h) + clamp(2rem, 1rem + 4vw, 5rem));
+  padding-bottom: clamp(3rem, 2rem + 5vw, 6rem);
   background:
-    linear-gradient(
-      100deg,
-      oklch(0.165 0.034 272 / 0.84) 0%,
-      oklch(0.165 0.034 272 / 0.66) 38%,
-      oklch(0.165 0.034 272 / 0.2) 64%,
-      transparent 80%
-    ),
-    linear-gradient(oklch(0.165 0.034 272 / 0.3), transparent 28%);
+    radial-gradient(120% 80% at 80% 0%, var(--night-800) 0%, transparent 60%),
+    var(--night-900);
+}
+
+.hero .geo {
+  z-index: -1;
+}
+
+/* Topli krug iza telefona — ono što je stajalo prije pozadinske slike. */
+.hero__glow {
+  position: absolute;
+  top: 38%;
+  right: 12%;
+  z-index: -1;
+  width: min(720px, 90vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 65%);
+  transform: translate(30%, -50%);
+  animation: glow 7s ease-in-out infinite;
+}
+
+@keyframes glow {
+  50% {
+    opacity: 0.65;
+  }
 }
 
 /* ── Mreža ───────────────────────────────────────────────────────────── */
@@ -176,39 +163,13 @@ const title = computed(() => {
 }
 
 .hero__phone {
-  position: relative;
   width: 100%;
-  /* Podignut s dna kolone: postolje na slici nije skroz pri dnu, pa bi
-     telefon poravnat uz rub visio ispod njega. */
-  margin-bottom: clamp(0.5rem, 2vw, 3rem);
 }
 
 .hero__phone :deep(.shot__img) {
   position: relative;
   z-index: 1;
   width: min(100%, clamp(280px, 30vw, 520px));
-}
-
-/* Sjena pod uređajem — bez nje render lebdi nad postoljem umjesto da stoji
-   na njemu. Spljoštena elipsa, jer svjetlo na slici pada odozgo i sprijeda,
-   a ne tačka ispod telefona. */
-.hero__phone::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -2%;
-  width: min(74%, clamp(210px, 22vw, 390px));
-  aspect-ratio: 5 / 1;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(
-    closest-side,
-    oklch(0.08 0.02 272 / 0.62),
-    oklch(0.08 0.02 272 / 0.28) 58%,
-    transparent 100%
-  );
-  filter: blur(10px);
-  pointer-events: none;
 }
 
 /* ── Učitavanje ──────────────────────────────────────────────────────── */
@@ -252,29 +213,12 @@ const title = computed(() => {
    postaje atmosfera.
    ─────────────────────────────────────────────────────────────────────── */
 @media (max-width: 1199px) {
-  .hero {
-    min-height: 0;
-  }
-
   .hero__grid {
     grid-template-columns: 1fr;
     gap: clamp(2rem, 1rem + 4vw, 3.5rem);
   }
 
-  .hero__bg {
-    background-position: 72% bottom;
-  }
-
-  /* Tekst sada stoji preko cijele širine slike, pa veo mora biti ravnomjeran
-     umjesto jači samo lijevo. */
-  .hero__scrim {
-    background: linear-gradient(
-      oklch(0.165 0.034 272 / 0.74),
-      oklch(0.165 0.034 272 / 0.88)
-    );
-  }
-
-  .hero__phone :deep(.shot__img) {
+      .hero__phone :deep(.shot__img) {
     width: min(100%, 360px);
   }
 }
