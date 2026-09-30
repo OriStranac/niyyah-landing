@@ -11,6 +11,7 @@ const title = computed(() => {
     tail: words.at(-1) ?? '',
   }
 })
+</script>
 
 <template>
   <section id="sadrzaj" class="section problem" aria-labelledby="problem-title">
