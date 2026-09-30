@@ -192,9 +192,10 @@ const title = computed(() => {
   position: absolute;
   left: 70.5%;
   bottom: 10%;
-  /* Render je u omjeru 2:3, pa širina određuje visinu: 25,5% širine daje
-     vrh na oko 13% — tamo gdje je i na mockupu. */
-  width: 25.5%;
+  /* Položaj se mjeri od pozadine (da ostane na postolju), ali veličina od
+     ekrana — pozadina je šira od prozora kad je visina ta koja je određuje,
+     pa je 25,5% njene širine ispadalo 33% ekrana umjesto 20%. */
+  width: clamp(190px, 20vw, 420px);
   transform: translateX(-50%);
 }
 
