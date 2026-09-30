@@ -22,7 +22,26 @@ const title = computed(() => {
     <div class="hero__stage" aria-hidden="true">
       <div class="hero__bg" :style="{ backgroundImage: `url(${heroBg})` }">
         <div class="hero__scrim" />
-        <p class="hero__note">{{ c.cta.note }}</p>
+        <div class="hero__note">
+          <p>{{ c.cta.note }}</p>
+          <svg class="hero__arrow" viewBox="0 0 120 80" aria-hidden="true">
+            <path
+              d="M112 10C86 6 46 14 26 42"
+              fill="none"
+              stroke="var(--gold-soft)"
+              stroke-width="2.2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M20 34l-4 14 14-2"
+              fill="none"
+              stroke="var(--gold-soft)"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
         <PhoneShot
           class="hero__phone"
           :src="heroShot"
@@ -95,13 +114,19 @@ const title = computed(() => {
 }
 
 /* Kutija u omjeru same slike. Sve unutra mjeri se od nje, pa postolje i
-   telefon ostaju poravnati na svakoj širini. */
+   telefon ostaju poravnati.
+   Visina je ta koja određuje veličinu, ne širina: hero je zbog sadržaja
+   viši od omjera 2:1, pa bi slika mjerena po širini bila prekratka i
+   postolje bi ispalo ispod vidljivog dijela. Ovako slika uvijek pokrije
+   visinu, a višak širine ide van ekrana. */
 .hero__bg {
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: max(100%, 1240px);
+  height: 100%;
+  width: auto;
+  min-width: 100%;
   aspect-ratio: 1774 / 887;
   background-size: cover;
   background-position: center;
@@ -132,16 +157,27 @@ const title = computed(() => {
    prekida ništa. */
 .hero__note {
   position: absolute;
-  left: 84%;
-  top: 22%;
-  width: 20%;
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(0.85rem, 0.4rem + 0.8vw, 1.25rem);
-  line-height: 1.35;
+  left: 82%;
+  top: 20%;
+  width: 17%;
   color: var(--gold-soft);
+}
+
+.hero__note p {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-size: clamp(1.05rem, 1.24vw, 1.6rem);
+  line-height: 1.25;
   white-space: pre-line;
-  transform: rotate(-6deg);
+  transform: rotate(-5deg);
+}
+
+/* Strelica ide od bilješke natrag ka telefonu, kao na mockupu. */
+.hero__arrow {
+  display: block;
+  width: 78%;
+  height: auto;
+  margin: 0.35rem 0 0 -0.5rem;
 }
 
 @media (max-width: 900px) {
@@ -202,13 +238,13 @@ const title = computed(() => {
 .hero__eyebrow {
   display: inline-block;
   margin: 0 0 1.1rem;
-  padding: 0.5rem 1.1rem;
+  padding: 0.55rem 1.3rem;
+  font-size: clamp(0.72rem, 0.79vw, 0.9rem);
   border: 1px solid var(--gold-glow);
   border-radius: 999px;
   color: var(--gold);
-  font-size: var(--fs-small);
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
 }
 
@@ -248,9 +284,14 @@ const title = computed(() => {
 
 .hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   align-items: center;
   gap: clamp(2.5rem, 5vw, 6rem);
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 5.4vw, 6rem);
+  line-height: 1.02;
 }
 
 .hero__title span {
@@ -259,8 +300,9 @@ const title = computed(() => {
 
 .hero__lead {
   margin-top: clamp(1.4rem, 1rem + 1.2vw, 2.2rem);
+  font-size: clamp(1.02rem, 1.07vw, 1.28rem);
   color: var(--moon-2);
-  max-width: 34em;
+  max-width: 30em;
 }
 
 .hero__cta {

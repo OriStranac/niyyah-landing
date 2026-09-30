@@ -16,6 +16,7 @@ export const en: Copy = {
       { href: '#mahrem', label: 'Mahram' },
       { href: '#kako', label: 'How it works' },
       { href: '#sigurnost', label: 'Safety' },
+      { href: '#preporuke', label: 'Testimonials' },
       { href: '#pitanja', label: 'FAQ' },
     ],
     otherLang: 'Bosanski',

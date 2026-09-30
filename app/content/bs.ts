@@ -15,6 +15,7 @@ export const bs = {
       { href: '#mahrem', label: 'Mahrem' },
       { href: '#kako', label: 'Kako funkcioniše' },
       { href: '#sigurnost', label: 'Sigurnost' },
+      { href: '#preporuke', label: 'Preporuke' },
       { href: '#pitanja', label: 'Pitanja' },
     ],
     otherLang: 'English',

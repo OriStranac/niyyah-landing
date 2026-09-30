@@ -23,6 +23,8 @@
      se ne raziđu. */
   --hdr-h: 96px;
 
+  --font-hand: 'Caveat', 'Segoe Script', cursive;
+
   --gold: oklch(0.76 0.105 82);
   --gold-soft: oklch(0.86 0.065 85);
   --gold-deep: oklch(0.5 0.088 70);

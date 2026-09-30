@@ -70,6 +70,14 @@ export default defineNuxtConfig({
     locales: [
       { code: 'bs', language: 'bs-BA', name: 'Bosanski' },
       { code: 'en', language: 'en', name: 'English' },
+      { code: 'de', language: 'de', name: 'Deutsch' },
+      { code: 'tr', language: 'tr', name: 'Türkçe' },
+      { code: 'fr', language: 'fr', name: 'Français' },
+      { code: 'id', language: 'id', name: 'Bahasa Indonesia' },
+      { code: 'ms', language: 'ms', name: 'Bahasa Melayu' },
+      // Pišu se zdesna nalijevo; dir ide u <html> preko useHead u app.vue.
+      { code: 'ar', language: 'ar', name: 'العربية', dir: 'rtl' },
+      { code: 'ur', language: 'ur', name: 'اردو', dir: 'rtl' },
     ],
     detectBrowserLanguage: false,
     vueI18n: './i18n.config.ts',
@@ -83,6 +91,8 @@ export default defineNuxtConfig({
       { name: 'Gloock', provider: 'google', weights: [400] },
       { name: 'Jost', provider: 'google', weights: [400, 500] },
       { name: 'Amiri', provider: 'google', weights: [400], subsets: ['arabic'] },
+      // Za bilješku uz telefon — jedino mjesto gdje se koristi rukopis.
+      { name: 'Caveat', provider: 'google', weights: [500] },
     ],
   },
 
