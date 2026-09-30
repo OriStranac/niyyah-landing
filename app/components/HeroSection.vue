@@ -144,20 +144,42 @@ const title = computed(() => {
   content: '';
   position: absolute;
   z-index: -1;
-  inset: 8% -12% 4%;
+  inset: 2% -20% -2%;
   background:
     radial-gradient(
-      52% 40% at 50% 42%,
-      oklch(0.76 0.105 82 / 0.28),
+      30% 22% at 50% 38%,
+      oklch(0.86 0.065 85 / 0.5),
       transparent 70%
     ),
     radial-gradient(
-      78% 62% at 50% 52%,
-      oklch(0.5 0.088 70 / 0.22),
+      58% 44% at 50% 44%,
+      oklch(0.76 0.105 82 / 0.42),
       transparent 72%
+    ),
+    radial-gradient(
+      92% 74% at 50% 54%,
+      oklch(0.5 0.088 70 / 0.34),
+      transparent 74%
     );
-  filter: blur(34px);
+  filter: blur(42px);
   animation: hero-glow 7s var(--ease-in-out) infinite;
+}
+
+/* Uzak, svjetliji trag koji prati nagib uređaja — ono što na renderu već
+   pada niz ivicu, produženo u pozadinu. */
+.hero__visual::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 14% 6% 18% 34%;
+  background: linear-gradient(
+    198deg,
+    oklch(0.86 0.065 85 / 0.34),
+    oklch(0.76 0.105 82 / 0.12) 46%,
+    transparent 72%
+  );
+  filter: blur(30px);
+  animation: hero-glow 7s var(--ease-in-out) 900ms infinite;
 }
 
 /* Slika je već render telefona, sa svojim okvirom i sjenom, pa stoji sama —
@@ -181,7 +203,8 @@ const title = computed(() => {
 
 /* Disanje je ukras; ko ga je isključio, ne treba ga dobiti. */
 @media (prefers-reduced-motion: reduce) {
-  .hero__visual::before {
+  .hero__visual::before,
+  .hero__visual::after {
     animation: none;
   }
 }
