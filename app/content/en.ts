@@ -41,6 +41,7 @@ export const en: Copy = {
     googlePlay: 'Google Play',
     getOn: 'Get it on',
     founder: 'The first 50 to leave an address get unlimited access — no caps on messages, likes or anything else.',
+    eyebrow: 'HALAL MARRIAGE APP',
     founderShort: 'First 50 get unlimited access',
   },
 

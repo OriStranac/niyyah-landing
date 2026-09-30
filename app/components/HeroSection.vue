@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import heroBg from '~/assets/images/hero-bg.webp'
 import heroShot from '~/assets/images/hero-discover.webp'
 
 const c = useCopy()
@@ -14,11 +15,25 @@ const title = computed(() => {
 
 <template>
   <section class="hero on-night" aria-labelledby="hero-title">
-    <GeoPattern :opacity="0.12" />
-    <div class="hero__glow" aria-hidden="true" />
+    <!-- Telefon je dijete same pozadine, ne sekcije: postolje je na 71%
+         širine i 82% visine TE slike, pa postoci drže samo ako se oboje
+         mjeri od iste kutije. Inače bi telefon klizio s postolja čim se
+         promijeni omjer prozora. -->
+    <div class="hero__stage" aria-hidden="true">
+      <div class="hero__bg" :style="{ backgroundImage: `url(${heroBg})` }">
+        <PhoneShot
+          class="hero__phone"
+          :src="heroShot"
+          :alt="''"
+          :width="330"
+          eager
+        />
+      </div>
+    </div>
 
     <div class="wrap hero__grid">
       <div class="hero__text">
+        <p class="hero__eyebrow">{{ c.cta.eyebrow }}</p>
         <h1 id="hero-title" class="display hero__title">
           {{ title.a }} <span>{{ title.b }}</span>
         </h1>
@@ -40,19 +55,59 @@ const title = computed(() => {
         </div>
       </div>
 
-      <PhoneShot
-        class="hero__visual"
-        :src="heroShot"
-        :alt="c.hero.imageAlt"
-        :width="500"
-        eager
-        glow
-      />
     </div>
   </section>
 </template>
 
 <style scoped>
+.hero__stage {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Kutija u omjeru same slike. Sve unutra mjeri se od nje, pa postolje i
+   telefon ostaju poravnati na svakoj širini. */
+.hero__bg {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: max(100%, 1240px);
+  aspect-ratio: 1774 / 887;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Postolje je izmjereno na slici: centar na 71% širine, gornja ploha na
+   82% visine. Telefon stoji na njoj. */
+.hero__phone {
+  position: absolute;
+  left: 71%;
+  bottom: 18%;
+  width: 26%;
+  transform: translateX(-50%);
+}
+
+.hero__phone :deep(.shot__img) {
+  width: 100%;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  margin: 0 0 1.1rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--gold-glow);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
 .hero {
   position: relative;
   isolation: isolate;
@@ -60,7 +115,7 @@ const title = computed(() => {
   padding-top: calc(var(--hdr-h) + clamp(2.5rem, 1rem + 5vw, 6rem));
   padding-bottom: clamp(4rem, 2rem + 6vw, 8rem);
   background:
-    radial-gradient(120% 80% at 80% 0%, var(--night-800) 0%, transparent 60%),
+    radial-gradient(120% 80% at 80% 0%, oklch(0.255 0.05 272 / 0.35) 0%, transparent 60%),
     var(--night-900);
 }
 
