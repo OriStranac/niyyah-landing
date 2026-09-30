@@ -15,41 +15,9 @@ const title = computed(() => {
 
 <template>
   <section class="hero on-night" aria-labelledby="hero-title">
-    <!-- Telefon je dijete same pozadine, ne sekcije: postolje je na 71%
-         širine i 82% visine TE slike, pa postoci drže samo ako se oboje
-         mjeri od iste kutije. Inače bi telefon klizio s postolja čim se
-         promijeni omjer prozora. -->
     <div class="hero__stage" aria-hidden="true">
-      <div class="hero__bg" :style="{ backgroundImage: `url(${heroBg})` }">
-        <div class="hero__scrim" />
-        <div class="hero__note">
-          <p>{{ c.cta.note }}</p>
-          <svg class="hero__arrow" viewBox="0 0 120 80" aria-hidden="true">
-            <path
-              d="M104 8C80 10 44 20 24 44"
-              fill="none"
-              stroke="var(--gold-soft)"
-              stroke-width="2.2"
-              stroke-linecap="round"
-            />
-            <path
-              d="M18 34l-2 14 14-4"
-              fill="none"
-              stroke="var(--gold-soft)"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-        <PhoneShot
-          class="hero__phone"
-          :src="heroShot"
-          :alt="''"
-          :width="330"
-          eager
-        />
-      </div>
+      <div class="hero__bg" :style="{ backgroundImage: `url(${heroBg})` }" />
+      <div class="hero__scrim" />
     </div>
 
     <div class="wrap hero__grid">
@@ -91,17 +59,16 @@ const title = computed(() => {
         </div>
       </div>
 
-      <!-- Isti telefon, ali u normalnom toku — za uske ekrane, gdje postolja
-           praktično nema i držanje kompozicije nema smisla. Samo jedan od
-           dva je ikad vidljiv. -->
-      <PhoneShot
-        class="hero__phone-flow"
-        :src="heroShot"
-        :alt="c.hero.imageAlt"
-        :width="320"
-      />
-
-    </div>
+      <div class="hero__visual">
+        <p class="hero__note">{{ c.cta.note }}</p>
+        <PhoneShot
+          class="hero__phone"
+          :src="heroShot"
+          :alt="c.hero.imageAlt"
+          :width="420"
+          eager
+        />
+      </div>
   </section>
 </template>
 
@@ -114,139 +81,60 @@ const title = computed(() => {
   pointer-events: none;
 }
 
-/* Kutija u omjeru same slike. Sve unutra mjeri se od nje, pa postolje i
-   telefon ostaju poravnati.
-   Visina je ta koja određuje veličinu, ne širina: hero je zbog sadržaja
-   viši od omjera 2:1, pa bi slika mjerena po širini bila prekratka i
-   postolje bi ispalo ispod vidljivog dijela. Ovako slika uvijek pokrije
-   visinu, a višak širine ide van ekrana. */
+/* Pozadina je sloj, ne koordinatni sistem. Pokriva sekciju kako god visoka
+   bila; položaj je biran tako da postolje ostane pod telefonom, a lijeva
+   strana — gdje je tekst — ostane mirna i tamna. */
 .hero__bg {
   position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  height: 100%;
-  width: auto;
-  min-width: 100%;
-  aspect-ratio: 1774 / 887;
+  inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: 68% bottom;
 }
 
-/* Ploha postolja ide od 82% (stražnji rub) do 93% (prednji) visine slike.
-   Telefon stoji na njoj, bliže prednjem rubu — dno na 90%, kako je na
-   mockupu, a ne na stražnjem rubu gdje sam ga prvo stavio. */
-/* Tekst stoji na slici, a slika je oko luka i lampiona svijetla. Veo je
-   jači s lijeve strane, gdje su naslov i forma, i gotovo ga nema desno gdje
-   je telefon. */
 .hero__scrim {
   position: absolute;
   inset: 0;
   background:
     linear-gradient(
       100deg,
-      oklch(0.165 0.034 272 / 0.82) 0%,
-      oklch(0.165 0.034 272 / 0.62) 38%,
-      oklch(0.165 0.034 272 / 0.18) 62%,
-      transparent 78%
+      oklch(0.165 0.034 272 / 0.84) 0%,
+      oklch(0.165 0.034 272 / 0.66) 38%,
+      oklch(0.165 0.034 272 / 0.2) 64%,
+      transparent 80%
     ),
-    linear-gradient(oklch(0.165 0.034 272 / 0.28), transparent 30%);
+    linear-gradient(oklch(0.165 0.034 272 / 0.3), transparent 28%);
 }
 
-/* Bilješka desno od telefona, rukopisom. Ukras je i stoji izvan reda
-   čitanja — aria-hidden nije potreban jer tekst nosi značenje, ali ne
-   prekida ništa. */
+/* Telefon je sada dio mreže, pa prati širinu ekrana kao i sve ostalo. */
+.hero__visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hero__phone {
+  width: 100%;
+}
+
+.hero__phone :deep(.shot__img) {
+  width: min(100%, clamp(240px, 24vw, 430px));
+}
+
 .hero__note {
-  position: absolute;
-  left: 82%;
-  top: 20%;
-  width: 17%;
-  color: var(--gold-soft);
-}
-
-.hero__note p {
-  margin: 0;
+  margin: 0 0 0.6rem auto;
+  padding-right: clamp(0.5rem, 2vw, 2.5rem);
   font-family: var(--font-hand);
   font-size: clamp(1.05rem, 1.24vw, 1.6rem);
   line-height: 1.25;
+  color: var(--gold-soft);
   white-space: pre-line;
-  transform: rotate(-5deg);
+  text-align: right;
+  transform: rotate(-4deg);
 }
 
-/* Strelica ide od bilješke natrag ka telefonu, kao na mockupu. */
-.hero__arrow {
-  display: block;
-  width: 58%;
-  height: auto;
-  margin: 0.15rem 0 0 -0.35rem;
-}
-
-/* ── Raspored po širini ──────────────────────────────────────────────────
-   Preko 1200 px drži se kompozicija s mockupa: telefon stoji na postolju
-   unutar pozadine. Ispod toga postolje je odrezano i kompozicija nema
-   smisla, pa telefon izlazi iz slike i ide ispod teksta.
-   ─────────────────────────────────────────────────────────────────────── */
-
-.hero__phone-flow {
-  display: none;
-}
-
-@media (max-width: 1199px) {
-  .hero {
-    min-height: 0;
-  }
-
-  .hero__grid {
-    grid-template-columns: 1fr;
-    gap: clamp(2rem, 1rem + 4vw, 3.5rem);
-  }
-
-  /* Telefon i bilješka pripadaju kompoziciji koje više nema. */
-  .hero__phone,
-  .hero__note {
-    display: none;
-  }
-
-  .hero__phone-flow {
-    display: flex;
-  }
-
-  /* Pozadina se više ne mjeri po visini — nema šta da poravnava — pa se
-     ponaša kao obična slika preko cijele sekcije. */
-  .hero__bg {
-    height: 100%;
-    width: 100%;
-    min-width: 0;
-    aspect-ratio: auto;
-    background-position: 72% bottom;
-  }
-
-  /* Tekst sada stoji preko cijele širine slike, pa veo mora biti ravnomjeran
-     umjesto jači samo lijevo. */
-  .hero__scrim {
-    background:
-      linear-gradient(
-        oklch(0.165 0.034 272 / 0.72),
-        oklch(0.165 0.034 272 / 0.86)
-      );
-  }
-}
-
-@media (max-width: 767px) {
-  .hero__marks {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* Razdjelnici su za red, ne za stupac. */
-  .hero__marks li + li {
-    padding-left: 0;
-    margin-left: 0;
-    border-left: 0;
-    margin-top: 0.85rem;
-  }
-
-  .hero__eyebrow {
+.hero__eyebrow {
     letter-spacing: 0.16em;
   }
 }
