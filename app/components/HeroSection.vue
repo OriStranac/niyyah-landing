@@ -184,31 +184,19 @@ const title = computed(() => {
   width: min(100%, clamp(280px, 30vw, 520px));
 }
 
-/* Odraz: ista slika okrenuta naopako, izblijedjela prema dolje. Maska radi
-   posao koji bi inače tražio drugu sliku — blijedi tamo gdje bi se odraz
-   na staklu ionako izgubio. */
+/* Odraz stoji IZA uređaja, ne ispod njega: apsolutno pozicioniran, pa ne
+   zauzima prostor u koloni i ne pomjera ništa. Uvećan, zamućen i jedva
+   vidljiv — sjena samog telefona, a ne druga slika pored njega. */
 .hero__reflection {
-  display: block;
-  width: min(100%, clamp(280px, 30vw, 520px));
-  margin-top: -2%;
-  transform: scaleY(-1);
-  opacity: 0.22;
-  filter: blur(1.5px);
-  -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 78%);
-  mask-image: linear-gradient(to top, transparent 0%, #000 78%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  width: min(112%, clamp(310px, 34vw, 580px));
+  transform: translate(-50%, -48%) scale(1.04);
+  opacity: 0.16;
+  filter: blur(18px) saturate(0.6);
   pointer-events: none;
-}
-
-@media (max-width: 1199px) {
-  .hero__reflection {
-    width: min(100%, 360px);
-  }
-}
-
-@media (max-width: 767px) {
-  .hero__reflection {
-    width: min(100%, 290px);
-  }
 }
 
 /* ── Učitavanje ──────────────────────────────────────────────────────── */
