@@ -43,6 +43,13 @@ const title = computed(() => {
           <PrimaryCta tone="night" />
         </div>
 
+        <ul class="hero__marks">
+          <li v-for="m in c.cta.marks" :key="m.label">
+            <Icon :name="m.icon" :size="20" />
+            <span>{{ m.label }}</span>
+          </li>
+        </ul>
+
         <div class="hero__meta">
           <p>
             {{ c.hero.micro }}
@@ -81,18 +88,47 @@ const title = computed(() => {
   background-position: center;
 }
 
-/* Postolje je izmjereno na slici: centar na 71% širine, gornja ploha na
-   82% visine. Telefon stoji na njoj. */
+/* Ploha postolja ide od 82% (stražnji rub) do 93% (prednji) visine slike.
+   Telefon stoji na njoj, bliže prednjem rubu — dno na 90%, kako je na
+   mockupu, a ne na stražnjem rubu gdje sam ga prvo stavio. */
 .hero__phone {
   position: absolute;
-  left: 71%;
-  bottom: 18%;
-  width: 26%;
+  left: 70.5%;
+  bottom: 10%;
+  width: 28%;
   transform: translateX(-50%);
 }
 
 .hero__phone :deep(.shot__img) {
   width: 100%;
+}
+
+.hero__marks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.4rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero__marks li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--fs-small);
+  line-height: 1.3;
+  color: var(--moon-2);
+}
+
+.hero__marks li :deep(svg) {
+  flex: none;
+  padding: 0.5rem;
+  box-sizing: content-box;
+  border: 1px solid var(--night-line);
+  border-radius: 50%;
+  color: var(--gold);
 }
 
 .hero__eyebrow {
