@@ -84,7 +84,6 @@ async function submit() {
 }
 
 .wl__form {
-  position: relative;
   display: flex;
   /* Bez ovoga se djeca rastežu po visini, pa ikona koverte stoji razvučena
      uz vrh umjesto poravnata s tekstom. */
@@ -95,58 +94,6 @@ async function submit() {
   background: oklch(1 0 0 / 0.06);
   box-shadow: inset 0 0 0 1px var(--night-line);
   transition: box-shadow 200ms ease;
-}
-
-/* Sjaj koji obilazi obrub, kao na karticama u Otkrij ekranu aplikacije.
-   Konusni gradijent se vrti, a maska ostavlja samo prsten širine 1 px —
-   tako svjetlo putuje rubom umjesto da preko njega stoji druga linija. */
-.wl__form::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: conic-gradient(
-    from var(--sheen),
-    transparent 0deg,
-    transparent 200deg,
-    oklch(0.76 0.105 82 / 0.5) 260deg,
-    oklch(0.9 0.07 85) 295deg,
-    oklch(0.76 0.105 82 / 0.5) 330deg,
-    transparent 360deg
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  animation: wl-sheen 4.5s linear infinite;
-  pointer-events: none;
-}
-
-/* Sadržaj iznad prstena. */
-.wl__icon,
-.wl__input,
-.wl__btn {
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes wl-sheen {
-  to {
-    --sheen: 360deg;
-  }
-}
-
-/* Ukras; ko ga je isključio, ne treba ga dobiti. */
-@media (prefers-reduced-motion: reduce) {
-  .wl__form::before {
-    animation: none;
-  }
 }
 
 .wl__form:focus-within {
@@ -182,17 +129,61 @@ async function submit() {
   color: var(--ink-3);
 }
 
+/* ── Sjaj po rubu dugmeta ────────────────────────────────────────────────
+   Kao kartice u Otkrij ekranu aplikacije: konusni gradijent se vrti, a
+   maska ostavlja prsten od 1 px, pa svjetlo putuje samim rubom umjesto da
+   preko njega stoji druga linija.
+   ─────────────────────────────────────────────────────────────────────── */
+.wl__btn {
+  position: relative;
+  isolation: isolate;
+}
+
+.wl__btn::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--sheen),
+    transparent 0deg,
+    transparent 190deg,
+    oklch(0.86 0.065 85 / 0.55) 255deg,
+    oklch(1 0 0 / 0.95) 292deg,
+    oklch(0.86 0.065 85 / 0.55) 330deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: wl-sheen 4.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes wl-sheen {
+  to {
+    --sheen: 360deg;
+  }
+}
+
+.wl__btn[disabled] {
+  opacity: 0.75;
+  cursor: progress;
+}
+
 .wl__trap {
   position: absolute;
   left: -9999px;
   width: 1px;
   height: 1px;
   opacity: 0;
-}
-
-.wl__btn[disabled] {
-  opacity: 0.75;
-  cursor: progress;
 }
 
 .wl__msg {
@@ -240,47 +231,60 @@ async function submit() {
   }
 }
 
-@media (max-width: 520px) {
+/* ── Uski ekran ──────────────────────────────────────────────────────────
+   Polje i dugme jedno ispod drugog. Okvir tada nestaje, a polje dobija svoj
+   — inače bi na uskom ekranu ostao prazan prsten oko dva složena elementa.
+   ─────────────────────────────────────────────────────────────────────── */
+@media (max-width: 560px) {
   .wl__form {
     flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
     padding: 0;
     border-radius: 0;
     background: none;
     box-shadow: none;
   }
+
   .wl__form:focus-within {
     box-shadow: none;
   }
-  .wl__icon {
-  flex: none;
-  margin-left: 1.15rem;
-  color: var(--moon-3);
-}
 
-.wl__input {
+  /* Ikona pripada jednorednom polju; u stupcu bi stajala sama iznad njega. */
+  .wl__icon {
+    display: none;
+  }
+
+  .wl__input {
     min-height: 54px;
+    padding: 0 1.3rem;
     border-radius: 999px;
     background: oklch(1 0 0 / 0.06);
     box-shadow: inset 0 0 0 1px var(--night-line);
   }
-  .wl--day .wl__icon {
-  flex: none;
-  margin-left: 1.15rem;
-  color: var(--moon-3);
-}
 
-.wl__input {
-    background: var(--paper);
-    box-shadow: inset 0 0 0 1px var(--line);
-  }
   .wl__input:focus {
     box-shadow: inset 0 0 0 1px var(--gold);
   }
+
+  .wl--day .wl__input {
+    background: var(--paper);
+    box-shadow: inset 0 0 0 1px var(--line);
+  }
+
   .wl__btn {
     width: 100%;
   }
+
   .wl__msg {
     padding-inline: 0.25rem;
+  }
+}
+
+/* Ukras; ko ga je isključio, ne treba ga dobiti. */
+@media (prefers-reduced-motion: reduce) {
+  .wl__btn::before {
+    animation: none;
   }
 }
 </style>

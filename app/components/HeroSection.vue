@@ -54,6 +54,15 @@ const title = computed(() => {
           :width="420"
           eager
         />
+        <!-- Ista slika, okrenuta i izblijedjela: odraz pod uređajem. Ukras,
+             pa je skrivena od čitača ekrana i ne nosi alt. -->
+        <img
+          class="hero__reflection"
+          :src="heroShot"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
       </div>
     </div>
   </section>
@@ -173,6 +182,33 @@ const title = computed(() => {
   position: relative;
   z-index: 1;
   width: min(100%, clamp(280px, 30vw, 520px));
+}
+
+/* Odraz: ista slika okrenuta naopako, izblijedjela prema dolje. Maska radi
+   posao koji bi inače tražio drugu sliku — blijedi tamo gdje bi se odraz
+   na staklu ionako izgubio. */
+.hero__reflection {
+  display: block;
+  width: min(100%, clamp(280px, 30vw, 520px));
+  margin-top: -2%;
+  transform: scaleY(-1);
+  opacity: 0.22;
+  filter: blur(1.5px);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 78%);
+  mask-image: linear-gradient(to top, transparent 0%, #000 78%);
+  pointer-events: none;
+}
+
+@media (max-width: 1199px) {
+  .hero__reflection {
+    width: min(100%, 360px);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero__reflection {
+    width: min(100%, 290px);
+  }
 }
 
 /* ── Učitavanje ──────────────────────────────────────────────────────── */

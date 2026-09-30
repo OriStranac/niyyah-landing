@@ -138,7 +138,8 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
 .hdr__nav {
   display: flex;
   gap: clamp(0.9rem, 0.2rem + 1.4vw, 1.9rem);
-  margin-inline: auto;
+  /* Uz desni kraj, do jezika i dugmeta — ne po sredini zaglavlja. */
+  margin-left: auto;
   min-width: 0;
 }
 
@@ -164,7 +165,7 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
 }
 
 .hdr__nav + .hdr__end {
-  margin-left: 0;
+  margin-left: clamp(0.9rem, 0.3rem + 1.2vw, 1.9rem);
 }
 
 .hdr__lang {
