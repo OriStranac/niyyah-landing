@@ -43,8 +43,9 @@ export default defineNuxtConfig({
       appLaunched,
       appStoreUrl,
       googlePlayUrl,
-      // samo za listu čekanja: POST { email, locale }
-      waitlistEndpoint: '',
+      // Lista čekanja: POST { email, locale } → 202. Backend upisuje adresu i
+      // prikazuje je u admin portalu; duplikat je uspjeh, ne greška.
+      waitlistEndpoint: 'https://api.niyyahmarriage.com/api/waitlist',
     },
   },
 
