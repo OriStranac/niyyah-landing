@@ -65,6 +65,22 @@ const title = computed(() => {
 </template>
 
 <style scoped>
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--hdr-h) + clamp(1.5rem, 0.5rem + 3vw, 4rem));
+  padding-bottom: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+}
+
+/* ── Pozadina ────────────────────────────────────────────────────────────
+   Sloj, ne koordinatni sistem. Pokriva sekciju kako god visoka bila; položaj
+   je biran tako da postolje ostane pod telefonom, a lijeva strana — gdje je
+   tekst — ostane mirna i tamna.
+   ─────────────────────────────────────────────────────────────────────── */
 .hero__stage {
   position: absolute;
   inset: 0;
@@ -73,9 +89,6 @@ const title = computed(() => {
   pointer-events: none;
 }
 
-/* Pozadina je sloj, ne koordinatni sistem. Pokriva sekciju kako god visoka
-   bila; položaj je biran tako da postolje ostane pod telefonom, a lijeva
-   strana — gdje je tekst — ostane mirna i tamna. */
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -97,7 +110,64 @@ const title = computed(() => {
     linear-gradient(oklch(0.165 0.034 272 / 0.3), transparent 28%);
 }
 
-/* Telefon je sada dio mreže, pa prati širinu ekrana kao i sve ostalo. */
+/* ── Mreža ───────────────────────────────────────────────────────────── */
+.hero__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
+  align-items: center;
+  gap: clamp(2rem, 1rem + 3vw, 4.5rem);
+}
+
+/* ── Tekst ───────────────────────────────────────────────────────────────
+   Veličine su vezane za širinu ekrana tako da se na širini mockupa
+   (1774 px) poklope tačno, a clamp ih drži čitljivim ispod toga.
+   ─────────────────────────────────────────────────────────────────────── */
+.hero__eyebrow {
+  display: inline-block;
+  margin: 0 0 1.1rem;
+  padding: 0.55rem 1.3rem;
+  border: 1px solid var(--gold-glow);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: clamp(0.72rem, 0.79vw, 0.9rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 5.4vw, 6rem);
+  line-height: 1.02;
+}
+
+.hero__title span {
+  color: var(--gold);
+}
+
+.hero__flourish {
+  display: block;
+  width: min(100%, 340px);
+  height: auto;
+  margin: 0.2rem 0 0;
+}
+
+.hero__lead {
+  margin-top: clamp(1.2rem, 0.9rem + 1vw, 2rem);
+  font-size: clamp(1.02rem, 1.07vw, 1.28rem);
+  color: var(--moon-2);
+  max-width: 30em;
+}
+
+.hero__cta {
+  margin-top: clamp(1.6rem, 1.2rem + 1.2vw, 2.4rem);
+}
+
+/* ── Telefon ─────────────────────────────────────────────────────────────
+   Dio mreže, ne dijete pozadine: dok je bio zalijepljen za piksele slike,
+   pratio je njenu veličinu, a ona zavisi od visine sadržaja — pa je na
+   svakoj rezoluciji ispadao drukčije.
+   ─────────────────────────────────────────────────────────────────────── */
 .hero__visual {
   position: relative;
   display: flex;
@@ -126,126 +196,23 @@ const title = computed(() => {
   transform: rotate(-4deg);
 }
 
-.hero__eyebrow {
-    letter-spacing: 0.16em;
-  }
-}
-
-@media (max-width: 900px) {
-  .hero__note {
-    display: none;
-  }
-}
-
-.hero__phone {
-  position: absolute;
-  left: 70.5%;
-  bottom: 10%;
-  /* Položaj se mjeri od pozadine (da ostane na postolju), ali veličina od
-     ekrana — pozadina je šira od prozora kad je visina ta koja je određuje,
-     pa je 25,5% njene širine ispadalo 33% ekrana umjesto 20%. */
-  width: clamp(190px, 20vw, 420px);
-  transform: translateX(-50%);
-}
-
-.hero__phone :deep(.shot__img) {
-  width: 100%;
-}
-
-.hero__flourish {
-  display: block;
-  width: min(100%, 340px);
-  height: auto;
-  margin: 0.2rem 0 0;
-}
-
-.hero__eyebrow {
-  display: inline-block;
-  margin: 0 0 1.1rem;
-  padding: 0.55rem 1.3rem;
-  font-size: clamp(0.72rem, 0.79vw, 0.9rem);
-  border: 1px solid var(--gold-glow);
-  border-radius: 999px;
-  color: var(--gold);
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
-.hero {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding-top: calc(var(--hdr-h) + clamp(2.5rem, 1rem + 5vw, 6rem));
-  padding-bottom: clamp(4rem, 2rem + 6vw, 8rem);
-  background:
-    radial-gradient(120% 80% at 80% 0%, oklch(0.255 0.05 272 / 0.35) 0%, transparent 60%),
-    var(--night-900);
-}
-
-.hero .geo {
-  z-index: -1;
-}
-
-.hero__glow {
-  position: absolute;
-  top: 38%;
-  right: 12%;
-  z-index: -1;
-  width: min(720px, 90vw);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 65%);
-  transform: translate(30%, -50%);
-  animation: glow 7s ease-in-out infinite;
-}
-
-@keyframes glow {
-  50% {
-    opacity: 0.65;
-  }
-}
-
-.hero__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
-  align-items: center;
-  gap: clamp(2.5rem, 5vw, 6rem);
-}
-
-.hero__title {
-  font-size: clamp(2.5rem, 5.4vw, 6rem);
-  line-height: 1.02;
-}
-
-.hero__title span {
-  color: var(--gold);
-}
-
-.hero__lead {
-  margin-top: clamp(1.4rem, 1rem + 1.2vw, 2.2rem);
-  font-size: clamp(1.02rem, 1.07vw, 1.28rem);
-  color: var(--moon-2);
-  max-width: 30em;
-}
-
-.hero__cta {
-  margin-top: clamp(2rem, 1.5rem + 1.5vw, 2.75rem);
-}
-
-/* Učitavanje: tekst se slaže odozgo, telefon se diže malo kasnije. */
+/* ── Učitavanje ──────────────────────────────────────────────────────── */
 .hero__text > * {
   animation: rise 900ms var(--ease-out) both;
 }
+
 .hero__text > :nth-child(2) {
   animation-delay: 90ms;
 }
+
 .hero__text > :nth-child(3) {
   animation-delay: 180ms;
 }
+
 .hero__text > :nth-child(4) {
   animation-delay: 260ms;
 }
+
 .hero__visual {
   animation: rise-phone 1200ms var(--ease-out) 200ms both;
 }
@@ -260,14 +227,61 @@ const title = computed(() => {
 @keyframes rise-phone {
   from {
     opacity: 0;
-    transform: translateY(48px) rotate(1.5deg);
+    transform: translateY(48px);
   }
 }
 
-@media (max-width: 900px) {
-  .hero__grid {
-    grid-template-columns: 1fr;
+/* ── Raspored po širini ──────────────────────────────────────────────────
+   Preko 1200 px drži se kompozicija s mockupa. Ispod toga se ne pokušava
+   držati: telefon ide pod tekst, a slika prestaje da bude kompozicija i
+   postaje atmosfera.
+   ─────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1199px) {
+  .hero {
+    min-height: 0;
   }
 
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 1rem + 4vw, 3.5rem);
+  }
+
+  .hero__note {
+    display: none;
+  }
+
+  .hero__bg {
+    background-position: 72% bottom;
+  }
+
+  /* Tekst sada stoji preko cijele širine slike, pa veo mora biti ravnomjeran
+     umjesto jači samo lijevo. */
+  .hero__scrim {
+    background: linear-gradient(
+      oklch(0.165 0.034 272 / 0.74),
+      oklch(0.165 0.034 272 / 0.88)
+    );
+  }
+
+  .hero__phone :deep(.shot__img) {
+    width: min(100%, 320px);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero__eyebrow {
+    letter-spacing: 0.16em;
+  }
+
+  .hero__phone :deep(.shot__img) {
+    width: min(100%, 270px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__text > *,
+  .hero__visual {
+    animation: none;
+  }
 }
 </style>
