@@ -9,9 +9,14 @@ const year = new Date().getFullYear()
   <footer class="ftr">
     <div class="wrap ftr__row">
       <div class="ftr__brand">
-        <img src="/logo.png" alt="" width="64" height="64" loading="lazy" />
+        <img
+          src="/logo.webp"
+          alt="Niyyah"
+          width="1323"
+          height="1189"
+          loading="lazy"
+        />
         <div>
-          <p class="ftr__name">Niyyah</p>
           <p>{{ c.footer.tagline }}</p>
         </div>
       </div>
@@ -59,16 +64,8 @@ const year = new Date().getFullYear()
 }
 
 .ftr__brand img {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-}
-
-.ftr__name {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  line-height: 1.1;
-  color: var(--moon);
+  width: auto;
+  height: 86px;
 }
 
 .ftr__langs {

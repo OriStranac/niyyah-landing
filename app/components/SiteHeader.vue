@@ -27,8 +27,7 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
   <header class="hdr" :class="{ 'is-solid': scrolled || open }">
     <div class="wrap hdr__row">
       <NuxtLink :to="localePath('/')" class="hdr__brand" :aria-label="c.nav.home">
-        <img src="/logo.png" alt="" width="40" height="40" />
-        <span>Niyyah</span>
+        <img src="/logo.webp" alt="Niyyah" width="1323" height="1189" />
       </NuxtLink>
 
       <nav class="hdr__nav" :aria-label="c.nav.label">
@@ -122,11 +121,12 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
   line-height: 1;
 }
 
+/* Logotip je cijeli lockup — par, ime i slogan — a ne ikona, pa ne ide ni u
+   krug ni u prsten: oboje bi mu odsjekli tekst. Visina ga drži unutar
+   zaglavlja od 72 px, širinu određuje omjer. */
 .hdr__brand img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px var(--night-line);
+  width: auto;
+  height: 54px;
 }
 
 .hdr__nav {
