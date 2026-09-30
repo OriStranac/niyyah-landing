@@ -28,26 +28,10 @@ defineProps<{ name: string; size?: number }>()
       />
     </template>
     <template v-else-if="name === 'google-play'">
-      <path
-        fill="currentColor"
-        stroke="none"
-        d="M3.6 2.2a1.4 1.4 0 0 0-.5 1.1v17.4c0 .5.2.9.5 1.1l9.2-9.8L3.6 2.2Z"
-      />
-      <path
-        fill="currentColor"
-        stroke="none"
-        d="m16.2 8.6-3-1.7-8.3-4 8.8 9.4 2.5-3.7Z"
-      />
-      <path
-        fill="currentColor"
-        stroke="none"
-        d="m20.2 10.8-2.7-1.5-2.7 2.7 2.7 2.7 2.7-1.5a1.4 1.4 0 0 0 0-2.4Z"
-      />
-      <path
-        fill="currentColor"
-        stroke="none"
-        d="m4.9 21.1 8.3-4 3-1.7-2.5-3.7-8.8 9.4Z"
-      />
+      <path fill="#00A0FF" stroke="none" d="M3.6 2.2a1.4 1.4 0 0 0-.5 1.1v17.4c0 .5.2.9.5 1.1l9.2-9.8L3.6 2.2Z" />
+      <path fill="#FFBC00" stroke="none" d="m20.2 10.8-2.7-1.5-2.7 2.7 2.7 2.7 2.7-1.5a1.4 1.4 0 0 0 0-2.4Z" />
+      <path fill="#FF3A44" stroke="none" d="m16.2 8.6-3-1.7-8.3-4 8.8 9.4 2.5-3.7Z" />
+      <path fill="#00C853" stroke="none" d="m4.9 21.1 8.3-4 3-1.7-2.5-3.7-8.8 9.4Z" />
     </template>
     <template v-else-if="name === 'arrow'"><path d="M5 12h14M13 6l6 6-6 6" /></template>
     <template v-else-if="name === 'arrow-down'"><path d="M12 5v14M6 13l6 6 6-6" /></template>
@@ -58,6 +42,7 @@ defineProps<{ name: string; size?: number }>()
     <template v-else-if="name === 'pin'"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" /><circle cx="12" cy="10" r="2.3" /></template>
     <template v-else-if="name === 'photo'"><rect x="3.5" y="5" width="17" height="14" rx="3" /><circle cx="12" cy="11" r="2.6" /><path d="M7.5 19c.8-2.2 2.4-3.4 4.5-3.4s3.7 1.2 4.5 3.4" /></template>
     <template v-else-if="name === 'badge'"><path d="M12 3l2.3 1.7 2.8-.2.9 2.7 2.3 1.6-.9 2.7.9 2.7-2.3 1.6-.9 2.7-2.8-.2L12 21l-2.3-1.7-2.8.2-.9-2.7-2.3-1.6.9-2.7-.9-2.7 2.3-1.6.9-2.7 2.8.2Z" /><path d="M8.8 12.2l2.2 2.2 4.2-4.4" /></template>
+    <template v-else-if="name === 'mail'"><rect x="3" y="5.5" width="18" height="13" rx="2.6" /><path d="m4 7 8 5.5L20 7" /></template>
     <template v-else-if="name === 'heart'"><path d="M12 20.3s-7.3-4.6-7.3-9.6a4.3 4.3 0 0 1 7.3-3 4.3 4.3 0 0 1 7.3 3c0 5-7.3 9.6-7.3 9.6Z" /></template>
     <template v-else-if="name === 'people'"><circle cx="9" cy="8.5" r="3" /><path d="M3.5 19c.6-3 2.8-4.8 5.5-4.8s4.9 1.8 5.5 4.8" /><circle cx="17" cy="9.5" r="2.4" /><path d="M16 14.4c2.3.1 4 1.6 4.5 4.1" /></template>
     <template v-else-if="name === 'block'"><circle cx="12" cy="12" r="8.5" /><path d="M6 6l12 12" /></template>

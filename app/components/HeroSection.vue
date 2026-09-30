@@ -90,16 +90,7 @@ const title = computed(() => {
           </PrimaryCta>
         </div>
 
-        <div class="hero__meta">
-          <p>
-            {{ c.hero.micro }}
-            <template v-if="!appLaunched"><br />{{ c.cta.soon }}.</template>
-          </p>
-          <a href="#mahrem" class="link-arrow">
-            {{ c.hero.secondary }}
-            <Icon name="arrow" :size="16" />
-          </a>
-        </div>
+
       </div>
 
     </div>
@@ -229,15 +220,16 @@ const title = computed(() => {
 .hero__marks li {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: var(--fs-small);
-  line-height: 1.3;
+  gap: 0.75rem;
+  font-size: clamp(0.85rem, 0.9vw, 1.02rem);
+  line-height: 1.25;
   color: var(--moon-2);
+  white-space: pre-line;
 }
 
 .hero__marks li :deep(svg) {
   flex: none;
-  padding: 0.5rem;
+  padding: 0.6rem;
   box-sizing: content-box;
   border: 1px solid var(--night-line);
   border-radius: 50%;
@@ -316,24 +308,6 @@ const title = computed(() => {
 
 .hero__cta {
   margin-top: clamp(2rem, 1.5rem + 1.5vw, 2.75rem);
-}
-
-.hero__meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem 2rem;
-  max-width: 540px;
-  margin-top: 1.25rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--night-line);
-  font-size: var(--fs-small);
-  color: var(--moon-3);
-}
-
-.hero__meta .link-arrow {
-  color: var(--gold);
 }
 
 /* Učitavanje: tekst se slaže odozgo, telefon se diže malo kasnije. */

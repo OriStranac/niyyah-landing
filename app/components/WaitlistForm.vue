@@ -50,6 +50,7 @@ async function submit() {
     </p>
     <form v-else class="wl__form" novalidate @submit.prevent="submit">
       <label :for="`${id}-email`" class="sr-only">{{ c.cta.emailLabel }}</label>
+      <Icon class="wl__icon" name="mail" :size="20" />
       <input
         :id="`${id}-email`"
         v-model="email"
@@ -67,6 +68,7 @@ async function submit() {
       <input v-model="trap" class="wl__trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
       <button class="btn btn--gold wl__btn" type="submit" :disabled="state === 'sending'">
         <span>{{ state === 'sending' ? c.cta.sending : c.cta.waitlist }}</span>
+        <Icon name="arrow" :size="18" />
       </button>
     </form>
     <p :id="`${id}-msg`" class="wl__msg" :class="{ 'is-error': state === 'error' }" aria-live="polite">
@@ -98,6 +100,12 @@ async function submit() {
 .wl--day .wl__form {
   background: var(--paper);
   box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.wl__icon {
+  flex: none;
+  margin-left: 1.15rem;
+  color: var(--moon-3);
 }
 
 .wl__input {
@@ -187,13 +195,25 @@ async function submit() {
   .wl__form:focus-within {
     box-shadow: none;
   }
-  .wl__input {
+  .wl__icon {
+  flex: none;
+  margin-left: 1.15rem;
+  color: var(--moon-3);
+}
+
+.wl__input {
     min-height: 54px;
     border-radius: 999px;
     background: oklch(1 0 0 / 0.06);
     box-shadow: inset 0 0 0 1px var(--night-line);
   }
-  .wl--day .wl__input {
+  .wl--day .wl__icon {
+  flex: none;
+  margin-left: 1.15rem;
+  color: var(--moon-3);
+}
+
+.wl__input {
     background: var(--paper);
     box-shadow: inset 0 0 0 1px var(--line);
   }

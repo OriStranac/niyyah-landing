@@ -45,9 +45,9 @@ export const en: Copy = {
     eyebrow: 'HALAL MARRIAGE APP',
     note: 'Real profiles.\nReal intentions.',
     marks: [
-      { icon: 'badge', label: 'Islamic values' },
-      { icon: 'lock', label: 'Safe and private' },
-      { icon: 'heart', label: 'Serious members' },
+      { icon: 'badge', label: 'Islamic\nvalues' },
+      { icon: 'lock', label: 'Safe and\nprivate' },
+      { icon: 'heart', label: 'Serious\nmembers' },
     ],
     founderShort: 'First 50 get unlimited access',
   },

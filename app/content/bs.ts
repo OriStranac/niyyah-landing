@@ -44,9 +44,9 @@ export const bs = {
     eyebrow: 'HALAL APLIKACIJA ZA BRAK',
     note: 'Stvarni profili.\nStvarne namjere.',
     marks: [
-      { icon: 'badge', label: 'Islamske vrijednosti' },
-      { icon: 'lock', label: 'Sigurno i privatno' },
-      { icon: 'heart', label: 'Ozbiljni korisnici' },
+      { icon: 'badge', label: 'Islamske\nvrijednosti' },
+      { icon: 'lock', label: 'Sigurno i\nprivatno' },
+      { icon: 'heart', label: 'Ozbiljni\nkorisnici' },
     ],
     founderShort: 'Prvih 50 dobija neograničen pristup',
   },
