@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import heroShot from '~/assets/images/hero-discover.jpg'
+
 const c = useCopy()
 const { appLaunched } = useRuntimeConfig().public
 
@@ -39,9 +41,16 @@ const title = computed(() => {
       </div>
 
       <div class="hero__visual">
-        <PhoneFrame shot="hero-profil" :alt="c.hero.imageAlt" eager>
-          <MockProfile />
-        </PhoneFrame>
+        <img
+          class="hero__shot"
+          :src="heroShot"
+          :alt="c.hero.imageAlt"
+          width="1024"
+          height="1536"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
       </div>
     </div>
   </section>
@@ -124,7 +133,13 @@ const title = computed(() => {
 .hero__visual {
   display: flex;
   justify-content: center;
-  --phone-w: 340px;
+}
+
+/* Slika je već render telefona, sa svojim okvirom i sjenom, pa stoji sama —
+   nacrtani okvir bi oko nje bio drugi telefon. */
+.hero__shot {
+  width: min(100%, 420px);
+  height: auto;
 }
 
 /* Učitavanje: tekst se slaže odozgo, telefon se diže malo kasnije. */
@@ -162,8 +177,8 @@ const title = computed(() => {
   .hero__grid {
     grid-template-columns: 1fr;
   }
-  .hero__visual {
-    --phone-w: 300px;
+  .hero__shot {
+    width: min(100%, 360px);
   }
 }
 </style>
