@@ -40,18 +40,14 @@ const title = computed(() => {
         </div>
       </div>
 
-      <div class="hero__visual">
-        <img
-          class="hero__shot"
-          :src="heroShot"
-          :alt="c.hero.imageAlt"
-          width="1024"
-          height="1536"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
-      </div>
+      <PhoneShot
+        class="hero__visual"
+        :src="heroShot"
+        :alt="c.hero.imageAlt"
+        :width="500"
+        eager
+        glow
+      />
     </div>
   </section>
 </template>
@@ -130,85 +126,6 @@ const title = computed(() => {
   color: var(--gold);
 }
 
-.hero__visual {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  isolation: isolate;
-}
-
-/* Sjaj iza telefona. Dvije elipse: šira i topla nosi ambijent, uža i svjetlija
-   pada iza samog uređaja da se odvoji od pozadine. Obje su u zlatu iz palete,
-   pa svijetli kao lampa sa slike, a ne kao dodatak. */
-.hero__visual::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 2% -20% -2%;
-  background:
-    radial-gradient(
-      30% 22% at 50% 38%,
-      oklch(0.86 0.065 85 / 0.5),
-      transparent 70%
-    ),
-    radial-gradient(
-      58% 44% at 50% 44%,
-      oklch(0.76 0.105 82 / 0.42),
-      transparent 72%
-    ),
-    radial-gradient(
-      92% 74% at 50% 54%,
-      oklch(0.5 0.088 70 / 0.34),
-      transparent 74%
-    );
-  filter: blur(42px);
-  animation: hero-glow 7s var(--ease-in-out) infinite;
-}
-
-/* Uzak, svjetliji trag koji prati nagib uređaja — ono što na renderu već
-   pada niz ivicu, produženo u pozadinu. */
-.hero__visual::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 14% 6% 18% 34%;
-  background: linear-gradient(
-    198deg,
-    oklch(0.86 0.065 85 / 0.34),
-    oklch(0.76 0.105 82 / 0.12) 46%,
-    transparent 72%
-  );
-  filter: blur(30px);
-  animation: hero-glow 7s var(--ease-in-out) 900ms infinite;
-}
-
-/* Slika je već render telefona, sa svojim okvirom i sjenom, pa stoji sama —
-   nacrtani okvir bi oko nje bio drugi telefon. */
-.hero__shot {
-  width: min(100%, 500px);
-  height: auto;
-}
-
-@keyframes hero-glow {
-  0%,
-  100% {
-    opacity: 0.75;
-    transform: scale(0.97);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.03);
-  }
-}
-
-/* Disanje je ukras; ko ga je isključio, ne treba ga dobiti. */
-@media (prefers-reduced-motion: reduce) {
-  .hero__visual::before,
-  .hero__visual::after {
-    animation: none;
-  }
-}
-
 /* Učitavanje: tekst se slaže odozgo, telefon se diže malo kasnije. */
 .hero__text > * {
   animation: rise 900ms var(--ease-out) both;
@@ -244,8 +161,6 @@ const title = computed(() => {
   .hero__grid {
     grid-template-columns: 1fr;
   }
-  .hero__shot {
-    width: min(100%, 400px);
-  }
+
 }
 </style>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import questionsShot from '~/assets/images/pitanja-shot.webp'
 const c = useCopy()
 </script>
 
@@ -6,9 +7,7 @@ const c = useCopy()
   <section class="section qs" aria-labelledby="qs-title">
     <div class="wrap qs__grid">
       <div v-reveal class="qs__visual">
-        <PhoneFrame shot="pitanja-prije-razgovora" :alt="c.questions.imageAlt">
-          <MockQuestions />
-        </PhoneFrame>
+        <PhoneShot :src="questionsShot" :alt="c.questions.imageAlt" :width="380" />
       </div>
 
       <div class="qs__text">
@@ -45,7 +44,6 @@ const c = useCopy()
 .qs__visual {
   display: flex;
   justify-content: center;
-  --phone-w: 320px;
 }
 
 .qs__title {
@@ -116,7 +114,6 @@ const c = useCopy()
   }
   .qs__visual {
     order: 2;
-    --phone-w: 290px;
   }
 }
 </style>

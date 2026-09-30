@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import mahremShot from '~/assets/images/mahrem-portal-shot.webp'
 const c = useCopy()
 </script>
 
@@ -25,9 +26,7 @@ const c = useCopy()
         </div>
 
         <div v-reveal="100" class="mahrem__visual">
-          <PhoneFrame shot="mahrem-portal" :alt="c.mahrem.imageAlt">
-            <MockPortal />
-          </PhoneFrame>
+          <PhoneShot :src="mahremShot" :alt="c.mahrem.imageAlt" :width="380" />
         </div>
       </div>
 
@@ -117,7 +116,6 @@ const c = useCopy()
 .mahrem__visual {
   display: flex;
   justify-content: center;
-  --phone-w: 320px;
 }
 
 .mahrem__who {
@@ -178,7 +176,6 @@ const c = useCopy()
     grid-template-columns: 1fr;
   }
   .mahrem__visual {
-    --phone-w: 290px;
   }
 }
 </style>

@@ -4,12 +4,20 @@ Stranica radi i bez ovih slika: dok slike nema, u okviru telefona se prikazuje
 HTML maketa. Kad ubaciš sliku s tačnim imenom, ona automatski zamijeni maketu
 (ništa u kodu ne treba mijenjati). Poslije dodavanja pokreni `npm run generate`.
 
-**Hero je izuzetak.** Tamo stoji `hero-discover.webp` — gotov render telefona,
-sa svojim okvirom i sjenom — pa ga `HeroSection.vue` prikazuje direktno, bez
-`PhoneFrame` komponente. Nacrtani okvir bi oko njega bio drugi telefon.
-Zamjena te slike znači zamijeniti sam fajl; ime i omjer nisu vezani za
-1179 × 2556 kao kod ostalih. Mora ostati format s prozirnošću (.webp ili
-.png) — render nema pozadinu, pa bi je JPEG popunio bijelim pravougaonikom.
+**Tri sekcije rade drukčije.** Hero, Mahrem i Pitanja koriste gotove rendere
+telefona — slike koje već imaju svoj okvir i sjenu — pa ih prikazuje
+`PhoneShot.vue`, a ne `PhoneFrame`. Nacrtati okvir oko njih značilo bi
+telefon u telefonu.
+
+| Komponenta | Slika |
+|---|---|
+| `HeroSection.vue` | `hero-discover.webp` |
+| `MahremSection.vue` | `mahrem-portal-shot.webp` |
+| `QuestionsSection.vue` | `pitanja-shot.webp` |
+
+Zamjena znači zamijeniti sam fajl; omjer nije vezan za 1179 × 2556 kao kod
+ostalih. **Mora ostati format s prozirnošću** (.webp ili .png) — renderi
+nemaju pozadinu, pa bi je JPEG popunio bijelim pravougaonikom.
 
 ## 1. Screenshotovi aplikacije → `app/assets/images/`
 
@@ -18,8 +26,6 @@ omjer 9:19,5). Bez okvira telefona i bez status bara ako možeš; okvir crta str
 
 | Ime fajla | Gdje se pojavljuje | Šta treba biti na ekranu |
 |---|---|---|
-| `mahrem-portal.webp` | Sekcija Mahrem | **Mahrem portal** iz ugla oca/brata: razgovor koji samo čita, vidljivo da se ne može pisati. |
-| `pitanja-prije-razgovora.webp` | Sekcija Pitanja prije razgovora | Ekran s odgovorima na 3 pitanja i dugmadima „Sviđa mi se" / „Ne sviđa mi se". |
 | `profil-detalji.webp` | Sekcija Profil | Detalji profila: vjera, planovi za brak, djeca, selidba, i po mogućnosti jedan odgovor iz **Situacija**. |
 | `zajednica.webp` | Sekcija Zajednica | Feed **Pitaj sestre** ili **Pitaj braću** s anonimnom objavom i reakcijama (Korisno, Ima smisla…). |
 

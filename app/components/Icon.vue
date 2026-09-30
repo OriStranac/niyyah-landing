@@ -15,7 +15,41 @@ defineProps<{ name: string; size?: number }>()
     aria-hidden="true"
     focusable="false"
   >
-    <template v-if="name === 'arrow'"><path d="M5 12h14M13 6l6 6-6 6" /></template>
+    <template v-if="name === 'apple'">
+      <path
+        fill="currentColor"
+        stroke="none"
+        d="M16.7 12.6c0-2.4 2-3.6 2.1-3.6-1.1-1.7-2.9-1.9-3.6-1.9-1.5-.2-3 .9-3.7.9-.8 0-2-.9-3.2-.8-1.7 0-3.2 1-4 2.5-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3.1 2.5 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.6-1-2.6-4.2Z"
+      />
+      <path
+        fill="currentColor"
+        stroke="none"
+        d="M14.4 5.6c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4Z"
+      />
+    </template>
+    <template v-else-if="name === 'google-play'">
+      <path
+        fill="currentColor"
+        stroke="none"
+        d="M3.6 2.2a1.4 1.4 0 0 0-.5 1.1v17.4c0 .5.2.9.5 1.1l9.2-9.8L3.6 2.2Z"
+      />
+      <path
+        fill="currentColor"
+        stroke="none"
+        d="m16.2 8.6-3-1.7-8.3-4 8.8 9.4 2.5-3.7Z"
+      />
+      <path
+        fill="currentColor"
+        stroke="none"
+        d="m20.2 10.8-2.7-1.5-2.7 2.7 2.7 2.7 2.7-1.5a1.4 1.4 0 0 0 0-2.4Z"
+      />
+      <path
+        fill="currentColor"
+        stroke="none"
+        d="m4.9 21.1 8.3-4 3-1.7-2.5-3.7-8.8 9.4Z"
+      />
+    </template>
+    <template v-else-if="name === 'arrow'"><path d="M5 12h14M13 6l6 6-6 6" /></template>
     <template v-else-if="name === 'arrow-down'"><path d="M12 5v14M6 13l6 6 6-6" /></template>
     <template v-else-if="name === 'check'"><path d="M5 12.5l4.2 4.2L19 7" /></template>
     <template v-else-if="name === 'plus'"><path d="M12 5v14M5 12h14" /></template>
