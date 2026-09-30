@@ -107,7 +107,7 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  height: 72px;
+  height: var(--hdr-h);
 }
 
 .hdr__brand {
@@ -126,7 +126,7 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
    zaglavlja od 72 px, širinu određuje omjer. */
 .hdr__brand img {
   width: auto;
-  height: 54px;
+  height: 78px;
 }
 
 .hdr__nav {

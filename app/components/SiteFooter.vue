@@ -65,7 +65,7 @@ const year = new Date().getFullYear()
 
 .ftr__brand img {
   width: auto;
-  height: 86px;
+  height: 124px;
 }
 
 .ftr__langs {

@@ -19,6 +19,10 @@
   --ink-2: oklch(0.43 0.03 272);
   --ink-3: oklch(0.55 0.025 272);
 
+  /* Zaglavlje je fiksno, a hero se spušta za tačno ovoliko. Jedan broj, da
+     se ne raziđu. */
+  --hdr-h: 96px;
+
   --gold: oklch(0.76 0.105 82);
   --gold-soft: oklch(0.86 0.065 85);
   --gold-deep: oklch(0.5 0.088 70);
