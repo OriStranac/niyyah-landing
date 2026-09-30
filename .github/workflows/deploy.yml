@@ -25,11 +25,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run generate
-        env:
-          NUXT_PUBLIC_WAITLIST_ENDPOINT: ${{ vars.WAITLIST_ENDPOINT }}
-          NUXT_PUBLIC_APP_LAUNCHED: ${{ vars.APP_LAUNCHED }}
-          NUXT_PUBLIC_APP_STORE_URL: ${{ vars.APP_STORE_URL }}
-          NUXT_PUBLIC_GOOGLE_PLAY_URL: ${{ vars.GOOGLE_PLAY_URL }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public

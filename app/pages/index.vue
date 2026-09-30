@@ -1,7 +1,10 @@
 <script setup lang="ts">
 const c = useCopy()
 const { locale } = useI18n()
-const { siteUrl, ogImage } = useRuntimeConfig().public
+const { siteUrl, ogImage, appLaunched, appStoreUrl, googlePlayUrl } = useRuntimeConfig().public
+const storeLinks = appLaunched ? [appStoreUrl, googlePlayUrl].filter(Boolean) : []
+// Safari na iPhoneu prikazuje traku "Otvori / Preuzmi" iznad stranice.
+const appleId = appLaunched ? /id(\d+)/.exec(appStoreUrl)?.[1] : undefined
 
 const pageUrl = computed(() => (locale.value === 'bs' ? siteUrl : `${siteUrl}/${locale.value}`))
 const image = `${siteUrl}${ogImage}`
@@ -23,6 +26,7 @@ useSeoMeta({
 })
 
 useHead(() => ({
+  meta: appleId ? [{ key: 'apple-itunes-app', name: 'apple-itunes-app', content: `app-id=${appleId}` }] : [],
   script: [
     {
       key: 'ld-json',
@@ -56,6 +60,7 @@ useHead(() => ({
             image,
             inLanguage: ['bs', 'en', 'de', 'tr', 'ar', 'id', 'ur', 'ms', 'fr'],
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+            ...(storeLinks.length ? { downloadUrl: storeLinks, sameAs: storeLinks } : {}),
             publisher: { '@id': `${siteUrl}/#org` },
           },
           {

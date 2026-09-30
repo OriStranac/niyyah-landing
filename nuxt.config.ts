@@ -2,6 +2,18 @@ import { existsSync } from 'node:fs'
 
 const siteUrl = 'https://www.niyyahmarriage.com'
 
+// Linkovi na Niyyah u trgovinama, npr.
+//   https://apps.apple.com/app/niyyah/id1234567890
+//   https://play.google.com/store/apps/details?id=com.niyyah.app
+// Build namjerno pada dok su prazni, da stranica ne ode online s dugmadima koja ne vode nigdje.
+const appStoreUrl = ''
+const googlePlayUrl = ''
+
+const isBuild = process.argv.some((a) => a === 'build' || a === 'generate')
+if (isBuild && (!appStoreUrl || !googlePlayUrl)) {
+  throw new Error('Upiši appStoreUrl i googlePlayUrl na vrhu nuxt.config.ts prije builda.')
+}
+
 // Ako postoji public/og-image.jpg koristi se on, inače logo (vidi SLIKE.md).
 const ogImage = existsSync('public/og-image.jpg') ? '/og-image.jpg' : '/favicon-512.jpg'
 
@@ -22,11 +34,11 @@ export default defineNuxtConfig({
     public: {
       siteUrl,
       ogImage,
-      // true kad je aplikacija u trgovinama: CTA postaje "Preuzmi Niyyah" + bedževi
-      appLaunched: false,
-      appStoreUrl: '',
-      googlePlayUrl: '',
-      // POST { email, locale } za listu čekanja; postavi NUXT_PUBLIC_WAITLIST_ENDPOINT
+      // true: CTA je "Preuzmi Niyyah" + trgovine. false: lista čekanja (WaitlistForm).
+      appLaunched: true,
+      appStoreUrl,
+      googlePlayUrl,
+      // samo za listu čekanja: POST { email, locale }
       waitlistEndpoint: '',
     },
   },

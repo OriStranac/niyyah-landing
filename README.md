@@ -22,16 +22,16 @@ npm run generate   # statički build u .output/public
 - `app/assets/css/main.css` — boje, fontovi, razmaci
 - `nuxt.config.ts` — SEO, jezici, sitemap, fontovi
 
-## Lansiranje aplikacije
+## Linkovi na trgovine
 
-Dok aplikacija nije u trgovinama, CTA je lista čekanja. Postavi varijable okoline
-pri buildu:
+Stranica je u načinu „aplikacija je objavljena": svi CTA vode na App Store i
+Google Play. Linkovi se upisuju na vrhu `nuxt.config.ts` (`appStoreUrl`,
+`googlePlayUrl`). Dok su prazni, build namjerno pada, da stranica ne ode online
+s mrtvim dugmadima. Iz App Store linka se automatski pravi i Smart App Banner
+za Safari na iPhoneu.
 
-| Varijabla | Značenje |
-|---|---|
-| `NUXT_PUBLIC_WAITLIST_ENDPOINT` | URL koji prima `POST { email, locale }` (npr. ruta u Laravel API-ju). Bez toga forma kaže da lista još nije otvorena. |
-| `NUXT_PUBLIC_APP_LAUNCHED=true` | Prebacuje sve CTA na „Preuzmi Niyyah" + bedževe |
-| `NUXT_PUBLIC_APP_STORE_URL`, `NUXT_PUBLIC_GOOGLE_PLAY_URL` | Linkovi na trgovine |
+Za povratak na listu čekanja postavi `appLaunched: false` u `nuxt.config.ts`
+(forma tada šalje `POST { email, locale }` na `waitlistEndpoint`).
 
 ## Deploy
 
