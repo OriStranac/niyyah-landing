@@ -73,7 +73,14 @@
   box-sizing: border-box;
 }
 
+/* Ukras koji viri van ekrana ne smije razvlačiti stranicu i tjerati
+   preglednik da je odzumira.
+   Mora stajati na html, ne na body: kad je html "visible", preglednik
+   prenese overflow s body-ja na viewport, a body ostane visible — pa
+   pravilo na body-ju ne radi ništa. clip a ne hidden, jer hidden ovdje
+   kvari sticky pozicioniranje. */
 html {
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
