@@ -47,7 +47,7 @@
   --fs-tiny: 0.8125rem;
 
   --gutter: clamp(1rem, 4.5vw, 2.75rem);
-  --wide: 1240px;
+  --wide: 1400px;
   --section: clamp(5.5rem, 3rem + 8vw, 10.5rem);
 
   --radius: 18px;

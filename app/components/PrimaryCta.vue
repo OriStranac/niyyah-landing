@@ -15,6 +15,10 @@ const { appLaunched } = useRuntimeConfig().public
     <WaitlistForm :tone="tone" />
   </template>
 
+  <!-- Hero ovdje ubacuje svoje oznake: na mockupu stoje između reda o
+       privatnosti i bedževa trgovina. -->
+  <slot name="between" />
+
   <!-- Kartice trgovina: prigušene i bez linka dok aplikacija ne izađe. -->
   <StoreButtons />
 </template>

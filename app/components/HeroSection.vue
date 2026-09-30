@@ -26,14 +26,14 @@ const title = computed(() => {
           <p>{{ c.cta.note }}</p>
           <svg class="hero__arrow" viewBox="0 0 120 80" aria-hidden="true">
             <path
-              d="M112 10C86 6 46 14 26 42"
+              d="M104 8C80 10 44 20 24 44"
               fill="none"
               stroke="var(--gold-soft)"
               stroke-width="2.2"
               stroke-linecap="round"
             />
             <path
-              d="M20 34l-4 14 14-2"
+              d="M18 34l-2 14 14-4"
               fill="none"
               stroke="var(--gold-soft)"
               stroke-width="2.2"
@@ -78,15 +78,17 @@ const title = computed(() => {
         <p class="lead hero__lead">{{ c.hero.lead }}</p>
 
         <div class="hero__cta">
-          <PrimaryCta tone="night" />
+          <PrimaryCta tone="night">
+            <template #between>
+              <ul class="hero__marks">
+                <li v-for="m in c.cta.marks" :key="m.label">
+                  <Icon :name="m.icon" :size="20" />
+                  <span>{{ m.label }}</span>
+                </li>
+              </ul>
+            </template>
+          </PrimaryCta>
         </div>
-
-        <ul class="hero__marks">
-          <li v-for="m in c.cta.marks" :key="m.label">
-            <Icon :name="m.icon" :size="20" />
-            <span>{{ m.label }}</span>
-          </li>
-        </ul>
 
         <div class="hero__meta">
           <p>
@@ -175,9 +177,9 @@ const title = computed(() => {
 /* Strelica ide od bilješke natrag ka telefonu, kao na mockupu. */
 .hero__arrow {
   display: block;
-  width: 78%;
+  width: 58%;
   height: auto;
-  margin: 0.35rem 0 0 -0.5rem;
+  margin: 0.15rem 0 0 -0.35rem;
 }
 
 @media (max-width: 900px) {
@@ -211,10 +213,16 @@ const title = computed(() => {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.6rem 1.4rem;
-  margin: 1.4rem 0 0;
+  gap: 0.5rem 0;
+  margin: 1.5rem 0 0;
   padding: 0;
   list-style: none;
+}
+
+.hero__marks li + li {
+  padding-left: 1.1rem;
+  margin-left: 1.1rem;
+  border-left: 1px solid var(--night-line);
 }
 
 .hero__marks li {
@@ -284,7 +292,7 @@ const title = computed(() => {
 
 .hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
   align-items: center;
   gap: clamp(2.5rem, 5vw, 6rem);
 }
