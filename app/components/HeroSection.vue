@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import heroShot from '~/assets/images/hero-discover.jpg'
+import heroShot from '~/assets/images/hero-discover.webp'
 
 const c = useCopy()
 const { appLaunched } = useRuntimeConfig().public

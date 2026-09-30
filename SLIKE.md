@@ -4,11 +4,12 @@ Stranica radi i bez ovih slika: dok slike nema, u okviru telefona se prikazuje
 HTML maketa. Kad ubaciš sliku s tačnim imenom, ona automatski zamijeni maketu
 (ništa u kodu ne treba mijenjati). Poslije dodavanja pokreni `npm run generate`.
 
-**Hero je izuzetak.** Tamo stoji `hero-discover.jpg` — gotov render telefona,
+**Hero je izuzetak.** Tamo stoji `hero-discover.webp` — gotov render telefona,
 sa svojim okvirom i sjenom — pa ga `HeroSection.vue` prikazuje direktno, bez
 `PhoneFrame` komponente. Nacrtani okvir bi oko njega bio drugi telefon.
 Zamjena te slike znači zamijeniti sam fajl; ime i omjer nisu vezani za
-1179 × 2556 kao kod ostalih.
+1179 × 2556 kao kod ostalih. Mora ostati format s prozirnošću (.webp ili
+.png) — render nema pozadinu, pa bi je JPEG popunio bijelim pravougaonikom.
 
 ## 1. Screenshotovi aplikacije → `app/assets/images/`
 
