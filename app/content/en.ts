@@ -42,6 +42,7 @@ export const en: Copy = {
     getOn: 'Get it on',
     founder: 'The first 50 to leave an address get unlimited access — no caps on messages, likes or anything else.',
     eyebrow: 'HALAL MARRIAGE APP',
+    note: 'Real profiles.\nReal intentions.',
     marks: [
       { icon: 'badge', label: 'Islamic values' },
       { icon: 'lock', label: 'Safe and private' },

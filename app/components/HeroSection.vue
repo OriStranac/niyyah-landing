@@ -21,6 +21,8 @@ const title = computed(() => {
          promijeni omjer prozora. -->
     <div class="hero__stage" aria-hidden="true">
       <div class="hero__bg" :style="{ backgroundImage: `url(${heroBg})` }">
+        <div class="hero__scrim" />
+        <p class="hero__note">{{ c.cta.note }}</p>
         <PhoneShot
           class="hero__phone"
           :src="heroShot"
@@ -37,6 +39,23 @@ const title = computed(() => {
         <h1 id="hero-title" class="display hero__title">
           {{ title.a }} <span>{{ title.b }}</span>
         </h1>
+        <svg class="hero__flourish" viewBox="0 0 320 14" aria-hidden="true">
+          <path
+            d="M4 9.5c38-5.5 76-7 114-4.5s76 6.5 114 3.5 62-6 84-8"
+            fill="none"
+            stroke="url(#flourish)"
+            stroke-width="2.4"
+            stroke-linecap="round"
+          />
+          <defs>
+            <linearGradient id="flourish" x1="0" x2="1">
+              <stop offset="0" stop-color="oklch(0.76 0.105 82 / 0)" />
+              <stop offset="0.25" stop-color="oklch(0.86 0.065 85 / 0.95)" />
+              <stop offset="0.7" stop-color="oklch(0.76 0.105 82 / 0.7)" />
+              <stop offset="1" stop-color="oklch(0.76 0.105 82 / 0)" />
+            </linearGradient>
+          </defs>
+        </svg>
         <p class="lead hero__lead">{{ c.hero.lead }}</p>
 
         <div class="hero__cta">
@@ -91,6 +110,46 @@ const title = computed(() => {
 /* Ploha postolja ide od 82% (stražnji rub) do 93% (prednji) visine slike.
    Telefon stoji na njoj, bliže prednjem rubu — dno na 90%, kako je na
    mockupu, a ne na stražnjem rubu gdje sam ga prvo stavio. */
+/* Tekst stoji na slici, a slika je oko luka i lampiona svijetla. Veo je
+   jači s lijeve strane, gdje su naslov i forma, i gotovo ga nema desno gdje
+   je telefon. */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      100deg,
+      oklch(0.165 0.034 272 / 0.82) 0%,
+      oklch(0.165 0.034 272 / 0.62) 38%,
+      oklch(0.165 0.034 272 / 0.18) 62%,
+      transparent 78%
+    ),
+    linear-gradient(oklch(0.165 0.034 272 / 0.28), transparent 30%);
+}
+
+/* Bilješka desno od telefona, rukopisom. Ukras je i stoji izvan reda
+   čitanja — aria-hidden nije potreban jer tekst nosi značenje, ali ne
+   prekida ništa. */
+.hero__note {
+  position: absolute;
+  left: 84%;
+  top: 22%;
+  width: 20%;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 0.4rem + 0.8vw, 1.25rem);
+  line-height: 1.35;
+  color: var(--gold-soft);
+  white-space: pre-line;
+  transform: rotate(-6deg);
+}
+
+@media (max-width: 900px) {
+  .hero__note {
+    display: none;
+  }
+}
+
 .hero__phone {
   position: absolute;
   left: 70.5%;
@@ -103,6 +162,13 @@ const title = computed(() => {
 
 .hero__phone :deep(.shot__img) {
   width: 100%;
+}
+
+.hero__flourish {
+  display: block;
+  width: min(100%, 340px);
+  height: auto;
+  margin: 0.2rem 0 0;
 }
 
 .hero__marks {

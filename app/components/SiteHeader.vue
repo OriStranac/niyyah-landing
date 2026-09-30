@@ -106,11 +106,16 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
 .hdr__row {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: clamp(0.75rem, 0.2rem + 1.4vw, 1.5rem);
   height: var(--hdr-h);
+  /* Bez ovoga flex djeca ne smiju ispod svoje prirodne širine, pa duži
+     prijevod ili veće zumiranje izgura sadržaj iz zaglavlja umjesto da ga
+     stisne. */
+  min-width: 0;
 }
 
 .hdr__brand {
+  flex: none;
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
@@ -122,21 +127,24 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
 }
 
 /* Logotip je cijeli lockup — par, ime i slogan — a ne ikona, pa ne ide ni u
-   krug ni u prsten: oboje bi mu odsjekli tekst. Visina ga drži unutar
-   zaglavlja od 72 px, širinu određuje omjer. */
+   krug ni u prsten: oboje bi mu odsjekli tekst. Visina prati širinu prozora
+   umjesto fiksnih 78 px: na užem ekranu je manji i ostavlja mjesta
+   navigaciji, umjesto da je istisne. */
 .hdr__brand img {
   width: auto;
-  height: 78px;
+  height: clamp(48px, 2rem + 2.6vw, 78px);
 }
 
 .hdr__nav {
   display: flex;
-  gap: 1.9rem;
+  gap: clamp(0.9rem, 0.2rem + 1.4vw, 1.9rem);
   margin-inline: auto;
+  min-width: 0;
 }
 
 .hdr__nav a {
   position: relative;
+  white-space: nowrap;
   color: var(--moon-2);
   text-decoration: none;
   font-size: var(--fs-small);
@@ -148,6 +156,7 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
 }
 
 .hdr__end {
+  flex: none;
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -180,6 +189,7 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
   min-height: 42px;
   padding: 0 1.15rem;
   font-size: var(--fs-small);
+  white-space: nowrap;
 }
 
 .hdr__menu {
@@ -198,7 +208,7 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
   display: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .hdr__nav {
     display: none;
   }

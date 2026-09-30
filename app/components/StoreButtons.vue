@@ -65,13 +65,13 @@ const stores = computed(() => {
 .store {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  min-height: 60px;
-  padding: 0 1.5rem 0 1.25rem;
-  border-radius: 16px;
-  box-shadow: inset 0 0 0 1px var(--night-line);
-  background: oklch(1 0 0 / 0.04);
-  color: var(--moon);
+  gap: 0.7rem;
+  min-height: 56px;
+  padding: 0 1.15rem;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px oklch(1 0 0 / 0.22);
+  background: oklch(0.12 0.02 272);
+  color: oklch(1 0 0);
   text-decoration: none;
   transition:
     transform 160ms var(--ease-out),
@@ -84,9 +84,9 @@ const stores = computed(() => {
 }
 
 .store--primary {
-  background: var(--gold);
-  color: var(--night-950);
-  box-shadow: none;
+  background: oklch(0.12 0.02 272);
+  color: oklch(1 0 0);
+  box-shadow: inset 0 0 0 1px oklch(1 0 0 / 0.22);
 }
 
 .store__text {

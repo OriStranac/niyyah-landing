@@ -41,6 +41,7 @@ export const bs = {
     getOn: 'Preuzmi na',
     founder: 'Prvih 50 koji ostave adresu dobijaju neograničen pristup — bez ograničenja na poruke, lajkove i sve ostalo.',
     eyebrow: 'HALAL APLIKACIJA ZA BRAK',
+    note: 'Stvarni profili.\nStvarne namjere.',
     marks: [
       { icon: 'badge', label: 'Islamske vrijednosti' },
       { icon: 'lock', label: 'Sigurno i privatno' },
