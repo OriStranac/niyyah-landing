@@ -37,6 +37,15 @@ async function submit() {
     })
     state.value = 'done'
     increment()
+
+    // Bez ovoga Meta broji samo posjete, pa reklamu ne može optimizovati —
+    // ne zna koja je posjeta završila prijavom. Adresa se ne šalje: Meti
+    // treba znati da se prijava desila, ne ko se prijavio.
+    ;(window as typeof window & { fbq?: (...a: unknown[]) => void }).fbq?.(
+      'track',
+      'Lead',
+      { content_name: 'waitlist', content_category: locale.value },
+    )
   } catch {
     state.value = 'error'
     message.value = c.value.cta.error

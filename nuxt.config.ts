@@ -48,6 +48,9 @@ export default defineNuxtConfig({
       waitlistEndpoint: 'https://api.niyyahmarriage.com/api/waitlist',
       // Broj prijavljenih, za dokaz na stranici. Vraća samo { count }.
       waitlistCountEndpoint: 'https://api.niyyahmarriage.com/api/waitlist/count',
+      // Meta pixel za reklame na Facebooku i Instagramu. Nije tajna: svako
+      // ko otvori izvor stranice ga vidi. Prazno ga potpuno isključuje.
+      metaPixelId: '4603339379933380',
     },
   },
 
@@ -57,6 +60,15 @@ export default defineNuxtConfig({
       meta: [
         { name: 'theme-color', content: '#12162b' },
         { name: 'format-detection', content: 'telephone=no' },
+      ],
+      // Za posjetioce bez JavaScripta. Pixel se inače učitava iz dodatka,
+      // koji bez JS-a ne postoji; ova slika je jedino što od njega ostane.
+      noscript: [
+        {
+          innerHTML:
+            '<img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=4603339379933380&ev=PageView&noscript=1">',
+          tagPosition: 'bodyClose',
+        },
       ],
       link: [
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' },
