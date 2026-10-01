@@ -394,6 +394,15 @@ export const su: Copy = {
       'Antepkeun surélék anjeun, urang bakal méré béja pas Niyyah jalan. Tuluy jieun profil jeung papanggih jeung jalma nu enya-enya hayang ngawangun hal nu nyata.',
   },
 
+  consent: {
+    body:
+      'Urang ngukur sabaraha jalma nu dibawa iklan ka dieu. Teu aya nu séjén, sarta surélék anjeun teu kungsi diteruskeun.',
+    accept: 'Satuju',
+    decline: 'Henteu, nuhun',
+    label: 'Ngukur iklan',
+    change: 'Pilihan ngukur',
+  },
+
   footer: {
     tagline: 'Nikah, ditéangan kalawan niat.',
     made: 'Dijieun kalawan ati-ati di Bosnia jeung Herzegovina.',

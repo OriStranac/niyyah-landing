@@ -394,6 +394,15 @@ export const ms: Copy = {
       'Tinggalkan e-mel anda dan kami akan memberitahu sebaik Niyyah dibuka. Kemudian bina profil anda dan bertemu orang yang benar-benar mahu membina sesuatu yang bermakna.',
   },
 
+  consent: {
+    body:
+      'Kami mengukur berapa ramai orang yang dibawa iklan kami ke sini. Tiada yang lain, dan alamat e-mel anda tidak pernah dihantar lebih jauh.',
+    accept: 'Setuju',
+    decline: 'Tidak, terima kasih',
+    label: 'Pengukuran iklan',
+    change: 'Pilihan pengukuran',
+  },
+
   footer: {
     tagline: 'Perkahwinan, dicari dengan niat.',
     made: 'Dibuat dengan teliti di Bosnia dan Herzegovina.',

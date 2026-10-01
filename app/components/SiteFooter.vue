@@ -3,6 +3,7 @@ const c = useCopy()
 const { locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 const year = new Date().getFullYear()
+const { reopen } = useConsent()
 </script>
 
 <template>
@@ -36,12 +37,29 @@ const year = new Date().getFullYear()
     </div>
     <div class="wrap ftr__bottom">
       <p>{{ c.footer.made }}</p>
+      <!-- Pristanak se mora moći povući isto tako lako kao što se daje. -->
+      <button type="button" class="ftr__consent" @click="reopen">{{ c.consent.change }}</button>
       <p>© {{ year }} {{ c.footer.rights }}</p>
     </div>
   </footer>
 </template>
 
 <style scoped>
+.ftr__consent {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.ftr__consent:hover {
+  color: var(--moon);
+}
+
 .ftr {
   padding-block: 3.5rem 2rem;
   background: var(--night-950);

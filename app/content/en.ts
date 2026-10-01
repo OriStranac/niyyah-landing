@@ -394,6 +394,15 @@ export const en: Copy = {
       'Leave your email and we will let you know as soon as Niyyah launches. Then create your profile and meet people who seriously want to build something real.',
   },
 
+  consent: {
+    body:
+      'We measure how many people our ads bring here. Nothing else, and your email address never goes further.',
+    accept: 'Accept',
+    decline: 'No thanks',
+    label: 'Ad measurement',
+    change: 'Measurement choice',
+  },
+
   footer: {
     tagline: 'Marriage, sought with intention.',
     made: 'Made with care in Bosnia and Herzegovina.',

@@ -394,6 +394,15 @@ export const tr: Copy = {
       'E-postanı bırak, Niyyah açılır açılmaz haber veririz. Sonra profilini kur ve gerçek bir şey kurmayı ciddiye alan insanlarla tanış.',
   },
 
+  consent: {
+    body:
+      'Reklamlarımızın buraya kaç kişi getirdiğini ölçüyoruz. Başka bir şey değil, ve e-posta adresin asla daha ileri gitmez.',
+    accept: 'Kabul ediyorum',
+    decline: 'Hayır, teşekkürler',
+    label: 'Reklam ölçümü',
+    change: 'Ölçüm tercihi',
+  },
+
   footer: {
     tagline: 'Niyetle aranan evlilik.',
     made: 'Bosna-Hersek’te özenle yapıldı.',

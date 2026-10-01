@@ -394,6 +394,15 @@ export const jv: Copy = {
       'Tinggalna email sampeyan, awake dhewe bakal kabari sawise Niyyah mlaku. Banjur gawe profil lan ketemu wong-wong sing temenan kepengin mbangun samubarang sing nyata.',
   },
 
+  consent: {
+    body:
+      'Awake dhewe ngukur pira wong sing digawa iklan tekan kene. Ora liya, lan alamat email sampeyan ora tau diterusake.',
+    accept: 'Setuju',
+    decline: 'Ora, matur nuwun',
+    label: 'Ngukur iklan',
+    change: 'Pilihan pangukuran',
+  },
+
   footer: {
     tagline: 'Bebrayan, digoleki kanthi niyat.',
     made: 'Digawe kanthi ati-ati ing Bosnia lan Herzegovina.',

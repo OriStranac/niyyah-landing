@@ -13,4 +13,5 @@ useHead(() => ({
 
 <template>
   <NuxtPage />
+  <ConsentBar />
 </template>

@@ -395,6 +395,15 @@ export const so: Copy = {
       'Ka tag iimaylkaaga, waanan ku ogeysiinaynaa isla marka Niyyah furmo. Kadibna samee profile-kaaga oo la kulan dad si dhab ah doonaya inay wax dhab ah dhisaan.',
   },
 
+  consent: {
+    body:
+      'Waxaan cabbirnaa inta qof ee xayeysiisyadeennu halkan keenaan. Wax kale ma jiro, iimaylkaaguna waligiis kama sii gudbo.',
+    accept: 'Waan oggolahay',
+    decline: 'Maya, mahadsanid',
+    label: 'Cabbirka xayeysiiska',
+    change: 'Doorashada cabbirka',
+  },
+
   footer: {
     tagline: 'Guur, oo niyad lagu raadiyo.',
     made: 'Si taxaddar leh lagu sameeyay Bosnia iyo Herzegovina.',

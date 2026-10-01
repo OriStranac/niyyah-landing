@@ -394,6 +394,15 @@ export const ku: Copy = {
       'E-nameya xwe bihêle û em ê gava Niyyah dest pê bike ji te re bêjin. Paşê profîlekê çêke û bi mirovên ku bi ciddî dixwazin tiştekî rastîn ava bikin nas bibe.',
   },
 
+  consent: {
+    body:
+      'Em dipîvin ku reklamên me çend kesan tînin vir. Tiştekî din na, û navnîşana te ya e-nameyê qet wêdetir naçe.',
+    accept: 'Qebûl dikim',
+    decline: 'Na, spas',
+    label: 'Pîvandina reklaman',
+    change: 'Hilbijartina pîvandinê',
+  },
+
   footer: {
     tagline: 'Zewac, ku bi niyetê tê gerîn.',
     made: 'Bi baldarî li Bosna û Hersekê hatiye çêkirin.',

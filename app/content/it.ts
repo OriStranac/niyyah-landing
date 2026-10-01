@@ -395,6 +395,15 @@ export const it: Copy = {
       'Lascia la tua email e ti avviseremo appena Niyyah parte. Poi crea il profilo e incontra persone che vogliono davvero costruire qualcosa di vero.',
   },
 
+  consent: {
+    body:
+      'Misuriamo quante persone portano qui i nostri annunci. Nient’altro, e il tuo indirizzo email non va mai oltre.',
+    accept: 'Accetto',
+    decline: 'No, grazie',
+    label: 'Misurazione degli annunci',
+    change: 'Scelta sulla misurazione',
+  },
+
   footer: {
     tagline: 'Il matrimonio, cercato con intenzione.',
     made: 'Fatta con cura in Bosnia ed Erzegovina.',

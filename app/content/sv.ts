@@ -395,6 +395,15 @@ export const sv: Copy = {
       'Lämna din e-post och vi hör av oss så fort Niyyah startar. Gör sedan en profil och möt människor som på allvar vill bygga något verkligt.',
   },
 
+  consent: {
+    body:
+      'Vi mäter hur många som våra annonser för hit. Inget annat, och din e-postadress går aldrig vidare.',
+    accept: 'Jag godkänner',
+    decline: 'Nej tack',
+    label: 'Mätning av annonser',
+    change: 'Val om mätning',
+  },
+
   footer: {
     tagline: 'Äktenskap, sökt med avsikt.',
     made: 'Gjord med omsorg i Bosnien och Hercegovina.',

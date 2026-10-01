@@ -395,6 +395,15 @@ export const sw: Copy = {
       'Acha barua pepe yako na tutakuambia mara Niyyah itakapoanza. Kisha tengeneza wasifu na kutana na watu wanaotaka kwa dhati kujenga kitu cha kweli.',
   },
 
+  consent: {
+    body:
+      'Tunapima watu wangapi matangazo yetu huwaleta hapa. Si zaidi ya hapo, na barua pepe yako haiendi mbali zaidi kamwe.',
+    accept: 'Nakubali',
+    decline: 'Hapana, asante',
+    label: 'Upimaji wa matangazo',
+    change: 'Chaguo la upimaji',
+  },
+
   footer: {
     tagline: 'Ndoa, inayotafutwa kwa nia.',
     made: 'Imetengenezwa kwa uangalifu katika Bosnia na Herzegovina.',

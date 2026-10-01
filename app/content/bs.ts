@@ -393,6 +393,15 @@ export const bs = {
       'Ostavi e-mail i javit ćemo ti čim Niyyah krene. Onda napravi profil i upoznaj ljude koji ozbiljno žele izgraditi nešto stvarno.',
   },
 
+  consent: {
+    body:
+      'Mjerimo koliko naših reklama dovede ljudi ovamo. Ništa drugo, i tvoja e-mail adresa nikad ne ide dalje.',
+    accept: 'Prihvatam',
+    decline: 'Ne hvala',
+    label: 'Mjerenje reklama',
+    change: 'Izbor o mjerenju',
+  },
+
   footer: {
     tagline: 'Brak, tražen s namjerom.',
     made: 'Napravljeno s pažnjom u Bosni i Hercegovini.',

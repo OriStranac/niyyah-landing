@@ -394,6 +394,15 @@ export const tl: Copy = {
       'Iwan ang email mo at ipapaalam namin kapag nagsimula na ang Niyyah. Saka gumawa ng profile at makilala ang mga taong seryosong gustong magtayo ng isang bagay na totoo.',
   },
 
+  consent: {
+    body:
+      'Sinusukat namin kung ilang tao ang dinadala rito ng mga patalastas namin. Wala nang iba, at hindi kailanman lumalayo ang email mo.',
+    accept: 'Sang-ayon ako',
+    decline: 'Hindi na, salamat',
+    label: 'Pagsukat ng patalastas',
+    change: 'Pagpili sa pagsukat',
+  },
+
   footer: {
     tagline: 'Kasal, hinahanap nang may layunin.',
     made: 'Ginawa nang may ingat sa Bosnia at Herzegovina.',

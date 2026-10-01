@@ -394,6 +394,15 @@ export const ha: Copy = {
       'Ka bar imel ɗinka za mu sanar da kai da zarar Niyyah ta fara. Sannan ka yi bayanin martaba ka hadu da mutanen da suke son gina wani abu na gaskiya da gaske.',
   },
 
+  consent: {
+    body:
+      'Muna auna mutane nawa talle-tallenmu ke kawowa nan. Babu wani abu, kuma imel ɗinka ba ya wuce nan.',
+    accept: 'Na yarda',
+    decline: 'A’a, na gode',
+    label: 'Auna talla',
+    change: 'Zaɓin auna',
+  },
+
   footer: {
     tagline: 'Aure, da ake nema da niyya.',
     made: 'An yi ta da kulawa a Bosniya da Herzegovina.',

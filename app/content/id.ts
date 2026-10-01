@@ -394,6 +394,15 @@ export const id: Copy = {
       'Tinggalkan emailmu dan kami akan mengabari begitu Niyyah hadir. Lalu buat profilmu dan temui orang-orang yang sungguh-sungguh ingin membangun sesuatu yang nyata.',
   },
 
+  consent: {
+    body:
+      'Kami mengukur berapa orang yang dibawa iklan kami ke sini. Tidak lebih, dan alamat emailmu tidak pernah diteruskan.',
+    accept: 'Setuju',
+    decline: 'Tidak, terima kasih',
+    label: 'Pengukuran iklan',
+    change: 'Pilihan pengukuran',
+  },
+
   footer: {
     tagline: 'Pernikahan, dicari dengan niat.',
     made: 'Dibuat dengan cermat di Bosnia dan Herzegovina.',

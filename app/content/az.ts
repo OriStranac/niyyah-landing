@@ -395,6 +395,15 @@ export const az: Copy = {
       'E-poçtunuzu buraxın, Niyyah başlayan kimi xəbər verəcəyik. Sonra profil qurun və həqiqi bir şey qurmaq istəyən insanlarla tanış olun.',
   },
 
+  consent: {
+    body:
+      'Reklamlarımızın bura neçə nəfər gətirdiyini ölçürük. Başqa heç nə, və e-poçt ünvanınız heç vaxt daha irəli getmir.',
+    accept: 'Qəbul edirəm',
+    decline: 'Yox, sağ olun',
+    label: 'Reklamın ölçülməsi',
+    change: 'Ölçmə seçimi',
+  },
+
   footer: {
     tagline: 'Niyyətlə axtarılan evlilik.',
     made: 'Bosniya və Herseqovinada diqqətlə hazırlanıb.',

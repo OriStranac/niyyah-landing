@@ -395,6 +395,15 @@ export const nl: Copy = {
       'Laat je e-mail achter en we laten het weten zodra Niyyah begint. Maak dan een profiel en ontmoet mensen die serieus iets echt willen opbouwen.',
   },
 
+  consent: {
+    body:
+      'We meten hoeveel mensen onze advertenties hierheen brengen. Niets anders, en je e-mailadres gaat nooit verder.',
+    accept: 'Akkoord',
+    decline: 'Nee, bedankt',
+    label: 'Meting van advertenties',
+    change: 'Keuze over meting',
+  },
+
   footer: {
     tagline: 'Een huwelijk, gezocht met intentie.',
     made: 'Met zorg gemaakt in Bosnië en Herzegovina.',

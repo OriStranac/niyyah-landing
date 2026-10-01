@@ -395,6 +395,15 @@ export const uz: Copy = {
       'E-pochtangizni qoldiring, Niyyah ishga tushishi bilan xabar beramiz. Keyin profil tuzing va haqiqatan ham haqiqiy narsa qurmoqchi bo‘lgan odamlar bilan tanishing.',
   },
 
+  consent: {
+    body:
+      'Reklamalarimiz bu yerga necha kishini olib kelishini o‘lchaymiz. Boshqa hech narsa, va e-pochtangiz hech qachon uzoqqa ketmaydi.',
+    accept: 'Roziman',
+    decline: 'Yo‘q, rahmat',
+    label: 'Reklama o‘lchovi',
+    change: 'O‘lchov tanlovi',
+  },
+
   footer: {
     tagline: 'Niyat bilan izlangan nikoh.',
     made: 'Bosniya va Gertsegovinada ehtiyotkorlik bilan tayyorlangan.',

@@ -394,6 +394,15 @@ export const wo: Copy = {
       'Bàyyil sa email te dinañu la xamal bu Niyyah tàmbalee. Ba noppi defal sa profil te xamante ak nit ñi bëgg ci lu wér tabax lu dëggu.',
   },
 
+  consent: {
+    body:
+      'Dañuy natt ñaata nit la sunu reklaam yi di indi fii. Amul leneen, te sa adres email du dem fu gëna sore mukk.',
+    accept: 'Nangu naa',
+    decline: 'Déedéet, jërëjëf',
+    label: 'Nattu reklaam',
+    change: 'Tànn ci nattu',
+  },
+
   footer: {
     tagline: 'Takk, bi ñuy wut ak niyyat.',
     made: 'Ñu ko def ak sago ci Bosni ak Herzegovina.',

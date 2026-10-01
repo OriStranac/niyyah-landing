@@ -395,6 +395,15 @@ export const sq: Copy = {
       'Lër email-in dhe do të lajmërojmë sapo Niyyah të niset. Pastaj bëj profilin dhe njihu me njerëz që vërtet duan të ndërtojnë diçka të vërtetë.',
   },
 
+  consent: {
+    body:
+      'Matim sa njerëz sjellin reklamat tona këtu. Asgjë tjetër, dhe adresa jote e email-it nuk shkon kurrë më tutje.',
+    accept: 'Pranoj',
+    decline: 'Jo, faleminderit',
+    label: 'Matja e reklamave',
+    change: 'Zgjedhja për matjen',
+  },
+
   footer: {
     tagline: 'Martesa, e kërkuar me nijet.',
     made: 'Bërë me kujdes në Bosnjë dhe Hercegovinë.',
