@@ -45,6 +45,8 @@
   --font-display: 'Gloock', 'Iowan Old Style', Georgia, serif;
   --font-body: 'Jost', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
   --font-arabic: 'Amiri', 'Geeza Pro', 'Noto Naskh Arabic', serif;
+  --font-devanagari: 'Noto Serif Devanagari', 'Kohinoor Devanagari', serif;
+  --font-bengali: 'Noto Serif Bengali', 'Kohinoor Bangla', serif;
 
   --fs-display: clamp(3.1rem, 1.5rem + 6.2vw, 7.25rem);
   --fs-h2: clamp(2.15rem, 1.35rem + 3.2vw, 4.25rem);
@@ -201,6 +203,29 @@ input {
 
 .ar {
   font-family: var(--font-arabic);
+}
+
+/* ── Pisma koja latinični fontovi ne pokrivaju ───────────────────────────
+   Gloock i Jost nose latinicu (Jost i ćirilicu). Za arapsko pismo, devanagari
+   i bengalsko pismo bi pregledač sam birao zamjenu, pa bi ista stranica na
+   dva telefona izgledala kao dvije različite. Zato se obje varijable —
+   naslovna i tekstualna — zamjenjuju za cijeli dokument.
+   ─────────────────────────────────────────────────────────────────────── */
+:root:lang(ar),
+:root:lang(ur),
+:root:lang(fa) {
+  --font-display: var(--font-arabic);
+  --font-body: var(--font-arabic);
+}
+
+:root:lang(hi) {
+  --font-display: var(--font-devanagari);
+  --font-body: var(--font-devanagari);
+}
+
+:root:lang(bn) {
+  --font-display: var(--font-bengali);
+  --font-body: var(--font-bengali);
 }
 
 /* ── Raspored ────────────────────────────────────────────── */

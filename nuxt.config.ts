@@ -67,6 +67,10 @@ export default defineNuxtConfig({
     baseUrl: siteUrl,
     strategy: 'prefix_except_default',
     defaultLocale: 'bs',
+    // Prvih devet su jezici same aplikacije. Ostali su tu zbog reklama i
+    // dijaspore: stranica govori jezik posjetioca i kad aplikacija još ne
+    // govori, a FAQ mu kaže na kojih devet jezika je aplikacija — da nikome
+    // ne obećamo svoj jezik unutra ako ga tamo nema.
     locales: [
       { code: 'bs', language: 'bs-BA', name: 'Bosanski' },
       { code: 'en', language: 'en', name: 'English' },
@@ -78,8 +82,42 @@ export default defineNuxtConfig({
       // Pišu se zdesna nalijevo; dir ide u <html> preko useHead u app.vue.
       { code: 'ar', language: 'ar', name: 'العربية', dir: 'rtl' },
       { code: 'ur', language: 'ur', name: 'اردو', dir: 'rtl' },
+
+      // Dodani zbog reklama: susjedstvo, dijaspora i velike muslimanske
+      // zajednice koje ne govore ni jedan od gornjih.
+      { code: 'sq', language: 'sq', name: 'Shqip' },
+      { code: 'sv', language: 'sv', name: 'Svenska' },
+      { code: 'nl', language: 'nl', name: 'Nederlands' },
+      { code: 'es', language: 'es', name: 'Español' },
+      { code: 'it', language: 'it', name: 'Italiano' },
+      { code: 'ru', language: 'ru', name: 'Русский' },
+      { code: 'bn', language: 'bn', name: 'বাংলা' },
+      { code: 'hi', language: 'hi', name: 'हिन्दी' },
+      { code: 'fa', language: 'fa', name: 'فارسی', dir: 'rtl' },
+      { code: 'az', language: 'az', name: 'Azərbaycanca' },
+      { code: 'uz', language: 'uz', name: 'O‘zbekcha' },
+      { code: 'sw', language: 'sw', name: 'Kiswahili' },
+      { code: 'so', language: 'so', name: 'Soomaali' },
     ],
-    detectBrowserLanguage: false,
+
+    // Jezik pretraživača odlučuje, ali samo na korijenu.
+    //
+    // `redirectOn: 'root'` znači da reklama koja vodi na `/` odvede čovjeka
+    // na njegov jezik, a direktan link na `/de` ostane njemački — bez ovoga
+    // bi svaki dijeljeni link vodio na jezik onoga ko ga je otvorio, ne na
+    // jezik koji je dijeljen.
+    //
+    // Kolačić pamti ručni izbor, pa padajući meni nadjača pretraživač i
+    // ostane nadjačan. Stranica je statična (GitHub Pages), pa se ovo
+    // odlučuje u pregledaču nakon učitavanja, ne na serveru.
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'niyyah_lang',
+      cookieCrossOrigin: true,
+      redirectOn: 'root',
+      alwaysRedirect: false,
+      fallbackLocale: 'bs',
+    },
     vueI18n: './i18n.config.ts',
   },
 
@@ -89,8 +127,13 @@ export default defineNuxtConfig({
     },
     families: [
       { name: 'Gloock', provider: 'google', weights: [400] },
-      { name: 'Jost', provider: 'google', weights: [400, 500] },
+      // Jost nosi i ćirilicu; bez tog podskupa ruski bi pao na sistemski font
+      // i stranica bi na ruskom izgledala kao tuđa.
+      { name: 'Jost', provider: 'google', weights: [400, 500], subsets: ['latin', 'latin-ext', 'cyrillic', 'cyrillic-ext'] },
       { name: 'Amiri', provider: 'google', weights: [400], subsets: ['arabic'] },
+      // Devanagari i bengalsko pismo: Gloock i Jost ih ne pokrivaju.
+      { name: 'Noto Serif Devanagari', provider: 'google', weights: [400, 500], subsets: ['devanagari'] },
+      { name: 'Noto Serif Bengali', provider: 'google', weights: [400, 500], subsets: ['bengali'] },
       // Za bilješku uz telefon — jedino mjesto gdje se koristi rukopis.
       { name: 'Caveat', provider: 'google', weights: [500] },
     ],

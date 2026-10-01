@@ -1,11 +1,8 @@
 <script setup lang="ts">
 const c = useCopy()
-const { locale } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
 const localePath = useLocalePath()
 const { appLaunched } = useRuntimeConfig().public
 
-const other = computed(() => (locale.value === 'bs' ? 'en' : 'bs'))
 const scrolled = ref(false)
 const open = ref(false)
 
@@ -35,16 +32,7 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
       </nav>
 
       <div class="hdr__end">
-        <NuxtLink
-          :to="switchLocalePath(other)"
-          class="hdr__lang"
-          :hreflang="other"
-          :lang="other"
-          :aria-label="c.nav.otherLang"
-        >
-          <Icon name="globe" :size="17" />
-          {{ c.nav.otherLangShort }}
-        </NuxtLink>
+        <LanguageMenu class="hdr__lang" />
         <a href="#pridruzi" class="btn btn--gold hdr__cta">
           {{ appLaunched ? c.cta.download : c.cta.waitlistShort }}
         </a>
@@ -64,6 +52,7 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
     <nav id="mob-nav" class="mob" :class="{ 'is-open': open }" :aria-label="c.nav.label" :inert="!open || undefined">
       <div class="mob__in">
         <a v-for="l in c.nav.links" :key="l.href" :href="l.href" @click="open = false">{{ l.label }}</a>
+        <LanguageMenu variant="mobile" />
       </div>
     </nav>
   </header>
@@ -169,21 +158,7 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
 }
 
 .hdr__lang {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  min-height: 44px;
-  padding: 0 0.8rem;
-  border-radius: 999px;
-  color: var(--moon-2);
-  font-size: var(--fs-small);
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 200ms ease;
-}
-
-.hdr__lang:hover {
-  color: var(--moon);
+  flex: none;
 }
 
 .hdr__cta {
@@ -230,9 +205,6 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
   }
   .mob__in {
     min-height: 0;
-  }
-  .mob__in a:last-child {
-    margin-bottom: 1rem;
   }
   .mob a {
     display: block;

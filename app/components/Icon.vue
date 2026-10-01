@@ -35,6 +35,8 @@ defineProps<{ name: string; size?: number }>()
     </template>
     <template v-else-if="name === 'arrow'"><path d="M5 12h14M13 6l6 6-6 6" /></template>
     <template v-else-if="name === 'arrow-down'"><path d="M12 5v14M6 13l6 6 6-6" /></template>
+    <!-- Mala strelica za padajući meni; `arrow-down` je puna visina reda. -->
+    <template v-else-if="name === 'caret'"><path d="M7 10l5 5 5-5" /></template>
     <template v-else-if="name === 'check'"><path d="M5 12.5l4.2 4.2L19 7" /></template>
     <template v-else-if="name === 'plus'"><path d="M12 5v14M5 12h14" /></template>
     <template v-else-if="name === 'lock'"><rect x="5" y="10.5" width="14" height="10" rx="2.5" /><path d="M8.5 10.5V7.8a3.5 3.5 0 0 1 7 0v2.7" /></template>

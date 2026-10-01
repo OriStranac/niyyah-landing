@@ -26,8 +26,8 @@ const year = new Date().getFullYear()
           v-for="l in locales"
           :key="l.code"
           :to="switchLocalePath(l.code)"
-          :hreflang="l.code"
-          :lang="l.code"
+          :hreflang="l.language ?? l.code"
+          :lang="l.language ?? l.code"
           :aria-current="l.code === locale ? 'true' : undefined"
         >
           {{ l.name }}

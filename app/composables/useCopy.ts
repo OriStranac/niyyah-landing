@@ -1,16 +1,59 @@
 import { bs, type Copy } from '~/content/bs'
+import { ar } from '~/content/ar'
+import { az } from '~/content/az'
+import { bn } from '~/content/bn'
+import { de } from '~/content/de'
 import { en } from '~/content/en'
+import { es } from '~/content/es'
+import { fa } from '~/content/fa'
+import { fr } from '~/content/fr'
+import { hi } from '~/content/hi'
+import { id } from '~/content/id'
+import { it } from '~/content/it'
+import { ms } from '~/content/ms'
+import { nl } from '~/content/nl'
+import { ru } from '~/content/ru'
+import { so } from '~/content/so'
+import { sq } from '~/content/sq'
+import { sv } from '~/content/sv'
+import { sw } from '~/content/sw'
+import { tr } from '~/content/tr'
+import { ur } from '~/content/ur'
+import { uz } from '~/content/uz'
 
 /**
  * Tekst stranice po jeziku.
  *
- * Prijevodi stižu jezik po jezik, pa se ono čega još nema uzima iz
- * bosanskog umjesto da nedostaje. Spajanje je duboko: jezik koji ima samo
- * navigaciju i hero prikazat će ih na svom jeziku, a ostatak na bosanskom —
- * ružnije nego potpun prijevod, ali stranica radi i ne pada na `undefined`
- * usred renderovanja.
+ * Svaki jezik je potpun: tip `Copy` ne pušta fajl koji nešto ne prevede, pa
+ * build pada prije nego što neprevedeni ključ stigne na stranicu. Spajanje s
+ * bosanskim ostaje kao mreža za slučaj da se nekad doda jezik u pripremi —
+ * tada se vidi šta mu fali, a stranica ne pada na `undefined` usred
+ * renderovanja.
  */
-const partial: Record<string, unknown> = { bs, en }
+const byLocale: Record<string, Copy> = {
+  bs,
+  ar,
+  az,
+  bn,
+  de,
+  en,
+  es,
+  fa,
+  fr,
+  hi,
+  id,
+  it,
+  ms,
+  nl,
+  ru,
+  so,
+  sq,
+  sv,
+  sw,
+  tr,
+  ur,
+  uz,
+}
 
 function merge<T>(base: T, over: unknown): T {
   if (over === undefined || over === null) return base
@@ -30,7 +73,7 @@ export function useCopy() {
   return computed<Copy>(() => {
     const code = locale.value
     if (!cache.has(code)) {
-      cache.set(code, code === 'bs' ? bs : merge(bs, partial[code]))
+      cache.set(code, code === 'bs' ? bs : merge(bs, byLocale[code]))
     }
     return cache.get(code)!
   })
