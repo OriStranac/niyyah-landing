@@ -1,7 +1,9 @@
 import { bs, type Copy } from '~/content/bs'
+import { am } from '~/content/am'
 import { ar } from '~/content/ar'
 import { az } from '~/content/az'
 import { bn } from '~/content/bn'
+import { ckb } from '~/content/ckb'
 import { de } from '~/content/de'
 import { en } from '~/content/en'
 import { es } from '~/content/es'
@@ -29,11 +31,13 @@ import { su } from '~/content/su'
 import { sw } from '~/content/sw'
 import { ta } from '~/content/ta'
 import { te } from '~/content/te'
+import { tg } from '~/content/tg'
 import { tl } from '~/content/tl'
 import { tr } from '~/content/tr'
 import { ug } from '~/content/ug'
 import { ur } from '~/content/ur'
 import { uz } from '~/content/uz'
+import { wo } from '~/content/wo'
 
 /**
  * Tekst stranice po jeziku.
@@ -46,9 +50,11 @@ import { uz } from '~/content/uz'
  */
 const byLocale: Record<string, Copy> = {
   bs,
+  am,
   ar,
   az,
   bn,
+  ckb,
   de,
   en,
   es,
@@ -76,11 +82,13 @@ const byLocale: Record<string, Copy> = {
   sw,
   ta,
   te,
+  tg,
   tl,
   tr,
   ug,
   ur,
   uz,
+  wo,
 }
 
 function merge<T>(base: T, over: unknown): T {

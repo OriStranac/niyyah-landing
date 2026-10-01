@@ -51,6 +51,7 @@
   --font-tamil: 'Noto Serif Tamil', 'Tamil Sangam MN', serif;
   --font-gujarati: 'Noto Serif Gujarati', 'Gujarati Sangam MN', serif;
   --font-telugu: 'Noto Serif Telugu', 'Telugu Sangam MN', serif;
+  --font-ethiopic: 'Noto Serif Ethiopic', 'Kefa', serif;
 
   --fs-display: clamp(3.1rem, 1.5rem + 6.2vw, 7.25rem);
   --fs-h2: clamp(2.15rem, 1.35rem + 3.2vw, 4.25rem);
@@ -221,7 +222,8 @@ input {
 :root:lang(ps),
 :root:lang(pa),
 :root:lang(sd),
-:root:lang(ug) {
+:root:lang(ug),
+:root:lang(ckb) {
   --font-display: var(--font-arabic);
   --font-body: var(--font-arabic);
 }
@@ -254,6 +256,11 @@ input {
 :root:lang(te) {
   --font-display: var(--font-telugu);
   --font-body: var(--font-telugu);
+}
+
+:root:lang(am) {
+  --font-display: var(--font-ethiopic);
+  --font-body: var(--font-ethiopic);
 }
 
 /* ── Raspored ────────────────────────────────────────────── */
