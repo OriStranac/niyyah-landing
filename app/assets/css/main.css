@@ -210,6 +210,17 @@ input {
   font-family: var(--font-arabic);
 }
 
+/* ── Strelice na pismima zdesna nalijevo ─────────────────────────────────
+   Strelica koja kaže „dalje" pokazuje udesno samo tamo gdje se čita slijeva.
+   Na arapskom, urduu, perzijskom, paštu, sindiju, pandžabiju, ujgurskom i
+   soraniju ista strelica pokazuje nazad. Zrcali se samo ona: kvačica,
+   globus i mjesec nemaju smjer čitanja.
+   ─────────────────────────────────────────────────────────────────────── */
+:where([dir='rtl']) svg[data-icon='arrow'],
+:where([dir='rtl']) svg[data-icon='share'] {
+  transform: scaleX(-1);
+}
+
 /* ── Pisma koja latinični fontovi ne pokrivaju ───────────────────────────
    Gloock i Jost nose latinicu (Jost i ćirilicu). Za arapsko pismo, devanagari
    i bengalsko pismo bi pregledač sam birao zamjenu, pa bi ista stranica na

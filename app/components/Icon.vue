@@ -14,6 +14,7 @@ defineProps<{ name: string; size?: number }>()
     stroke-linejoin="round"
     aria-hidden="true"
     focusable="false"
+    :data-icon="name"
   >
     <template v-if="name === 'apple'">
       <path
