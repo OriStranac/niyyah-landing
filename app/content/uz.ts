@@ -396,6 +396,11 @@ export const uz: Copy = {
   },
 
   consent: {
+    title: 'Reklama o‘lchovi',
+    more: 'Bu nimani anglatadi',
+    details:
+      'Facebook pikseli reklamamiz bu yerga necha kishini olib kelishini va kim ro‘yxatdan o‘tishini sanaydi. E-pochtangizni unga hech qachon yubormaymiz. Rad etsangiz, Facebook’dan hech narsa yuklanmaydi.',
+    close: 'Yopish',
     body:
       'Reklamalarimiz bu yerga necha kishini olib kelishini o‘lchaymiz. Boshqa hech narsa, va e-pochtangiz hech qachon uzoqqa ketmaydi.',
     accept: 'Roziman',

@@ -395,6 +395,11 @@ export const tl: Copy = {
   },
 
   consent: {
+    title: 'Pagsukat ng patalastas',
+    more: 'Ano ang ibig sabihin nito',
+    details:
+      'May pixel mula sa Facebook na bumibilang kung ilan ang dinadala rito ng patalastas namin at sino ang nagpapalista. Hindi namin ipinapadala rito ang email mo. Kung tatanggi ka, walang anuman mula sa Facebook ang bubuksan.',
+    close: 'Isara',
     body:
       'Sinusukat namin kung ilang tao ang dinadala rito ng mga patalastas namin. Wala nang iba, at hindi kailanman lumalayo ang email mo.',
     accept: 'Sang-ayon ako',

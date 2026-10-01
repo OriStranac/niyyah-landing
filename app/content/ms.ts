@@ -395,6 +395,11 @@ export const ms: Copy = {
   },
 
   consent: {
+    title: 'Pengukuran iklan',
+    more: 'Apa maksudnya ini',
+    details:
+      'Piksel dari Facebook mengira berapa ramai orang yang dibawa iklan kami ke sini dan siapa yang mendaftar. Alamat e-mel anda tidak pernah kami hantar. Jika anda menolak, tiada apa-apa dari Facebook dimuatkan.',
+    close: 'Tutup',
     body:
       'Kami mengukur berapa ramai orang yang dibawa iklan kami ke sini. Tiada yang lain, dan alamat e-mel anda tidak pernah dihantar lebih jauh.',
     accept: 'Setuju',

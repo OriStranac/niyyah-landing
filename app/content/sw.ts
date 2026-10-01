@@ -396,6 +396,11 @@ export const sw: Copy = {
   },
 
   consent: {
+    title: 'Upimaji wa matangazo',
+    more: 'Hii ina maana gani',
+    details:
+      'Pikseli kutoka Facebook huhesabu watu wangapi tangazo letu linawaleta hapa na nani anajiandikisha. Barua pepe yako hatuipeleki kamwe. Ukikataa, hakuna chochote kutoka Facebook kinachopakiwa.',
+    close: 'Funga',
     body:
       'Tunapima watu wangapi matangazo yetu huwaleta hapa. Si zaidi ya hapo, na barua pepe yako haiendi mbali zaidi kamwe.',
     accept: 'Nakubali',

@@ -395,6 +395,11 @@ export const en: Copy = {
   },
 
   consent: {
+    title: 'Ad measurement',
+    more: 'What this means',
+    details:
+      'A pixel from Facebook counts how many people our ad brings here and who signs up. We never send it your email address. If you decline, nothing from Facebook is loaded at all.',
+    close: 'Close',
     body:
       'We measure how many people our ads bring here. Nothing else, and your email address never goes further.',
     accept: 'Accept',

@@ -396,6 +396,11 @@ export const sv: Copy = {
   },
 
   consent: {
+    title: 'Mätning av annonser',
+    more: 'Vad detta betyder',
+    details:
+      'En pixel från Facebook räknar hur många vår annons för hit och vem som anmäler sig. Din e-postadress skickar vi aldrig. Om du avböjer laddas ingenting alls från Facebook.',
+    close: 'Stäng',
     body:
       'Vi mäter hur många som våra annonser för hit. Inget annat, och din e-postadress går aldrig vidare.',
     accept: 'Jag godkänner',

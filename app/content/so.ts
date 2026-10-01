@@ -396,6 +396,11 @@ export const so: Copy = {
   },
 
   consent: {
+    title: 'Cabbirka xayeysiiska',
+    more: 'Waxa ay tan macneheedu tahay',
+    details:
+      'Pixel ka socda Facebook wuxuu tiriyaa inta qof ee xayeysiiskeennu halkan keeno iyo cidda isdiiwaangelisa. Iimaylkaaga waligeen uma dirno. Haddii aad diiddo, waxba Facebook kama soo dego.',
+    close: 'Xir',
     body:
       'Waxaan cabbirnaa inta qof ee xayeysiisyadeennu halkan keenaan. Wax kale ma jiro, iimaylkaaguna waligiis kama sii gudbo.',
     accept: 'Waan oggolahay',

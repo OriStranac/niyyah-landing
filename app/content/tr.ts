@@ -395,6 +395,11 @@ export const tr: Copy = {
   },
 
   consent: {
+    title: 'Reklam ölçümü',
+    more: 'Bu ne demek',
+    details:
+      'Facebook’tan bir piksel, reklamımızın buraya kaç kişi getirdiğini ve kimin kaydolduğunu sayar. E-posta adresini ona asla göndermeyiz. Reddedersen Facebook’tan hiçbir şey yüklenmez.',
+    close: 'Kapat',
     body:
       'Reklamlarımızın buraya kaç kişi getirdiğini ölçüyoruz. Başka bir şey değil, ve e-posta adresin asla daha ileri gitmez.',
     accept: 'Kabul ediyorum',

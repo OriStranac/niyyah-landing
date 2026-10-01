@@ -395,6 +395,11 @@ export const id: Copy = {
   },
 
   consent: {
+    title: 'Pengukuran iklan',
+    more: 'Apa artinya ini',
+    details:
+      'Piksel dari Facebook menghitung berapa orang yang dibawa iklan kami ke sini dan siapa yang mendaftar. Alamat emailmu tidak pernah kami kirimkan. Kalau menolak, tidak ada apa pun dari Facebook yang dimuat.',
+    close: 'Tutup',
     body:
       'Kami mengukur berapa orang yang dibawa iklan kami ke sini. Tidak lebih, dan alamat emailmu tidak pernah diteruskan.',
     accept: 'Setuju',

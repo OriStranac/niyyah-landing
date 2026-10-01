@@ -69,7 +69,18 @@ export function useConsent() {
     decide,
     grant: () => remember('granted'),
     deny: () => remember('denied'),
-    /** Predomišljanje: veza u podnožju vraća traku. */
+    /**
+     * Iks na kartici: „ne sada".
+     *
+     * Pixel ostaje ugašen, ali se ništa ne pamti, pa se pita opet sljedeći
+     * put. Zatvaranje prozora nije pristanak, a nije ni odbijanje — čovjek
+     * nije rekao ni jedno ni drugo.
+     */
+    dismiss: () => {
+      state.value = 'denied'
+    },
+
+    /** Predomišljanje: veza u podnožju vraća karticu. */
     reopen: () => {
       try {
         localStorage.removeItem(KEY)

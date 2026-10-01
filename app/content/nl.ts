@@ -396,6 +396,11 @@ export const nl: Copy = {
   },
 
   consent: {
+    title: 'Meting van advertenties',
+    more: 'Wat dit betekent',
+    details:
+      'Een pixel van Facebook telt hoeveel mensen onze advertentie hierheen brengt en wie zich aanmeldt. Je e-mailadres sturen we nooit mee. Weiger je, dan wordt er niets van Facebook geladen.',
+    close: 'Sluiten',
     body:
       'We meten hoeveel mensen onze advertenties hierheen brengen. Niets anders, en je e-mailadres gaat nooit verder.',
     accept: 'Akkoord',

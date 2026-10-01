@@ -395,6 +395,11 @@ export const fr: Copy = {
   },
 
   consent: {
+    title: 'Mesure des publicités',
+    more: 'Ce que cela signifie',
+    details:
+      'Un pixel de Facebook compte combien de personnes notre publicité amène ici et qui s’inscrit. Nous ne lui envoyons jamais ton adresse e-mail. Si tu refuses, rien de Facebook n’est chargé.',
+    close: 'Fermer',
     body:
       'Nous mesurons combien de personnes nos publicités amènent ici. Rien d’autre, et ton adresse e-mail ne va jamais plus loin.',
     accept: 'J’accepte',

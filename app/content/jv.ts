@@ -395,6 +395,11 @@ export const jv: Copy = {
   },
 
   consent: {
+    title: 'Ngukur iklan',
+    more: 'Tegese iki apa',
+    details:
+      'Piksel saka Facebook ngitung pira wong sing digawa iklan kita tekan kene lan sapa sing ndaftar. Alamat email sampeyan ora tau dikirim. Yen nolak, ora ana apa-apa saka Facebook sing dimuat.',
+    close: 'Tutup',
     body:
       'Awake dhewe ngukur pira wong sing digawa iklan tekan kene. Ora liya, lan alamat email sampeyan ora tau diterusake.',
     accept: 'Setuju',

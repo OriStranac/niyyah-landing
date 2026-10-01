@@ -396,6 +396,11 @@ export const es: Copy = {
   },
 
   consent: {
+    title: 'Medición de anuncios',
+    more: 'Qué significa esto',
+    details:
+      'Un píxel de Facebook cuenta cuánta gente trae aquí nuestro anuncio y quién se apunta. Nunca le enviamos tu correo. Si rechazas, no se carga nada de Facebook.',
+    close: 'Cerrar',
     body:
       'Medimos cuánta gente traen aquí nuestros anuncios. Nada más, y tu correo nunca va más allá.',
     accept: 'Acepto',

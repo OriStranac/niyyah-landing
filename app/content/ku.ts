@@ -395,6 +395,11 @@ export const ku: Copy = {
   },
 
   consent: {
+    title: 'Pîvandina reklaman',
+    more: 'Ev tê çi wateyê',
+    details:
+      'Pîkselek ji Facebook dihejmêre ku reklama me çend kesan tîne vir û kî navê xwe dinivîse. Em navnîşana te ya e-nameyê qet jê re naşînin. Heke tu red bikî, ji Facebook tiştek nayê barkirin.',
+    close: 'Bigire',
     body:
       'Em dipîvin ku reklamên me çend kesan tînin vir. Tiştekî din na, û navnîşana te ya e-nameyê qet wêdetir naçe.',
     accept: 'Qebûl dikim',

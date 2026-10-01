@@ -395,6 +395,11 @@ export const ha: Copy = {
   },
 
   consent: {
+    title: 'Auna talla',
+    more: 'Me wannan ke nufi',
+    details:
+      'Pixel daga Facebook yana ƙidaya mutane nawa tallanmu ke kawowa nan da kuma wanda ya yi rajista. Ba ma aika masa imel ɗinka ko kaɗan. Idan ka ƙi, babu abin da ake ɗora daga Facebook.',
+    close: 'Rufe',
     body:
       'Muna auna mutane nawa talle-tallenmu ke kawowa nan. Babu wani abu, kuma imel ɗinka ba ya wuce nan.',
     accept: 'Na yarda',

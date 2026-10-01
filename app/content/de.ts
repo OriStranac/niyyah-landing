@@ -395,6 +395,11 @@ export const de: Copy = {
   },
 
   consent: {
+    title: 'Messung von Anzeigen',
+    more: 'Was das bedeutet',
+    details:
+      'Ein Pixel von Facebook zählt, wie viele Menschen unsere Anzeige hierher bringt und wer sich einträgt. Deine E-Mail-Adresse senden wir nie. Lehnst du ab, wird gar nichts von Facebook geladen.',
+    close: 'Schließen',
     body:
       'Wir messen, wie viele Menschen unsere Anzeigen hierher bringen. Nichts weiter, und deine E-Mail-Adresse geht nie weiter.',
     accept: 'Einverstanden',

@@ -396,6 +396,11 @@ export const sq: Copy = {
   },
 
   consent: {
+    title: 'Matja e reklamave',
+    more: 'Çfarë do të thotë kjo',
+    details:
+      'Një piksel nga Facebook numëron sa njerëz sjell reklama jonë këtu dhe kush regjistrohet. Adresën tënde të email-it nuk ia dërgojmë kurrë. Nëse refuzon, nga Facebook nuk ngarkohet asgjë fare.',
+    close: 'Mbyll',
     body:
       'Matim sa njerëz sjellin reklamat tona këtu. Asgjë tjetër, dhe adresa jote e email-it nuk shkon kurrë më tutje.',
     accept: 'Pranoj',

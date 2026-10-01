@@ -396,6 +396,11 @@ export const it: Copy = {
   },
 
   consent: {
+    title: 'Misurazione degli annunci',
+    more: 'Che cosa significa',
+    details:
+      'Un pixel di Facebook conta quante persone porta qui il nostro annuncio e chi si iscrive. Il tuo indirizzo email non glielo inviamo mai. Se rifiuti, da Facebook non viene caricato nulla.',
+    close: 'Chiudi',
     body:
       'Misuriamo quante persone portano qui i nostri annunci. Nient’altro, e il tuo indirizzo email non va mai oltre.',
     accept: 'Accetto',

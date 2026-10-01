@@ -395,6 +395,11 @@ export const wo: Copy = {
   },
 
   consent: {
+    title: 'Nattu reklaam',
+    more: 'Lan la lii tekki',
+    details:
+      'Benn pixel bu jóge Facebook dafay waññ ñaata nit la sunu reklaam di indi fii ak kan moo bind turam. Du ñu ko yónnee sa adres email mukk. Soo ko bañee, dara du jóge Facebook bu ñu yeb.',
+    close: 'Tëj',
     body:
       'Dañuy natt ñaata nit la sunu reklaam yi di indi fii. Amul leneen, te sa adres email du dem fu gëna sore mukk.',
     accept: 'Nangu naa',

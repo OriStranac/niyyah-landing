@@ -395,6 +395,11 @@ export const su: Copy = {
   },
 
   consent: {
+    title: 'Ngukur iklan',
+    more: 'Naon hartina ieu',
+    details:
+      'Piksel ti Facebook ngitung sabaraha jalma nu dibawa iklan urang ka dieu jeung saha nu ngadaptar. Surélék anjeun teu kungsi dikirim ka dinya. Lamun nampik, taya nanaon ti Facebook nu dimuat.',
+    close: 'Tutup',
     body:
       'Urang ngukur sabaraha jalma nu dibawa iklan ka dieu. Teu aya nu séjén, sarta surélék anjeun teu kungsi diteruskeun.',
     accept: 'Satuju',

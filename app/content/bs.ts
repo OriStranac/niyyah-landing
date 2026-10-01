@@ -394,6 +394,11 @@ export const bs = {
   },
 
   consent: {
+    title: 'Mjerenje reklama',
+    more: 'Šta ovo znači',
+    details:
+      'Pixel s Facebooka broji koliko ljudi naša reklama dovede ovamo i ko se prijavi. Ne šaljemo mu tvoju e-mail adresu. Odbiješ li, ništa s Facebooka se neće ni učitati.',
+    close: 'Zatvori',
     body:
       'Mjerimo koliko naših reklama dovede ljudi ovamo. Ništa drugo, i tvoja e-mail adresa nikad ne ide dalje.',
     accept: 'Prihvatam',

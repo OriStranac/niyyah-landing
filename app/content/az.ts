@@ -396,6 +396,11 @@ export const az: Copy = {
   },
 
   consent: {
+    title: 'Reklamın ölçülməsi',
+    more: 'Bu nə deməkdir',
+    details:
+      'Facebook-dan bir piksel reklamımızın bura neçə nəfər gətirdiyini və kimin qeydiyyatdan keçdiyini sayır. E-poçt ünvanınızı ona heç vaxt göndərmirik. İmtina etsəniz, Facebook-dan heç nə yüklənmir.',
+    close: 'Bağla',
     body:
       'Reklamlarımızın bura neçə nəfər gətirdiyini ölçürük. Başqa heç nə, və e-poçt ünvanınız heç vaxt daha irəli getmir.',
     accept: 'Qəbul edirəm',
