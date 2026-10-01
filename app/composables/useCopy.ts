@@ -28,8 +28,10 @@ import { sv } from '~/content/sv'
 import { su } from '~/content/su'
 import { sw } from '~/content/sw'
 import { ta } from '~/content/ta'
+import { te } from '~/content/te'
 import { tl } from '~/content/tl'
 import { tr } from '~/content/tr'
+import { ug } from '~/content/ug'
 import { ur } from '~/content/ur'
 import { uz } from '~/content/uz'
 
@@ -73,8 +75,10 @@ const byLocale: Record<string, Copy> = {
   su,
   sw,
   ta,
+  te,
   tl,
   tr,
+  ug,
   ur,
   uz,
 }
