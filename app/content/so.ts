@@ -42,6 +42,7 @@ export const so: Copy = {
     getOn: 'Ka hel',
     availableOn: 'Waa laga helayaa',
     eyebrow: 'AB XALAAL AH OO GUUR LOOGU TALAGALAY',
+    waiting: '{count} qof ayaa durba sugaya Niyyah',
   },
 
   hero: {

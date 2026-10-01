@@ -42,6 +42,7 @@ export const ru: Copy = {
     getOn: 'Загрузить в',
     availableOn: 'Доступно в',
     eyebrow: 'ХАЛЯЛЬНОЕ ПРИЛОЖЕНИЕ ДЛЯ НИКАХА',
+    waiting: '{count} человек уже ждут Niyyah',
   },
 
   hero: {

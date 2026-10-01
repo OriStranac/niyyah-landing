@@ -42,6 +42,7 @@ export const hi: Copy = {
     getOn: 'पाएँ',
     availableOn: 'उपलब्ध है',
     eyebrow: 'निकाह के लिए हलाल ऐप',
+    waiting: '{count} लोग पहले से नीयाह का इंतज़ार कर रहे हैं',
   },
 
   hero: {

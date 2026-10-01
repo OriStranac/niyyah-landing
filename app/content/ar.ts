@@ -42,6 +42,7 @@ export const ar: Copy = {
     getOn: 'حمّله من',
     availableOn: 'متوفر على',
     eyebrow: 'تطبيق حلال للزواج',
+    waiting: '{count} شخصًا ينتظرون نيّة بالفعل',
   },
 
   hero: {

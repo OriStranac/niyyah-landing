@@ -41,6 +41,7 @@ export const bs = {
     getOn: 'Preuzmi na',
     availableOn: 'Dostupno na',
     eyebrow: 'HALAL APLIKACIJA ZA BRAK',
+    waiting: '{count} ljudi već čeka Niyyah',
   },
 
   hero: {

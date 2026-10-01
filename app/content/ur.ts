@@ -42,6 +42,7 @@ export const ur: Copy = {
     getOn: 'حاصل کریں',
     availableOn: 'دستیاب ہے',
     eyebrow: 'نکاح کے لیے حلال ایپ',
+    waiting: '{count} لوگ پہلے ہی نیّہ کا انتظار کر رہے ہیں',
   },
 
   hero: {

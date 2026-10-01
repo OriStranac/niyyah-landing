@@ -42,6 +42,7 @@ export const bn: Copy = {
     getOn: 'পাবেন',
     availableOn: 'পাওয়া যাচ্ছে',
     eyebrow: 'বিয়ের জন্য হালাল অ্যাপ',
+    waiting: '{count} জন ইতিমধ্যে নিয়্যাহর অপেক্ষায়',
   },
 
   hero: {

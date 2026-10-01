@@ -42,6 +42,7 @@ export const az: Copy = {
     getOn: 'Yüklə',
     availableOn: 'Mövcuddur',
     eyebrow: 'EVLİLİK ÜÇÜN HALAL TƏTBİQ',
+    waiting: '{count} nəfər artıq Niyyah-ı gözləyir',
   },
 
   hero: {

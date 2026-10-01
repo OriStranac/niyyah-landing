@@ -42,6 +42,7 @@ export const sw: Copy = {
     getOn: 'Ipate kwenye',
     availableOn: 'Inapatikana kwenye',
     eyebrow: 'PROGRAMU HALALI YA NDOA',
+    waiting: 'Watu {count} tayari wanaisubiri Niyyah',
   },
 
   hero: {

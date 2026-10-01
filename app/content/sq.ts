@@ -42,6 +42,7 @@ export const sq: Copy = {
     getOn: 'Shkarkoje në',
     availableOn: 'E gjeni në',
     eyebrow: 'APLIKACION HALLALL PËR MARTESË',
+    waiting: '{count} veta e presin tashmë Niyyah',
   },
 
   hero: {

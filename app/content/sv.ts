@@ -42,6 +42,7 @@ export const sv: Copy = {
     getOn: 'Hämta i',
     availableOn: 'Finns på',
     eyebrow: 'HALAL APP FÖR ÄKTENSKAP',
+    waiting: '{count} personer väntar redan på Niyyah',
   },
 
   hero: {

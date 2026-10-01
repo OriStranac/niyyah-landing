@@ -42,6 +42,7 @@ export const fa: Copy = {
     getOn: 'دریافت از',
     availableOn: 'موجود در',
     eyebrow: 'اپلیکیشن حلال برای ازدواج',
+    waiting: '{count} نفر همین حالا منتظر نیّه‌اند',
   },
 
   hero: {

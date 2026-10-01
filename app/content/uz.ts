@@ -42,6 +42,7 @@ export const uz: Copy = {
     getOn: 'Yuklab oling',
     availableOn: 'Mavjud',
     eyebrow: 'NIKOH UCHUN HALOL ILOVA',
+    waiting: '{count} kishi allaqachon Niyyah’ni kutmoqda',
   },
 
   hero: {

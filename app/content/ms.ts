@@ -42,6 +42,7 @@ export const ms: Copy = {
     getOn: 'Muat turun di',
     availableOn: 'Boleh didapati di',
     eyebrow: 'APLIKASI HALAL UNTUK PERKAHWINAN',
+    waiting: '{count} orang sudah menunggu Niyyah',
   },
 
   hero: {

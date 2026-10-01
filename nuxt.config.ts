@@ -46,6 +46,8 @@ export default defineNuxtConfig({
       // Lista čekanja: POST { email, locale } → 202. Backend upisuje adresu i
       // prikazuje je u admin portalu; duplikat je uspjeh, ne greška.
       waitlistEndpoint: 'https://api.niyyahmarriage.com/api/waitlist',
+      // Broj prijavljenih, za dokaz na stranici. Vraća samo { count }.
+      waitlistCountEndpoint: 'https://api.niyyahmarriage.com/api/waitlist/count',
     },
   },
 
@@ -98,6 +100,12 @@ export default defineNuxtConfig({
       { code: 'uz', language: 'uz', name: 'O‘zbekcha' },
       { code: 'sw', language: 'sw', name: 'Kiswahili' },
       { code: 'so', language: 'so', name: 'Soomaali' },
+      { code: 'ml', language: 'ml', name: 'മലയാളം' },
+      { code: 'ta', language: 'ta', name: 'தமிழ்' },
+      { code: 'tl', language: 'tl', name: 'Filipino' },
+      { code: 'ku', language: 'ku', name: 'Kurdî' },
+      { code: 'ha', language: 'ha', name: 'Hausa' },
+      { code: 'ps', language: 'ps', name: 'پښتو', dir: 'rtl' },
     ],
 
     // Jezik pretraživača odlučuje, ali samo na korijenu.
@@ -134,6 +142,8 @@ export default defineNuxtConfig({
       // Devanagari i bengalsko pismo: Gloock i Jost ih ne pokrivaju.
       { name: 'Noto Serif Devanagari', provider: 'google', weights: [400, 500], subsets: ['devanagari'] },
       { name: 'Noto Serif Bengali', provider: 'google', weights: [400, 500], subsets: ['bengali'] },
+      { name: 'Noto Serif Malayalam', provider: 'google', weights: [400, 500], subsets: ['malayalam'] },
+      { name: 'Noto Serif Tamil', provider: 'google', weights: [400, 500], subsets: ['tamil'] },
       // Za bilješku uz telefon — jedino mjesto gdje se koristi rukopis.
       { name: 'Caveat', provider: 'google', weights: [500] },
     ],

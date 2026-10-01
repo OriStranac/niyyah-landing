@@ -42,6 +42,7 @@ export const it: Copy = {
     getOn: 'Scaricala su',
     availableOn: 'Disponibile su',
     eyebrow: 'APP HALAL PER IL MATRIMONIO',
+    waiting: '{count} persone aspettano già Niyyah',
   },
 
   hero: {

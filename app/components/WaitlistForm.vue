@@ -9,6 +9,7 @@ const email = ref('')
 const trap = ref('') // honeypot za botove
 const state = ref<'idle' | 'sending' | 'done' | 'error'>('idle')
 const message = ref('')
+const { shown: waiting, increment } = useWaitlistCount()
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
@@ -35,6 +36,7 @@ async function submit() {
       body: { email: email.value.trim(), locale: locale.value },
     })
     state.value = 'done'
+    increment()
   } catch {
     state.value = 'error'
     message.value = c.value.cta.error
@@ -74,6 +76,10 @@ async function submit() {
     <p :id="`${id}-msg`" class="wl__msg" :class="{ 'is-error': state === 'error' }" aria-live="polite">
       {{ state === 'error' ? message : state === 'done' ? '' : c.cta.privacy }}
     </p>
+    <p v-if="waiting !== null" class="wl__count">
+      <span class="wl__pulse" aria-hidden="true" />
+      {{ c.cta.waiting.replace('{count}', waiting.toLocaleString(locale)) }}
+    </p>
   </div>
 </template>
 
@@ -81,6 +87,44 @@ async function submit() {
 .wl {
   width: 100%;
   max-width: 540px;
+}
+
+/* ── Koliko ih već čeka ──────────────────────────────────────────────────
+   Ispod poruke o privatnosti, tiše od nje: ovo je dokaz, ne poziv.
+   ─────────────────────────────────────────────────────────────────────── */
+.wl__count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.55rem 0 0;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--gold);
+}
+
+.wl__pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 0 var(--gold-glow);
+  animation: wl-pulse 2.4s ease-out infinite;
+}
+
+@keyframes wl-pulse {
+  70% {
+    box-shadow: 0 0 0 7px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wl__pulse {
+    animation: none;
+  }
 }
 
 .wl__form {

@@ -42,6 +42,7 @@ export const tr: Copy = {
     getOn: 'İndir',
     availableOn: 'Edin',
     eyebrow: 'EVLİLİK İÇİN HELAL UYGULAMA',
+    waiting: '{count} kişi Niyyah’ı şimdiden bekliyor',
   },
 
   hero: {

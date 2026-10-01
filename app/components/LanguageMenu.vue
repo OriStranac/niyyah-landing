@@ -3,7 +3,7 @@
  * Izbor jezika.
  *
  * Dok su bila dva jezika, jedno dugme koje ih zamjenjuje bilo je dovoljno.
- * S dvadeset dva nije: dugme „EN" ne kaže šta još postoji, a čovjek koji je
+ * S dvadeset osam nije: dugme „EN" ne kaže šta još postoji, a čovjek koji je
  * stranicu vidio preko reklame na svom jeziku i ne zna da treba tražiti.
  *
  * Svaki jezik je pravi link na svoju adresu, ne klik koji mijenja stanje —
@@ -123,7 +123,7 @@ onBeforeUnmount(() => {
 }
 
 /* ── Lista ───────────────────────────────────────────────────────────────
-   Dvadeset dva jezika su viša lista od većine ekrana, pa ima svoj skrol i
+   Dvadeset osam jezika su viša lista od većine ekrana, pa ima svoj skrol i
    gornju granicu vezanu za visinu prozora, a ne fiksnu.
    ─────────────────────────────────────────────────────────────────────── */
 .lang__list {

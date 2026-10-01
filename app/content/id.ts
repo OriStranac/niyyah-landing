@@ -42,6 +42,7 @@ export const id: Copy = {
     getOn: 'Unduh di',
     availableOn: 'Tersedia di',
     eyebrow: 'APLIKASI HALAL UNTUK PERNIKAHAN',
+    waiting: '{count} orang sudah menunggu Niyyah',
   },
 
   hero: {

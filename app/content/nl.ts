@@ -42,6 +42,7 @@ export const nl: Copy = {
     getOn: 'Download in de',
     availableOn: 'Verkrijgbaar via',
     eyebrow: 'HALAL APP VOOR HET HUWELIJK',
+    waiting: '{count} mensen wachten al op Niyyah',
   },
 
   hero: {

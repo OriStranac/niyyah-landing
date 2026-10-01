@@ -47,6 +47,8 @@
   --font-arabic: 'Amiri', 'Geeza Pro', 'Noto Naskh Arabic', serif;
   --font-devanagari: 'Noto Serif Devanagari', 'Kohinoor Devanagari', serif;
   --font-bengali: 'Noto Serif Bengali', 'Kohinoor Bangla', serif;
+  --font-malayalam: 'Noto Serif Malayalam', 'Kohinoor Malayalam', serif;
+  --font-tamil: 'Noto Serif Tamil', 'Tamil Sangam MN', serif;
 
   --fs-display: clamp(3.1rem, 1.5rem + 6.2vw, 7.25rem);
   --fs-h2: clamp(2.15rem, 1.35rem + 3.2vw, 4.25rem);
@@ -213,7 +215,8 @@ input {
    ─────────────────────────────────────────────────────────────────────── */
 :root:lang(ar),
 :root:lang(ur),
-:root:lang(fa) {
+:root:lang(fa),
+:root:lang(ps) {
   --font-display: var(--font-arabic);
   --font-body: var(--font-arabic);
 }
@@ -226,6 +229,16 @@ input {
 :root:lang(bn) {
   --font-display: var(--font-bengali);
   --font-body: var(--font-bengali);
+}
+
+:root:lang(ml) {
+  --font-display: var(--font-malayalam);
+  --font-body: var(--font-malayalam);
+}
+
+:root:lang(ta) {
+  --font-display: var(--font-tamil);
+  --font-body: var(--font-tamil);
 }
 
 /* ── Raspored ────────────────────────────────────────────── */
