@@ -7,19 +7,25 @@ import { en } from '~/content/en'
 import { es } from '~/content/es'
 import { fa } from '~/content/fa'
 import { fr } from '~/content/fr'
+import { gu } from '~/content/gu'
 import { ha } from '~/content/ha'
 import { hi } from '~/content/hi'
 import { id } from '~/content/id'
 import { it } from '~/content/it'
+import { jv } from '~/content/jv'
+import { kk } from '~/content/kk'
 import { ku } from '~/content/ku'
 import { ml } from '~/content/ml'
 import { ms } from '~/content/ms'
 import { nl } from '~/content/nl'
+import { pa } from '~/content/pa'
 import { ps } from '~/content/ps'
 import { ru } from '~/content/ru'
+import { sd } from '~/content/sd'
 import { so } from '~/content/so'
 import { sq } from '~/content/sq'
 import { sv } from '~/content/sv'
+import { su } from '~/content/su'
 import { sw } from '~/content/sw'
 import { ta } from '~/content/ta'
 import { tl } from '~/content/tl'
@@ -46,19 +52,25 @@ const byLocale: Record<string, Copy> = {
   es,
   fa,
   fr,
+  gu,
   ha,
   hi,
   id,
   it,
+  jv,
+  kk,
   ku,
   ml,
   ms,
   nl,
+  pa,
   ps,
   ru,
+  sd,
   so,
   sq,
   sv,
+  su,
   sw,
   ta,
   tl,

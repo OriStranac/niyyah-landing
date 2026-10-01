@@ -106,6 +106,12 @@ export default defineNuxtConfig({
       { code: 'ku', language: 'ku', name: 'Kurdî' },
       { code: 'ha', language: 'ha', name: 'Hausa' },
       { code: 'ps', language: 'ps', name: 'پښتو', dir: 'rtl' },
+      { code: 'jv', language: 'jv', name: 'Basa Jawa' },
+      { code: 'su', language: 'su', name: 'Basa Sunda' },
+      { code: 'gu', language: 'gu', name: 'ગુજરાતી' },
+      { code: 'kk', language: 'kk', name: 'Қазақша' },
+      { code: 'pa', language: 'pa', name: 'پنجابی', dir: 'rtl' },
+      { code: 'sd', language: 'sd', name: 'سنڌي', dir: 'rtl' },
     ],
 
     // Jezik pretraživača odlučuje, ali samo na korijenu.
@@ -144,6 +150,7 @@ export default defineNuxtConfig({
       { name: 'Noto Serif Bengali', provider: 'google', weights: [400, 500], subsets: ['bengali'] },
       { name: 'Noto Serif Malayalam', provider: 'google', weights: [400, 500], subsets: ['malayalam'] },
       { name: 'Noto Serif Tamil', provider: 'google', weights: [400, 500], subsets: ['tamil'] },
+      { name: 'Noto Serif Gujarati', provider: 'google', weights: [400, 500], subsets: ['gujarati'] },
       // Za bilješku uz telefon — jedino mjesto gdje se koristi rukopis.
       { name: 'Caveat', provider: 'google', weights: [500] },
     ],
