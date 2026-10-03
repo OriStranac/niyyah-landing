@@ -109,16 +109,28 @@ async function submit() {
   margin: 0.55rem 0 0;
   font-size: var(--fs-small);
   font-weight: 500;
-  color: var(--gold);
+  /* Zeleno, ne zlatno: ovo je jedini broj na stranici koji je živ — raste
+     dok se stranica gleda, i poraste za jedan čim se neko prijavi. Zlatom
+     je izgledao kao još jedan ukras među zlatnim ukrasima. */
+  color: var(--live);
+}
+
+.wl--day .wl__count {
+  /* Svijetlo zeleno na papiru se gubi. */
+  color: var(--live-deep);
 }
 
 .wl__pulse {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 0 0 var(--gold-glow);
+  background: var(--live);
+  box-shadow: 0 0 0 0 var(--live-glow);
   animation: wl-pulse 2.4s ease-out infinite;
+}
+
+.wl--day .wl__pulse {
+  background: var(--live-deep);
 }
 
 @keyframes wl-pulse {

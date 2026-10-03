@@ -38,6 +38,14 @@
   --gold-deep: oklch(0.5 0.088 70);
   --gold-glow: oklch(0.76 0.105 82 / 0.18);
 
+  /* „Živo" zeleno — isto ono kojim aplikacija označava da je neko na vezi
+     (#10B981), samo svjetlije da se drži na tamnoplavoj pozadini. Koristi
+     se tamo gdje broj znači da se nešto upravo događa, a ne tamo gdje je
+     ukras: zlato je boja marke, ovo je boja stanja. */
+  --live: oklch(0.82 0.14 162);
+  --live-deep: oklch(0.56 0.13 162);
+  --live-glow: oklch(0.82 0.14 162 / 0.22);
+
   --moon: oklch(0.955 0.018 80);
   --moon-2: oklch(0.955 0.018 80 / 0.72);
   --moon-3: oklch(0.955 0.018 80 / 0.5);

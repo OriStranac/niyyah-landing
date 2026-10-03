@@ -31,8 +31,11 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
         <a v-for="l in c.nav.links" :key="l.href" :href="l.href">{{ l.label }}</a>
       </nav>
 
+      <!-- Na telefonu je ovo redom kojim se i vidi: dugme, meni, jezik. Na
+           širokom ekranu nema dugmeta za meni, pa se jezik vraća ispred
+           dugmeta preko `order` — jedan od ta dva reda mora biti postavljen
+           u CSS-u, jer se razilaze, a telefon je taj koji se više gleda. -->
       <div class="hdr__end">
-        <LanguageMenu class="hdr__lang" />
         <a href="#pridruzi" class="btn btn--gold hdr__cta">
           {{ appLaunched ? c.cta.download : c.cta.waitlistShort }}
         </a>
@@ -46,6 +49,7 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
         >
           <Icon :name="open ? 'close' : 'menu'" :size="22" />
         </button>
+        <LanguageMenu class="hdr__lang" />
       </div>
     </div>
 
@@ -161,6 +165,13 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
   flex: none;
 }
 
+/* Širok ekran: jezik prvi, pa dugme — kako je i bilo. */
+@media (min-width: 1101px) {
+  .hdr__lang {
+    order: -1;
+  }
+}
+
 .hdr__cta {
   min-height: 42px;
   padding: 0 1.15rem;
@@ -187,6 +198,13 @@ watch(open, (v) => document.documentElement.classList.toggle('menu-open', v))
 @media (max-width: 1100px) {
   .hdr__nav {
     display: none;
+  }
+  /* `display: none` ne vadi navigaciju iz reda susjeda, pa je
+     `.hdr__nav + .hdr__end` i dalje gazio `margin-left: auto` svojim malim
+     razmakom — zato je cijela grupa na telefonu stajala odmah uz logotip, s
+     praznim prostorom desno. */
+  .hdr__nav + .hdr__end {
+    margin-left: auto;
   }
   .hdr__menu {
     display: grid;
